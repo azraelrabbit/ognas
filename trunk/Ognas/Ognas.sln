@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "!Documents", "!Documents\!Documents.csproj", "{B241975F-CA58-46EF-910F-C617C15C0E8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server Side", "Server Side", "{EC937E25-FFC7-4999-830E-DDA922E99F55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client Side", "Client Side", "{910F7D55-AB19-4F45-BBAE-4BC58571041A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9E591CB1-0E92-4257-AE3D-457A5C295719}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OgnasSrv", "OgnasSrv\OgnasSrv.csproj", "{C717EA66-612C-499A-8BCA-8152A84DCAD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ognas", "Ognas\Ognas.csproj", "{2A74329E-86BB-4149-823E-B9EB79AE099F}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B241975F-CA58-46EF-910F-C617C15C0E8E}.Debug|x86.ActiveCfg = Debug|x86
+		{B241975F-CA58-46EF-910F-C617C15C0E8E}.Debug|x86.Build.0 = Debug|x86
+		{B241975F-CA58-46EF-910F-C617C15C0E8E}.Release|x86.ActiveCfg = Release|x86
+		{B241975F-CA58-46EF-910F-C617C15C0E8E}.Release|x86.Build.0 = Release|x86
+		{C717EA66-612C-499A-8BCA-8152A84DCAD8}.Debug|x86.ActiveCfg = Debug|x86
+		{C717EA66-612C-499A-8BCA-8152A84DCAD8}.Debug|x86.Build.0 = Debug|x86
+		{C717EA66-612C-499A-8BCA-8152A84DCAD8}.Release|x86.ActiveCfg = Release|x86
+		{C717EA66-612C-499A-8BCA-8152A84DCAD8}.Release|x86.Build.0 = Release|x86
+		{2A74329E-86BB-4149-823E-B9EB79AE099F}.Debug|x86.ActiveCfg = Debug|x86
+		{2A74329E-86BB-4149-823E-B9EB79AE099F}.Debug|x86.Build.0 = Debug|x86
+		{2A74329E-86BB-4149-823E-B9EB79AE099F}.Release|x86.ActiveCfg = Release|x86
+		{2A74329E-86BB-4149-823E-B9EB79AE099F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C717EA66-612C-499A-8BCA-8152A84DCAD8} = {EC937E25-FFC7-4999-830E-DDA922E99F55}
+		{2A74329E-86BB-4149-823E-B9EB79AE099F} = {910F7D55-AB19-4F45-BBAE-4BC58571041A}
+	EndGlobalSection
+EndGlobal
