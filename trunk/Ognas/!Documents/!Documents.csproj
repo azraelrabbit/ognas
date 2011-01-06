@@ -37,8 +37,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="三国杀图片\png\Thumbs.db" />
-    <None Include="三国杀图片\sgs\Thumbs.db" />
     <None Include="三国杀图片\三国杀.图片.doc" />
     <None Include="三国杀.资料.doc" />
   </ItemGroup>
