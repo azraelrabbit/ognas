@@ -8,7 +8,7 @@
     <ProjectGuid>{2A74329E-86BB-4149-823E-B9EB79AE099F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ognas</RootNamespace>
+    <RootNamespace>Ognas.Client</RootNamespace>
     <AssemblyName>Ognas</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
