@@ -17,11 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common Library", "Common Li
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib", "Lib\Lib.csproj", "{61759E69-1213-4144-B33B-9C75B5F78A2C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SocketUtils", "SocketUtils\SocketUtils.csproj", "{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform", "Platform\Platform.csproj", "{6D2F5316-19A8-41FE-AC75-9B911689E7EE}"
+EndProject
 Global
-	GlobalSection(SubversionScc) = preSolution
-		Svn-Managed = True
-		Manager = AnkhSVN - Subversion Support for Visual Studio
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -70,6 +70,26 @@ Global
 		{61759E69-1213-4144-B33B-9C75B5F78A2C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{61759E69-1213-4144-B33B-9C75B5F78A2C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{61759E69-1213-4144-B33B-9C75B5F78A2C}.Release|x86.ActiveCfg = Release|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}.Release|x86.ActiveCfg = Release|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,5 +98,11 @@ Global
 		{C717EA66-612C-499A-8BCA-8152A84DCAD8} = {EC937E25-FFC7-4999-830E-DDA922E99F55}
 		{2A74329E-86BB-4149-823E-B9EB79AE099F} = {910F7D55-AB19-4F45-BBAE-4BC58571041A}
 		{61759E69-1213-4144-B33B-9C75B5F78A2C} = {40B114EC-A87B-41B0-9C20-D36875AFF0A5}
+		{A35EF144-7E5C-43DB-91E0-4EBF92C24D11} = {40B114EC-A87B-41B0-9C20-D36875AFF0A5}
+		{6D2F5316-19A8-41FE-AC75-9B911689E7EE} = {40B114EC-A87B-41B0-9C20-D36875AFF0A5}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
 	EndGlobalSection
 EndGlobal
