@@ -45,8 +45,11 @@
     <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Enum\SystemMessage.cs" />
+    <Compile Include="Games\Game.cs" />
+    <Compile Include="Games\GameBase.cs" />
     <Compile Include="Model\Delegates.cs" />
     <Compile Include="Model\Events.cs" />
+    <Compile Include="Model\OgnasEventArgs\CardUseEventArgs.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\RoomPort.cs" />
     <Compile Include="MainFrame.cs" />
@@ -65,6 +68,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Delegates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Lib\Lib.csproj">
+      <Project>{61759E69-1213-4144-B33B-9C75B5F78A2C}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
