@@ -6,7 +6,7 @@ using System.Configuration;
 
 namespace Platform
 {
-    public class HousePort
+    public class RoomPort
     {
         #region Tcp Port
         private static Dictionary<int, bool> tcpPortDictionary = new Dictionary<int, bool>();
@@ -17,7 +17,7 @@ namespace Platform
 
         private static int currentMaxTcpPort = Convert.ToInt32(ConfigurationManager.AppSettings["InstanceBeginTcpPort"]);
 
-        public static int GetHouseTcpPort()
+        public static int GetRoomTcpPort()
         {
             lock (tcpPortLock)
             {
@@ -53,7 +53,7 @@ namespace Platform
 
         private static int currentMaxUdpPort = Convert.ToInt32(ConfigurationManager.AppSettings["InstanceBeginUdpPort"]);
 
-        public static int GetHouseUdpPort()
+        public static int GetRoomUdpPort()
         {
             lock (udpPortLock)
             {

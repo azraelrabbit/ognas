@@ -16,6 +16,10 @@ using System.Configuration;
 using System.Net;
 using Platform.Enum;
 using System.Threading;
+using Ognas.Client.Model;
+using Platform.Protocals;
+using Platform.CommonUtils;
+using Platform.SocketUtils;
 
 namespace Ognas.Client
 {
@@ -24,66 +28,115 @@ namespace Ognas.Client
     /// </summary>
     public partial class MainWindow : Window
     {
-        public TcpListenerX tcpListenerX = null;
-        public string serverName = ConfigurationManager.AppSettings["ServerName"];
-        public int serverPort = Convert.ToInt32(ConfigurationManager.AppSettings["ServerPort"]);
-
-        public Thread clientThread = null;
+        public static string ServerName = ConfigurationManager.AppSettings["ServerName"];
+        public static int ServerPort = Convert.ToInt32(ConfigurationManager.AppSettings["ServerPort"]);
+        public static TcpClientUtils TcpClientUtils = new TcpClientUtils(ServerName, ServerPort);
 
         public static IPAddress SystemIPAddress = Dns.GetHostAddresses(Dns.GetHostName())[0];
+
+        public int currentRoomPort = 0;
 
         public MainWindow()
         {
             InitializeComponent();
+            PlatFormInitialize();
         }
 
-        private void btnEnterHouse_Click(object sender, RoutedEventArgs e)
+        public void PlatFormInitialize()
         {
-            if (string.IsNullOrWhiteSpace(txtHousePort.Text))
+            CreateTcpListenerThread();
+            ShowUserNameWindow();
+        }
+
+        public void CreateTcpListenerThread()
+        {
+            try
+            {
+                Thread thread = new Thread(CreateTcpListenerX);
+                thread.IsBackground = true;
+                thread.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }
+
+        public void CreateTcpListenerX()
+        {
+            TcpListenerX tcpListenerX = new TcpListenerX(SystemIPAddress, Constants.ClientPort, this.ReceiveTcpMessage);
+            tcpListenerX.Run();
+        }
+
+        public void ShowUserNameWindow()
+        {
+            var dialog = new UserNameWindow();
+            if (dialog.ShowDialog() == true)
+            {
+                lblWelcomeInfo.Content = "Welcome: " + dialog.ResponseText;
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void btnEnterRoom_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtRoomName.Text))
             {
                 return;
             }
-            List<byte> byteList = new List<byte>();
-            byteList.Add((byte)SystemMessage.EnterHouse);
 
-            int port = Convert.ToInt32(txtHousePort.Text);
-            byteList.AddRange(BitConverter.GetBytes(port));
-            TcpClientUtils.SendData(this.serverName, port, byteList.ToArray());
+            EnterRoomProtocal protocal = new EnterRoomProtocal();
+            protocal.Data = txtRoomName.Text;
+
+            this.EnterRoom(protocal.RequestData);
         }
 
-        private void btnCreateHouse_Click(object sender, RoutedEventArgs e)
+        private void btnCreateRoom_Click(object sender, RoutedEventArgs e)
         {
-            byte[] bytes = TcpClientUtils.SendData(this.serverName, this.serverPort, new byte[] { (byte)SystemMessage.CreateHouse });
-            if (null != bytes && bytes.Length > 0)
+            if (string.IsNullOrWhiteSpace(txtRoomName.Text))
             {
-                if ((byte)SystemMessage.ServerHousePort == bytes[0])
-                {
-                    int port = BitConverter.ToInt32(bytes, 1);
-                    CreateTcpListener(port);
-                }
+                return;
+            }
+
+            CreateRoomProtocal protocal = new CreateRoomProtocal();
+            protocal.Data = txtRoomName.Text;
+
+            this.EnterRoom(protocal.RequestData);
+
+        }
+
+        private void EnterRoom(byte[] bytes)
+        {
+            int port = BitConverter.ToInt32(MainWindow.TcpClientUtils.SendData(bytes), 0);
+            if (0 == port)
+            {
+                lblError.Content = "The name you entered is not existed.";
+            }
+            else
+            {
+                this.currentRoomPort = port;
+                this.lblWelcomeInfo.Content += string.Format("You have enter the room {0}.", txtRoomName.Text);
+                this.btnExitRoom.Visibility = System.Windows.Visibility.Visible;
+                this.panelEnterRoom.Visibility = System.Windows.Visibility.Collapsed;
             }
         }
 
-        public byte[] ReceiveTcpMessage(byte[] bytes, EndPoint endPoint)
+        public byte[] ReceiveTcpMessage(byte[] bytes, string endPoint)
         {
             if (null != bytes && bytes.Length > 0)
             {
-                //if ((byte)SystemMessage.ServerHousePort == bytes[0])
-                //{
-                //    int port = BitConverter.ToInt32(bytes, 1);
-                //    CreateTcpListener(port);
-                //}
+                Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
+                Console.WriteLine(protocal.ToString());
             }
             return null;
         }
 
         public void CreateTcpListener(int port)
         {
-            this.txtCurrentHousePort.Text = port.ToString();
-            //this.tcpListenerX = new TcpListenerX(SystemIPAddress, this.serverPort, this.ReceiveTcpMessage);
-            //this.tcpListenerX.Start();
-            //this.clientThread = new Thread(this.tcpListenerX.Run);
-            //this.clientThread.Start();            
+
         }
     }
 }

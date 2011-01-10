@@ -7,9 +7,11 @@ namespace Platform.Enum
 {
     public enum SystemMessage : byte
     {
-        CreateHouse,
-        ServerHousePort,
-        EnterHouse,
+        None,
+        RegisterUserName,
+        CreateRoom,
+        ServerRoomPort,
+        EnterRoom,
         Other
     }
 }

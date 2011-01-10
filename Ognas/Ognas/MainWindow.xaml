@@ -5,6 +5,7 @@
     <Grid>
         <Grid.RowDefinitions >
             <RowDefinition Height="35"   />
+            <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="20" />
         </Grid.RowDefinitions>
@@ -13,20 +14,30 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Canvas Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="2">
-
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="lblWelcomeInfo" Foreground="Blue" ></Label>
+                <Button x:Name="btnExitRoom" Content="Exit room" Visibility="Collapsed"></Button>
+            </StackPanel>
         </Canvas>
-        <Canvas Grid.Row="1"  Grid.Column="0" Background="#dcdcdc" >
+        <Canvas Grid.Row="1"  Grid.Column="0" Grid.RowSpan="2" Background="#dcdcdc" >
 
         </Canvas>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
-            <Label Content="CreateHouse"></Label>
-            <Button Content="CreateHouse" x:Name="btnCreateHouse" Click="btnCreateHouse_Click"></Button>
-            <Label Content="CurrentHousePort"></Label>
-            <TextBox x:Name="txtCurrentHousePort"></TextBox>
-            <Label Content="EnterHouse"></Label>
-            <Label Content="HousePort"></Label>
-            <TextBox x:Name="txtHousePort"></TextBox>
-            <Button Content="EnterHouse" x:Name="btnEnterHouse" Click="btnEnterHouse_Click" ></Button>
+            <Label x:Name="lblError" Foreground="Red"></Label>
+            <StackPanel x:Name="panelEnterRoom" Visibility="Visible" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Room Name"></Label>
+                    <TextBox x:Name="txtRoomName" Width="100"></TextBox>
+                </StackPanel>
+            
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="CreateRoom" x:Name="btnCreateRoom" Click="btnCreateRoom_Click"></Button>
+                    <Button Content="EnterRoom" x:Name="btnEnterRoom" Click="btnEnterRoom_Click" ></Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical">
+            <RichTextBox x:Name="richMessage" Height="500" ></RichTextBox>
         </StackPanel>
     </Grid>
 </Window>
