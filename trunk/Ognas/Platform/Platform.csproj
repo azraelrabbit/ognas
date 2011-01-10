@@ -46,8 +46,9 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Enum\SystemMessage.cs" />
     <Compile Include="Model\Delegates.cs" />
+    <Compile Include="Model\Events.cs" />
     <Compile Include="Model\Room.cs" />
-    <Compile Include="RoomPort.cs" />
+    <Compile Include="Model\RoomPort.cs" />
     <Compile Include="MainFrame.cs" />
     <Compile Include="Model\ProtocalParam.cs" />
     <Compile Include="Model\User.cs" />
