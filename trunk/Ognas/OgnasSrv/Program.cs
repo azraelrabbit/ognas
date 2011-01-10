@@ -15,9 +15,7 @@ namespace Ognas.Server
         static void Main(string[] args)
         {
             MainFrame mainFrame = new MainFrame();
-            mainFrame.Start();
-            Console.WriteLine("\nHit enter to continue...");
-            Console.Read();
+            mainFrame.Start();            
         }
     }
 }

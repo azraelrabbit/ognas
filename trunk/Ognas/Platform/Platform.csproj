@@ -41,19 +41,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonUtils\ProtocalUtils.cs" />
+    <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Enum\SystemMessage.cs" />
-    <Compile Include="House.cs" />
+    <Compile Include="Model\Delegates.cs" />
+    <Compile Include="Model\Room.cs" />
     <Compile Include="HousePort.cs" />
     <Compile Include="MainFrame.cs" />
-    <Compile Include="Model\ThreadParam.cs" />
+    <Compile Include="Model\ProtocalParam.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocals\CreateHouseProtocal.cs" />
+    <Compile Include="Protocals\EnterHouseProtocal.cs" />
+    <Compile Include="Protocals\Protocal.cs" />
+    <Compile Include="Protocals\ProtocalFactory.cs" />
+    <Compile Include="Protocals\RegisterUserProtocal.cs" />
+    <Compile Include="SocketUtils\TcpClientUtils.cs" />
+    <Compile Include="SocketUtils\TcpListenerX.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SocketUtils\SocketUtils.csproj">
-      <Project>{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}</Project>
-      <Name>SocketUtils</Name>
-    </ProjectReference>
+    <Folder Include="Delegates\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
