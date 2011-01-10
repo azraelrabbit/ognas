@@ -40,13 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Card\Card.cs" />
-    <Compile Include="Card\CardColor.cs" />
-    <Compile Include="Card\CardNumber.cs" />
-    <Compile Include="Card\EquipsCard.cs" />
-    <Compile Include="Card\TipsDelayCard.cs" />
-    <Compile Include="Card\TipsTimelyCard.cs" />
-    <Compile Include="Card\ToolsCard.cs" />
+    <Compile Include="CardCenter.cs" />
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\CardColor.cs" />
+    <Compile Include="Cards\CardNumber.cs" />
+    <Compile Include="Cards\EquipsCard.cs" />
+    <Compile Include="Cards\TipsDelayCard.cs" />
+    <Compile Include="Cards\TipsTimelyCard.cs" />
+    <Compile Include="Cards\ToolsCard.cs" />
+    <Compile Include="EventCenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shoguns\Enums.cs" />
     <Compile Include="Shoguns\Shogun.cs" />
