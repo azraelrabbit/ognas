@@ -28,6 +28,12 @@ namespace Platform.Protocals
                 case SystemMessage.RegisterUserName:
                     protocal = new RegisterUserProtocal(message);
                     break;
+                case SystemMessage.UdpMessage:
+                    protocal = new UdpMessageProtocal(message);
+                    break;
+                case SystemMessage.ExitRoom:
+                    protocal = new ExitRoomProtocal(message);
+                    break;
                 default:
                     break;
             }

@@ -12,6 +12,8 @@ namespace Platform.Enum
         CreateRoom,
         ServerRoomPort,
         EnterRoom,
+        UdpMessage,
+        ExitRoom,
         Other
     }
 }

@@ -53,11 +53,13 @@
     <Compile Include="Model\ProtocalParam.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Protocals\CreateHouseProtocal.cs" />
-    <Compile Include="Protocals\EnterHouseProtocal.cs" />
+    <Compile Include="Protocals\CreateRoomProtocal.cs" />
+    <Compile Include="Protocals\EnterRoomProtocal.cs" />
+    <Compile Include="Protocals\ExitRoomProtocal.cs" />
     <Compile Include="Protocals\Protocal.cs" />
     <Compile Include="Protocals\ProtocalFactory.cs" />
     <Compile Include="Protocals\RegisterUserProtocal.cs" />
+    <Compile Include="Protocals\UdpMessageProtocal.cs" />
     <Compile Include="SocketUtils\TcpClientUtils.cs" />
     <Compile Include="SocketUtils\TcpListenerX.cs" />
   </ItemGroup>

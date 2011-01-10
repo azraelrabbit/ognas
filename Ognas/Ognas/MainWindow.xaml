@@ -16,7 +16,8 @@
         <Canvas Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal">
                 <Label x:Name="lblWelcomeInfo" Foreground="Blue" ></Label>
-                <Button x:Name="btnExitRoom" Content="Exit room" Visibility="Collapsed"></Button>
+                <Label x:Name="lblRoomInfo" Foreground="Blue" ></Label>
+                <Button x:Name="btnExitRoom" Content="Exit room" Visibility="Collapsed" Click="btnExitRoom_Click"></Button>
             </StackPanel>
         </Canvas>
         <Canvas Grid.Row="1"  Grid.Column="0" Grid.RowSpan="2" Background="#dcdcdc" >
