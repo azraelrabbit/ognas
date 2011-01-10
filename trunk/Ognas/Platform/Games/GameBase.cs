@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Platform.Model;
+using Ognas.Lib;
 using Ognas.Server.Cards;
 using Platform.OgnasEventArgs;
 
@@ -103,10 +104,10 @@ namespace Platform.Games
         public void ShuffleCard()
         {
             // TODO: 洗牌
-
+            this.cardsList = Utility.GetRandomList(this.cardsList, this.cardsList.Count);
             // 洗牌完成 触发事件
             GameEventArgs gameArgs = new GameEventArgs();
-
+            gameArgs.cardList = this.cardsList;
             gameArgs.Messages = "洗牌完成...";
 
             if (OnShuffleCardCompleted != null)
@@ -137,6 +138,7 @@ namespace Platform.Games
         public void SetUpSeats()
         {
             // TODO: 随机排座
+            this.userList = Utility.GetRandomList(this.userList, this.userList.Count);
 
             // 座位分派完毕
             GameEventArgs gameArgs = new GameEventArgs();
