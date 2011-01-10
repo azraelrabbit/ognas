@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Platform.Model.OgnasEventArgs
+namespace Platform.OgnasEventArgs
 {
-    public class SendMessageArgs
+    public class SendMessageArgs : EventArgs
     {
         public Protocals.UdpMessageProtocal Message
         {

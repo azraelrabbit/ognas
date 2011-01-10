@@ -49,11 +49,11 @@
     <Compile Include="Games\GameBase.cs" />
     <Compile Include="Model\Delegates.cs" />
     <Compile Include="Model\EventCenter.cs" />
-    <Compile Include="Model\OgnasEventArgs\CardUseEventArgs.cs" />
-    <Compile Include="Model\OgnasEventArgs\DealCardsArgs.cs" />
-    <Compile Include="Model\OgnasEventArgs\GameEventArgs.cs" />
-    <Compile Include="Model\OgnasEventArgs\RecivedMessageArgs.cs" />
-    <Compile Include="Model\OgnasEventArgs\SendMessageArgs.cs" />
+    <Compile Include="OgnasEventArgs\CardUseEventArgs.cs" />
+    <Compile Include="OgnasEventArgs\DealCardsArgs.cs" />
+    <Compile Include="OgnasEventArgs\GameEventArgs.cs" />
+    <Compile Include="OgnasEventArgs\RecivedMessageArgs.cs" />
+    <Compile Include="OgnasEventArgs\SendMessageArgs.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\RoomPort.cs" />
     <Compile Include="MainFrame.cs" />
