@@ -6,7 +6,7 @@ using Ognas.Lib.Shoguns.Stunts;
 
 namespace Ognas.Lib.Shoguns
 {
-    class Shogun
+    public class Shogun
     {
         public string Name
         {
@@ -15,6 +15,12 @@ namespace Ognas.Lib.Shoguns
         }
 
         public Sex Sex
+        {
+            get;
+            set;
+        }
+
+        public Camp Camp
         {
             get;
             set;

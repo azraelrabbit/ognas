@@ -50,10 +50,15 @@
     <Compile Include="Cards\ToolsCard.cs" />
     <Compile Include="EventCenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shoguns\CaoCao.cs" />
     <Compile Include="Shoguns\Enums.cs" />
     <Compile Include="Shoguns\Shogun.cs" />
     <Compile Include="Shoguns\Stunts\LuoShen.cs" />
     <Compile Include="Shoguns\Stunts\Stunt.cs" />
+    <Compile Include="Shoguns\XiaHouDun.cs" />
+    <Compile Include="Shoguns\XuZhu.cs" />
+    <Compile Include="Shoguns\ZhangLiao.cs" />
+    <Compile Include="Shoguns\ZhenJi.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup />
