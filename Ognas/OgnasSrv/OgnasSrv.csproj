@@ -54,10 +54,6 @@
       <Project>{6D2F5316-19A8-41FE-AC75-9B911689E7EE}</Project>
       <Name>Platform</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SocketUtils\SocketUtils.csproj">
-      <Project>{A35EF144-7E5C-43DB-91E0-4EBF92C24D11}</Project>
-      <Name>SocketUtils</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
