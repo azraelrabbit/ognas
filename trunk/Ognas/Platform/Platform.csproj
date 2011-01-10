@@ -50,6 +50,10 @@
     <Compile Include="Model\Delegates.cs" />
     <Compile Include="Model\EventCenter.cs" />
     <Compile Include="Model\OgnasEventArgs\CardUseEventArgs.cs" />
+    <Compile Include="Model\OgnasEventArgs\DealCardsArgs.cs" />
+    <Compile Include="Model\OgnasEventArgs\GameEventArgs.cs" />
+    <Compile Include="Model\OgnasEventArgs\RecivedMessageArgs.cs" />
+    <Compile Include="Model\OgnasEventArgs\SendMessageArgs.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\RoomPort.cs" />
     <Compile Include="MainFrame.cs" />
