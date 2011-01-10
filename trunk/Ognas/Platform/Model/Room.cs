@@ -6,6 +6,8 @@ using SocketUtils;
 using System.Net.Sockets;
 using Platform.Enum;
 using System.Net;
+using Platform.SocketUtils;
+using Platform.Protocals;
 
 namespace Platform.Model
 {
@@ -15,7 +17,7 @@ namespace Platform.Model
 
         private int roomTcpPort = 0;
 
-        private List<User> userList = new List<User>();
+        private Dictionary<string, User> userDoctionary = new Dictionary<string, User>();
 
         private string roomName;
 
@@ -25,13 +27,11 @@ namespace Platform.Model
 
         private object roomLock = new object();
 
-
-
         public bool IsFull 
         {
             get
             {
-                return userList.Count == userMaxCount;
+                return userDoctionary.Count == userMaxCount;
             }
         }
 
@@ -53,7 +53,7 @@ namespace Platform.Model
             this.roomName = roomName;
             this.roomTcpPort = RoomPort.GetRoomTcpPort();
             this.roomCreator = user;
-            this.userList.Add(user);
+            this.AddUser(user);
             Console.WriteLine(string.Format("The room {0} is created", this.roomName));
         }
 
@@ -68,10 +68,10 @@ namespace Platform.Model
         {
             if (null != bytes && bytes.Length > 0)
             {
-                //if ((byte)SystemMessage.EnterRoom == bytes[0])
-                //{
-                //    Console.WriteLine(string.Format("{0} has entered the room.", endPoint.ToString()));
-                //}
+                Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
+                protocal.Host = this;
+                protocal.ClientAddress = address;
+                return protocal.OnResponse();
             }
             return null;
         }
@@ -92,13 +92,36 @@ namespace Platform.Model
         {
             lock (roomLock)
             {
-                userList.Add(user);
-                foreach (var userItem in userList)
+                userDoctionary.Add(user.Address, user);
+                foreach (var userItem in userDoctionary.Values)
                 {
+                    this.SendUdpMessage(string.Format("User {0} has entered the room {1}.", user.UserName, this.roomName));                    
+                }
+
+                if (IsFull)
+                {
+                    // initialize game
                 }
             }
         }
 
-        
+        internal byte[] UserExit(Protocal protocal)
+        {
+            // notify play
+            // send Udp message
+            this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.userDoctionary[protocal.ClientAddress].UserName, this.roomName));
+            return null;
+
+        }
+
+        internal void SendUdpMessage(string message)
+        {
+            foreach (var address in userDoctionary.Keys)
+            {
+                Protocal protocal = new UdpMessageProtocal();
+                protocal.Data = message;
+                TcpClientUtils.SendData(address, Constants.ClientPort, protocal.RequestData);
+            }
+        }
     }
 }

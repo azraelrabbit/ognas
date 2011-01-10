@@ -7,6 +7,6 @@ namespace Platform
 {
     public class Constants
     {
-        
+        public const int ClientPort = 9001;
     }
 }

@@ -20,6 +20,7 @@ using Ognas.Client.Model;
 using Platform.Protocals;
 using Platform.CommonUtils;
 using Platform.SocketUtils;
+using System.Windows.Threading;
 
 namespace Ognas.Client
 {
@@ -30,7 +31,8 @@ namespace Ognas.Client
     {
         public static string ServerName = ConfigurationManager.AppSettings["ServerName"];
         public static int ServerPort = Convert.ToInt32(ConfigurationManager.AppSettings["ServerPort"]);
-        public static TcpClientUtils TcpClientUtils = new TcpClientUtils(ServerName, ServerPort);
+        public static TcpClientUtils TcpClientSystem = new TcpClientUtils(ServerName, ServerPort);
+        public TcpClientUtils TcpClientRoom = null;
 
         public static IPAddress SystemIPAddress = Dns.GetHostAddresses(Dns.GetHostName())[0];
 
@@ -73,7 +75,7 @@ namespace Ognas.Client
             var dialog = new UserNameWindow();
             if (dialog.ShowDialog() == true)
             {
-                lblWelcomeInfo.Content = "Welcome: " + dialog.ResponseText;
+                lblWelcomeInfo.Content = string.Format("Welcome: {0}. ", dialog.ResponseText);
             }
             else
             {
@@ -110,7 +112,7 @@ namespace Ognas.Client
 
         private void EnterRoom(byte[] bytes)
         {
-            int port = BitConverter.ToInt32(MainWindow.TcpClientUtils.SendData(bytes), 0);
+            int port = BitConverter.ToInt32(MainWindow.TcpClientSystem.SendData(bytes), 0);
             if (0 == port)
             {
                 lblError.Content = "The name you entered is not existed.";
@@ -118,9 +120,10 @@ namespace Ognas.Client
             else
             {
                 this.currentRoomPort = port;
-                this.lblWelcomeInfo.Content += string.Format("You have enter the room {0}.", txtRoomName.Text);
+                this.lblRoomInfo.Content = string.Format("You have enter the room {0}.", txtRoomName.Text);
                 this.btnExitRoom.Visibility = System.Windows.Visibility.Visible;
                 this.panelEnterRoom.Visibility = System.Windows.Visibility.Collapsed;
+                this.TcpClientRoom = new TcpClientUtils(ServerName, this.currentRoomPort);
             }
         }
 
@@ -129,7 +132,13 @@ namespace Ognas.Client
             if (null != bytes && bytes.Length > 0)
             {
                 Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
-                Console.WriteLine(protocal.ToString());
+                if (protocal is UdpMessageProtocal)
+                {
+                    this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
+                    {
+                        this.richMessage.AppendText(protocal.Data + Environment.NewLine);
+                    });
+                }
             }
             return null;
         }
@@ -137,6 +146,18 @@ namespace Ognas.Client
         public void CreateTcpListener(int port)
         {
 
+        }
+
+        private void btnExitRoom_Click(object sender, RoutedEventArgs e)
+        {
+            ExitRoomProtocal protocal = new ExitRoomProtocal();
+            protocal.Data = txtRoomName.Text;
+
+            this.TcpClientRoom.SendData(protocal);
+
+            this.lblRoomInfo.Content = "";
+            this.btnExitRoom.Visibility = System.Windows.Visibility.Collapsed;
+            this.panelEnterRoom.Visibility = System.Windows.Visibility.Visible;
         }
     }
 }
