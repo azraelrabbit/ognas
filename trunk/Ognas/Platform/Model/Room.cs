@@ -86,11 +86,6 @@ namespace Platform.Model
             {
                 this.tcpListenerX.Stop();
             }
-
-            foreach (var user in this.userDoctionary.Values)
-            {
-                user.Room = null;
-            }
         }
 
         #endregion
@@ -117,8 +112,11 @@ namespace Platform.Model
             lock (roomLock)
             {
                 // notify play
+                // set the user as exit status.
+                this.userDoctionary[protocal.ClientAddress].Room = null;
                 // send Udp message
                 this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.userDoctionary[protocal.ClientAddress].UserName, this.roomName));
+                // trigger room exit event.
                 if (this.userDoctionary.Count< 1 && null != this.RoomEnd)
                 {
                     this.RoomEnd(this);
