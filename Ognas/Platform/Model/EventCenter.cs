@@ -10,7 +10,9 @@ namespace Platform.Model
 {
     public delegate void UserCardUse(object sender, CardUseEventArgs args);
 
-    public class Events
+
+
+    public class EventCenter
     {
         //public event void InitializePlay;
     }
