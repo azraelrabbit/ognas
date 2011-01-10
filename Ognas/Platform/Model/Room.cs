@@ -25,6 +25,8 @@ namespace Platform.Model
 
         private object roomLock = new object();
 
+
+
         public bool IsFull 
         {
             get
@@ -91,6 +93,9 @@ namespace Platform.Model
             lock (roomLock)
             {
                 userList.Add(user);
+                foreach (var userItem in userList)
+                {
+                }
             }
         }
 
