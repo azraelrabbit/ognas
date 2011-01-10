@@ -19,10 +19,22 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lib", "Lib\Lib.csproj", "{6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Platform", "Platform\Platform.csproj", "{6D2F5316-19A8-41FE-AC75-9B911689E7EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Ognas.Lib", "Test.Ognas.Lib\Test.Ognas.Lib.csproj", "{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C6E9A373-22D2-4FF9-ACA1-FBCCCCBC75D7}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		Ognas.vsmdi = Ognas.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
 		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = Ognas.vsmdi
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,6 +94,16 @@ Global
 		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6D2F5316-19A8-41FE-AC75-9B911689E7EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,7 +111,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{C717EA66-612C-499A-8BCA-8152A84DCAD8} = {EC937E25-FFC7-4999-830E-DDA922E99F55}
 		{2A74329E-86BB-4149-823E-B9EB79AE099F} = {910F7D55-AB19-4F45-BBAE-4BC58571041A}
-		{B241975F-CA58-46EF-910F-C617C15C0E8E} = {9E591CB1-0E92-4257-AE3D-457A5C295719}
+		{A87D6850-73A1-4FD2-B3F6-E3BBD0F2D1F9} = {9E591CB1-0E92-4257-AE3D-457A5C295719}
 		{61759E69-1213-4144-B33B-9C75B5F78A2C} = {40B114EC-A87B-41B0-9C20-D36875AFF0A5}
 		{6D2F5316-19A8-41FE-AC75-9B911689E7EE} = {40B114EC-A87B-41B0-9C20-D36875AFF0A5}
 	EndGlobalSection
