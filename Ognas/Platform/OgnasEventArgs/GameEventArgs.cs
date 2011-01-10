@@ -5,11 +5,17 @@ using System.Text;
 using Platform.Model;
 using Ognas.Server.Cards;
 
-namespace Platform.Model.OgnasEventArgs
+namespace Platform.OgnasEventArgs
 {
-    public class DealCardsArgs : EventArgs
+    public class GameEventArgs : EventArgs
     {
         public List<Card> cardList
+        {
+            get;
+            set;
+        }
+
+        public List<User> userList
         {
             get;
             set;

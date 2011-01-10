@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Platform.Model.OgnasEventArgs
+namespace Platform.OgnasEventArgs
 {
     public class RecivedMessageArgs : EventArgs
     {

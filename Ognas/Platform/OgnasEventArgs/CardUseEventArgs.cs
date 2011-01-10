@@ -5,7 +5,7 @@ using System.Text;
 using Platform.Model;
 using Ognas.Server.Cards;
 
-namespace Platform.Model.OgnasEventArgs
+namespace Platform.OgnasEventArgs
 {
     public class CardUseEventArgs : EventArgs
     {
