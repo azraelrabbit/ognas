@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ognas.Server.Card
+namespace Ognas.Lib
 {
-    class TipsDelayCard
+    public class EventCenter
     {
     }
 }

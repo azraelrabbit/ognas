@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ognas.Server.Card
+namespace Ognas.Server.Cards
 {
-    class EquipsCard
+    class TipsTimelyCard
     {
     }
 }
