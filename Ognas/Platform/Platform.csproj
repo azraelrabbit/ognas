@@ -45,10 +45,11 @@
     <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Enum\SystemMessage.cs" />
+    <Compile Include="Games\EventCenterRule.cs" />
     <Compile Include="Games\Game.cs" />
     <Compile Include="Games\GameBase.cs" />
     <Compile Include="Model\Delegates.cs" />
-    <Compile Include="Model\EventCenter.cs" />
+    <Compile Include="Games\EventCenter.cs" />
     <Compile Include="OgnasEventArgs\CardUseEventArgs.cs" />
     <Compile Include="OgnasEventArgs\DealCardsArgs.cs" />
     <Compile Include="OgnasEventArgs\GameEventArgs.cs" />
