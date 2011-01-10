@@ -89,7 +89,9 @@ namespace Platform
                 if (!string.IsNullOrWhiteSpace(roomName) && !this.roomDictionary.ContainsKey(roomName))
                 {
                     room = new Room(roomName, user);
+                    room.RoomEnd = this.DisposeRoom;
                     user.Room = room;
+
                     port = room.RoomTcpPort;                    
                 }
             }
@@ -151,6 +153,12 @@ namespace Platform
                 }
             }
             return BitConverter.GetBytes(rtn);
+        }
+
+        public void DisposeRoom(Room room)
+        {
+            this.roomDictionary.Remove(room.RoomName);
+            room.Dispose();
         }
 
         #region IDisposable Members
