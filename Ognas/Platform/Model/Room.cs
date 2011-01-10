@@ -27,6 +27,8 @@ namespace Platform.Model
 
         private object roomLock = new object();
 
+        public RoomEnd RoomEnd = null;
+
         public bool IsFull 
         {
             get
@@ -84,6 +86,11 @@ namespace Platform.Model
             {
                 this.tcpListenerX.Stop();
             }
+
+            foreach (var user in this.userDoctionary.Values)
+            {
+                user.Room = null;
+            }
         }
 
         #endregion
@@ -107,10 +114,17 @@ namespace Platform.Model
 
         internal byte[] UserExit(Protocal protocal)
         {
-            // notify play
-            // send Udp message
-            this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.userDoctionary[protocal.ClientAddress].UserName, this.roomName));
-            return null;
+            lock (roomLock)
+            {
+                // notify play
+                // send Udp message
+                this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.userDoctionary[protocal.ClientAddress].UserName, this.roomName));
+                if (this.userDoctionary.Count< 1 && null != this.RoomEnd)
+                {
+                    this.RoomEnd(this);
+                }
+                return null;
+            }
 
         }
 
