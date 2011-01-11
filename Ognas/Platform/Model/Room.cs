@@ -137,7 +137,7 @@ namespace Platform.Model
             {
                 Protocal protocal = new UdpMessageProtocal();
                 protocal.Data = message;
-                TcpClientUtils.SendData(address, Constants.ClientPort, protocal.RequestData);
+                TcpClientUtils.SendData(address, Constants.ClientPort, protocal);
             }
             return null;
         }
