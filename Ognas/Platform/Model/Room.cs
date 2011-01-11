@@ -8,6 +8,7 @@ using Platform.Enum;
 using System.Net;
 using Platform.SocketUtils;
 using Platform.Protocals;
+using Platform.Games;
 
 namespace Platform.Model
 {
@@ -28,6 +29,8 @@ namespace Platform.Model
         private object roomLock = new object();
 
         public RoomEnd RoomEnd = null;
+
+        private GameBase gameBase = null;
 
         public bool IsFull 
         {
@@ -103,6 +106,8 @@ namespace Platform.Model
                 if (IsFull)
                 {
                     // initialize game
+                    this.gameBase = new Games.Game(userDoctionary.Values.ToList());
+                    this.gameBase.GameStart();
                 }
             }
         }
@@ -126,7 +131,7 @@ namespace Platform.Model
 
         }
 
-        internal void SendUdpMessage(string message)
+        internal byte[] SendUdpMessage(string message)
         {
             foreach (var address in userDoctionary.Keys)
             {
@@ -134,6 +139,7 @@ namespace Platform.Model
                 protocal.Data = message;
                 TcpClientUtils.SendData(address, Constants.ClientPort, protocal.RequestData);
             }
+            return null;
         }
     }
 }

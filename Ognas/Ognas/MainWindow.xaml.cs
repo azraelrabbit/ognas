@@ -159,5 +159,16 @@ namespace Ognas.Client
             this.btnExitRoom.Visibility = System.Windows.Visibility.Collapsed;
             this.panelEnterRoom.Visibility = System.Windows.Visibility.Visible;
         }
+
+        private void btnSendMessage_Click(object sender, RoutedEventArgs e)
+        {
+            string inputMessage = new TextRange(richInputMessage.Document.ContentStart, richInputMessage.Document.ContentEnd).Text;
+            if (!string.IsNullOrWhiteSpace(inputMessage))
+            {
+                Protocal udpMessageProtocal = new UdpMessageProtocal();
+                udpMessageProtocal.Data = inputMessage;
+                this.TcpClientRoom.SendData(udpMessageProtocal);
+            }
+        }
     }
 }

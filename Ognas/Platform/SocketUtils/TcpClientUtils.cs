@@ -49,6 +49,11 @@ namespace Platform.SocketUtils
             return SendMessage(this.serverName, this.serverPort, message);            
         }
 
+        public static byte[] SendData(String server, int port, Protocal protocal)
+        {
+            return SendMessage(server, port, protocal.RequestData);
+        }
+
         public static byte[] SendData(String server, int port, byte[] message)
         {
             if (null == message || message.Length < 1)

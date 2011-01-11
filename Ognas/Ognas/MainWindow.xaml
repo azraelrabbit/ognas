@@ -38,7 +38,9 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical">
-            <RichTextBox x:Name="richMessage" Height="500" ></RichTextBox>
+            <RichTextBox x:Name="richMessage" Height="400" IsReadOnly="True"></RichTextBox>
+            <RichTextBox x:Name="richInputMessage" Height="50"></RichTextBox> 
+            <Button x:Name="btnSendMessage" Click="btnSendMessage_Click" Content="SendMessage"></Button>
         </StackPanel>
     </Grid>
 </Window>
