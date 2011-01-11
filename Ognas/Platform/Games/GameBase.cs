@@ -68,11 +68,14 @@ namespace Platform.Games
             this.userList = userlist;
         }
 
+        EventCenterRule eventCenterRule;
+
         /// <summary>
         /// Game Starting
         /// </summary>
         public void GameStart()
         {
+            eventCenterRule = new EventCenterRule(this);
             //TODO: 
 
             // 初始化游戏全局变量
@@ -123,7 +126,7 @@ namespace Platform.Games
         public void ShuffleCard()
         {
             // TODO: 洗牌
-            this.cardsList = Utility.GetRandomList(this.cardsList, this.cardsList.Count);
+            //  this.cardsList = Utility.GetRandomList(this.cardsList, this.cardsList.Count);
             // 洗牌完成 触发事件
             GameEventArgs gameArgs = new GameEventArgs();
             gameArgs.cardList = this.cardsList;
@@ -158,7 +161,12 @@ namespace Platform.Games
         {
             // TODO: 随机排座
             this.userList = Utility.GetRandomList(this.userList, this.userList.Count);
-
+            int indexUser = 0;
+            foreach (User u in userList)
+            {
+                u.SeatNum = indexUser.ToString();
+                indexUser++;
+            }
             // 座位分派完毕
             GameEventArgs gameArgs = new GameEventArgs();
             gameArgs.userList = this.userList;

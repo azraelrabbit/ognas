@@ -21,6 +21,7 @@ using Platform.Protocals;
 using Platform.CommonUtils;
 using Platform.SocketUtils;
 using System.Windows.Threading;
+using Platform.Model;
 
 namespace Ognas.Client
 {
@@ -37,6 +38,7 @@ namespace Ognas.Client
         public static IPAddress SystemIPAddress = Dns.GetHostAddresses(Dns.GetHostName())[0];
 
         public int currentRoomPort = 0;
+        public User localUser = null;
 
         public MainWindow()
         {
@@ -80,6 +82,7 @@ namespace Ognas.Client
             if (dialog.ShowDialog() == true)
             {
                 lblWelcomeInfo.Content = string.Format("Welcome: {0}. ", dialog.ResponseText);
+                localUser = new User(dialog.ResponseText);
             }
             else
             {
@@ -128,6 +131,7 @@ namespace Ognas.Client
                 this.btnExitRoom.Visibility = System.Windows.Visibility.Visible;
                 this.panelEnterRoom.Visibility = System.Windows.Visibility.Collapsed;
                 this.TcpClientRoom = new TcpClientUtils(ServerName, this.currentRoomPort);
+                this.localUser.Address = SystemIPAddress.ToString();
             }
         }
 
@@ -141,6 +145,33 @@ namespace Ognas.Client
                     this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
                     {
                         this.richMessage.AppendText(protocal.Data + Environment.NewLine);
+                    });
+                }
+                if (protocal is DealSeatProtocal)
+                {
+                    this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
+                    {
+                        // this.richMessage.AppendText(protocal.Data + Environment.NewLine);
+                        DealSeatProtocal dsp = (DealSeatProtocal)protocal;
+                        foreach (User u in dsp.userList)
+                        {
+                            if (u.Address == localUser.Address)
+                            {
+                                localUser = u;
+                            }
+                        }
+                        this.richMessage.AppendText("your seat number : " + localUser.SeatNum + Environment.NewLine);
+                    });
+                }
+                if (protocal is DealRoleProtocal)
+                {
+                    this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
+                    {
+                        // this.richMessage.AppendText(protocal.Data + Environment.NewLine);
+                        DealRoleProtocal drp = (DealRoleProtocal)protocal;
+                        localUser.UserRole = drp.player.UserRole;
+                        string m = localUser.UserRole.ToString();
+                        this.richMessage.AppendText("your role is : " + m + Environment.NewLine + " the Lord is : " + drp.playerKing.UserName + Environment.NewLine);
                     });
                 }
             }

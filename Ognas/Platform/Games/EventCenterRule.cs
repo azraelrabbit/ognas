@@ -5,6 +5,8 @@ using System.Text;
 using Platform.Model;
 using Platform.Protocals;
 using Platform.Enum;
+using Platform.SocketUtils;
+using System.Collections;
 
 namespace Platform.Games
 {
@@ -12,12 +14,24 @@ namespace Platform.Games
     {
         Room room;
 
-        public EventCenterRule(Game game)
+        public EventCenterRule(object objgame)
         {
+            Game game = (Game)objgame;
             game.OnShuffleCardCompleted += new Model.ShuffleCardComplete(game_OnShuffleCardCompleted);
             game.OnSetUpSeatCompleted += new Model.SetUpSeatComplete(game_OnSetUpSeatCompleted);
             game.OnSetUpUserRoleCompleted += new Model.SetUpUserRoleComplete(game_OnSetUpUserRoleCompleted);
             game.OnDealCardBegins += new Model.DealCardBegin(game_OnDealCardBegins);
+            game.OnShogunSelectionBegin += new ShogunSelectionBegin(game_OnShogunSelectionBegin);
+        }
+
+        /// <summary>
+        /// 开始选择武将
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        void game_OnShogunSelectionBegin(object sender, OgnasEventArgs.ShogunSelectArgs args)
+        {
+
         }
 
         /// <summary>
@@ -57,7 +71,7 @@ namespace Platform.Games
                 drp.ClientAddress = u.Address;
                 drp.player = u;
                 drp.playerKing = ku;
-                room.SendMessage(drp);
+                SendMessage(drp);
             }
         }
 
@@ -72,8 +86,9 @@ namespace Platform.Games
             Console.WriteLine(args.Messages);
 
             DealSeatProtocal dsp = new DealSeatProtocal();
+
             dsp.userList = args.userList;
-            room.SendMessageAll(dsp);
+            SendMessageAll(dsp, args.userList);
         }
 
         /// <summary>
@@ -84,6 +99,32 @@ namespace Platform.Games
         void game_OnShuffleCardCompleted(object sender, OgnasEventArgs.GameEventArgs args)
         {
             Console.WriteLine(args.Messages);
+        }
+
+        /// <summary>
+        /// 给全体玩家发送消息协议
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="userList"></param>
+        /// <returns></returns>
+        internal byte[] SendMessageAll(Protocal message, List<User> userList)
+        {
+            foreach (var user in userList)
+            {
+                TcpClientUtils.SendData(user.Address, Constants.ClientPort, message);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 给单个玩家发送消息协议
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        internal byte[] SendMessage(Protocal message)
+        {
+            TcpClientUtils.SendData(message.ClientAddress, Constants.ClientPort, message);
+            return null;
         }
     }
 }
