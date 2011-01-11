@@ -108,10 +108,7 @@ namespace Platform.Model
             lock (roomLock)
             {
                 userDoctionary.Add(user.Address, user);
-                foreach (var userItem in userDoctionary.Values)
-                {
-                    this.SendUdpMessage(string.Format("User {0} has entered the room {1}.", user.UserName, this.roomName));
-                }
+                this.SendUdpMessage(string.Format("User {0} has entered the room {1}.", user.UserName, this.roomName));
 
                 if (IsFull)
                 {
