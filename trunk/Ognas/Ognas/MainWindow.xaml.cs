@@ -93,7 +93,7 @@ namespace Ognas.Client
             EnterRoomProtocal protocal = new EnterRoomProtocal();
             protocal.Data = txtRoomName.Text;
 
-            this.EnterRoom(protocal.RequestData);
+            this.EnterRoom(protocal);
         }
 
         private void btnCreateRoom_Click(object sender, RoutedEventArgs e)
@@ -106,13 +106,13 @@ namespace Ognas.Client
             CreateRoomProtocal protocal = new CreateRoomProtocal();
             protocal.Data = txtRoomName.Text;
 
-            this.EnterRoom(protocal.RequestData);
+            this.EnterRoom(protocal);
 
         }
 
-        private void EnterRoom(byte[] bytes)
+        private void EnterRoom(Protocal protocal)
         {
-            int port = BitConverter.ToInt32(MainWindow.TcpClientSystem.SendData(bytes), 0);
+            int port = BitConverter.ToInt32(MainWindow.TcpClientSystem.SendData(protocal), 0);
             if (0 == port)
             {
                 lblError.Content = "The name you entered is not existed.";

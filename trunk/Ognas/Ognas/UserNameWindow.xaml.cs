@@ -44,7 +44,7 @@ namespace Ognas.Client
 
             Protocal protocal = new RegisterUserProtocal();
             protocal.Data = ResponseText;
-            var bytes = MainWindow.TcpClientSystem.SendData(protocal.RequestData);
+            var bytes = MainWindow.TcpClientSystem.SendData(protocal);
             if (!BitConverter.ToBoolean(bytes, 0))
             {
                 lblError.Content = "An error occurred.";

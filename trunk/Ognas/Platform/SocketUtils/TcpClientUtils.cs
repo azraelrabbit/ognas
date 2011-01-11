@@ -29,12 +29,12 @@ namespace Platform.SocketUtils
             return this.SendMessage(protocal.RequestData);
         }
 
-        public byte[] SendData(byte message)
+        private byte[] SendData(byte message)
         {
             return this.SendMessage(new byte[] { message });
         }
 
-        public byte[] SendData(byte[] message)
+        private byte[] SendData(byte[] message)
         {
             if (null == message || message.Length < 1)
             {
@@ -54,7 +54,7 @@ namespace Platform.SocketUtils
             return SendMessage(server, port, protocal.RequestData);
         }
 
-        public static byte[] SendData(String server, int port, byte[] message)
+        private static byte[] SendData(String server, int port, byte[] message)
         {
             if (null == message || message.Length < 1)
             {
