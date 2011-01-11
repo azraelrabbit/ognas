@@ -32,6 +32,7 @@ namespace Platform
 
         public MainFrame()
         {            
+            
         }
 
         public void Start()
@@ -99,7 +100,7 @@ namespace Platform
                         room = new Room(roomName, user);
                         room.RoomEnd = this.DisposeRoom;
                         user.Room = room;
-
+                        this.roomDictionary.Add(roomName, room);
                         port = room.RoomTcpPort;
                     }
                 }
