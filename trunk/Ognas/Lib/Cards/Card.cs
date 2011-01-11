@@ -1,5 +1,5 @@
 ﻿
-namespace Ognas.Server.Cards
+namespace Ognas.Lib.Cards
 {
     public class Card
     {
