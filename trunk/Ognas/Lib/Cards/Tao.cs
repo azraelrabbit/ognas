@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ognas.Lib.Cards
 {
-    class Tao : Card
+    public class Tao : Card
     {
     }
 }

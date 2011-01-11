@@ -5,7 +5,10 @@ using System.Text;
 
 namespace Ognas.Lib.Cards
 {
-    class FangTianHuaJi : EquipsCard
+    /// <summary>
+    /// 方天画戟
+    /// </summary>
+    public class FangTianHuaJi : EquipsCard
     {
     }
 }

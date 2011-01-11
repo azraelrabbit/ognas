@@ -1,7 +1,10 @@
 ﻿
 namespace Ognas.Lib.Cards
 {
-    public class Card
+    /// <summary>
+    /// 卡片基类
+    /// </summary>
+    public abstract class Card
     {
         /// <summary>
         /// 卡牌名称（杀，闪。。。。）

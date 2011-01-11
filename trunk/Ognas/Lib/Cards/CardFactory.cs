@@ -6,14 +6,15 @@ using System.Text;
 namespace Ognas.Lib.Cards
 {
     /// <summary>
-    /// 装备类卡
+    /// 卡片工厂
+    /// 用以卡的初始化
     /// </summary>
-    public abstract class EquipsCard : Card
+    public static class CardFactory
     {
-        public EquipmentClasses EquipmentClass
+
+        public static List<Card> CreateCard()
         {
-            get;
-            set;
+            return null;
         }
     }
 }

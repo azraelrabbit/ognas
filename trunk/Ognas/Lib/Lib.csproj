@@ -44,8 +44,10 @@
     <Compile Include="Cards\BaGuaZhen.cs" />
     <Compile Include="Cards\Card.cs" />
     <Compile Include="Cards\CardColor.cs" />
+    <Compile Include="Cards\CardFactory.cs" />
     <Compile Include="Cards\CardNumber.cs" />
     <Compile Include="Cards\CiXiongShuangGuJian.cs" />
+    <Compile Include="Cards\EquipmentClasses.cs" />
     <Compile Include="Cards\EquipsCard.cs" />
     <Compile Include="Cards\FangTianHuaJi.cs" />
     <Compile Include="Cards\GuanShiFu.cs" />

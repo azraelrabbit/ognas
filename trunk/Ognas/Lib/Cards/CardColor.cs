@@ -1,17 +1,18 @@
 ﻿
 namespace Ognas.Lib.Cards
 {
+    /// <summary>
+    /// 卡片花色
+    /// </summary>
     public enum CardColor
     {
-        // Changed by Wang, Yajing , 2011-01-07 10:33
-
         // 黑桃
-        Spade = 1,
+        Spades = 1,
         // 红桃
-        Heart = 2,
+        Hearts = 2,
         // 梅花
-        Club = 3,
+        Clubs = 3,
         // 方块
-        Diamond = 4,
+        Diamonds = 4,
     }
 }
