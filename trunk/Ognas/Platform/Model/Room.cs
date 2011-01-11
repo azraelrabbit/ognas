@@ -9,6 +9,7 @@ using System.Net;
 using Platform.SocketUtils;
 using Platform.Protocals;
 using Platform.Games;
+using Platform.CommonUtils;
 
 namespace Platform.Model
 {
@@ -71,12 +72,19 @@ namespace Platform.Model
 
         public byte[] ReceiveTcpMessage(byte[] bytes, string address)
         {
-            if (null != bytes && bytes.Length > 0)
+            try
             {
-                Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
-                protocal.Host = this;
-                protocal.ClientAddress = address;
-                return protocal.OnResponse();
+                if (null != bytes && bytes.Length > 0)
+                {
+                    Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
+                    protocal.Host = this;
+                    protocal.ClientAddress = address;
+                    return protocal.OnResponse();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(string.Format("An exception occurred when receive message in the room {0}. {1}", this.RoomName, CommonUtil.GetOutputExceptionWithNewLine(ex)));
             }
             return null;
         }

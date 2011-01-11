@@ -10,6 +10,7 @@ using Platform.Enum;
 using System.Net.Sockets;
 using Platform.Model;
 using Platform.Protocals;
+using Platform.CommonUtils;
 
 namespace Platform
 {
@@ -35,23 +36,28 @@ namespace Platform
 
         public void Start()
         {
+            Console.WriteLine("The main frame started and enter message loop.");
             this.tcpListenerX = new TcpListenerX(SystemIPAddress, ServerPort, ReceiveTcpMessage);
             this.tcpListenerX.Run();
         }
 
         public byte[] ReceiveTcpMessage(byte[] bytes, string address)
         {
-            if (null != bytes && bytes.Length > 0)
+            try
             {
-                Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
-                protocal.Host = this;
-                protocal.ClientAddress = address;
-                return protocal.OnResponse();
+                if (null != bytes && bytes.Length > 0)
+                {
+                    Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
+                    protocal.Host = this;
+                    protocal.ClientAddress = address;
+                    return protocal.OnResponse();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return null;
+                Console.WriteLine(string.Format("An exception occurred when receive message. {0}", CommonUtil.GetOutputExceptionWithNewLine(ex)));
             }
+            return null;
         }
 
         public byte[] CreateRoomThread(Protocal protocal)
@@ -71,7 +77,7 @@ namespace Platform
             }
             catch (Exception ex)
             {
-                Console.WriteLine(string.Format("Create room thread failed. {0} Exception Message : {1} {0} Exception StackTrace{2}", Environment.NewLine, ex.Message, ex.StackTrace));
+                Console.WriteLine(string.Format("Create room thread failed. {0}", CommonUtil.GetOutputExceptionWithNewLine(ex)));
             }
             return null;            
         }
