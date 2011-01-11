@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommonUtils\CommonUtil.cs" />
     <Compile Include="CommonUtils\ProtocalUtils.cs" />
     <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Constants\Constants.cs" />
