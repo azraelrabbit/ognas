@@ -36,7 +36,7 @@ namespace Platform
         public void Start()
         {
             this.tcpListenerX = new TcpListenerX(SystemIPAddress, ServerPort, ReceiveTcpMessage);
-            this.tcpListenerX.Run();            
+            this.tcpListenerX.Run();
         }
 
         public byte[] ReceiveTcpMessage(byte[] bytes, string address)
@@ -71,10 +71,9 @@ namespace Platform
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Console.WriteLine(string.Format("Create room thread failed. {0} Exception Message : {1} {0} Exception StackTrace{2}", Environment.NewLine, ex.Message, ex.StackTrace));
             }
-            return null;
-            
+            return null;            
         }
 
         public void CreateRoom(object obj)
@@ -82,24 +81,46 @@ namespace Platform
             int port = 0;
             ProtocalParam protocalParam = (ProtocalParam)obj;
             string roomName = (string)protocalParam.Protocal.Data;
-            User user = this.AddressDictionary[protocalParam.Protocal.ClientAddress];
             Room room = null;
-            lock (this.maimFrameLock)
+            try
             {
-                if (!string.IsNullOrWhiteSpace(roomName) && !this.roomDictionary.ContainsKey(roomName))
+                User user = this.AddressDictionary[protocalParam.Protocal.ClientAddress];
+                lock (this.maimFrameLock)
                 {
-                    room = new Room(roomName, user);
-                    room.RoomEnd = this.DisposeRoom;
-                    user.Room = room;
+                    if (!string.IsNullOrWhiteSpace(roomName) && 
+                        (!this.roomDictionary.ContainsKey(roomName) || null == this.roomDictionary[roomName]))
+                    {
+                        room = new Room(roomName, user);
+                        room.RoomEnd = this.DisposeRoom;
+                        user.Room = room;
 
-                    port = room.RoomTcpPort;                    
+                        port = room.RoomTcpPort;
+                    }
+                }
+
+                protocalParam.Param = port;
+                if (null != room)
+                {
+                    room.Start();
                 }
             }
-
-            protocalParam.Param = port;
-            if (null != room)
+            catch
             {
-                room.Start();
+                try 
+	            {	        
+		            if (null != room)
+                    {
+                        room.Dispose();
+                        room = null;
+                        if (this.roomDictionary.ContainsKey(roomName))
+                        {
+                            this.roomDictionary.Remove(roomName);
+                        }
+                    }                        
+	            }
+	            catch
+	            {
+	            }
             }
         }
 

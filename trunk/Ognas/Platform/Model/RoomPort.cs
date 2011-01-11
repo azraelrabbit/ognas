@@ -42,6 +42,21 @@ namespace Platform
                 }
             }
         }
+
+        public static void ReleasePort(int port)
+        {
+            if (tcpPortDictionary.ContainsKey(port))
+            {
+                lock (tcpPortLock)
+                {
+                    if (tcpPortDictionary[port])
+                    {
+                        unusedTcpPortCount++;
+                        tcpPortDictionary[port] = false;
+                    }
+                }
+            }            
+        }
         #endregion
 
         #region Udp Port
