@@ -26,6 +26,8 @@ namespace Platform.Model
 
     public delegate void SendMessageToUserClient(object sender, SendMessageArgs args);
 
+    public delegate void ShogunSelectionBegin(object sender, ShogunSelectArgs args);
+
     #endregion Game about
 
     #region User action about

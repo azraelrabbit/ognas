@@ -32,7 +32,7 @@ namespace Platform.Model
 
         private GameBase gameBase = null;
 
-        public bool IsFull 
+        public bool IsFull
         {
             get
             {
@@ -65,7 +65,7 @@ namespace Platform.Model
         internal void Start()
         {
             Console.WriteLine(string.Format("The room {0} is running", this.roomName));
-            this.tcpListenerX = new TcpListenerX(MainFrame.SystemIPAddress, this.roomTcpPort, ReceiveTcpMessage);            
+            this.tcpListenerX = new TcpListenerX(MainFrame.SystemIPAddress, this.roomTcpPort, ReceiveTcpMessage);
             tcpListenerX.Run();
         }
 
@@ -100,7 +100,7 @@ namespace Platform.Model
                 userDoctionary.Add(user.Address, user);
                 foreach (var userItem in userDoctionary.Values)
                 {
-                    this.SendUdpMessage(string.Format("User {0} has entered the room {1}.", user.UserName, this.roomName));                    
+                    this.SendUdpMessage(string.Format("User {0} has entered the room {1}.", user.UserName, this.roomName));
                 }
 
                 if (IsFull)
@@ -122,7 +122,7 @@ namespace Platform.Model
                 // send Udp message
                 this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.userDoctionary[protocal.ClientAddress].UserName, this.roomName));
                 // trigger room exit event.
-                if (this.userDoctionary.Count< 1 && null != this.RoomEnd)
+                if (this.userDoctionary.Count < 1 && null != this.RoomEnd)
                 {
                     this.RoomEnd(this);
                 }
@@ -139,6 +139,21 @@ namespace Platform.Model
                 protocal.Data = message;
                 TcpClientUtils.SendData(address, Constants.ClientPort, protocal);
             }
+            return null;
+        }
+
+        internal byte[] SendMessageAll(Protocal message)
+        {
+            foreach (var address in userDoctionary.Keys)
+            {
+                TcpClientUtils.SendData(address, Constants.ClientPort, message);
+            }
+            return null;
+        }
+
+        internal byte[] SendMessage(Protocal message)
+        {
+            TcpClientUtils.SendData(message.ClientAddress, Constants.ClientPort, message);
             return null;
         }
     }

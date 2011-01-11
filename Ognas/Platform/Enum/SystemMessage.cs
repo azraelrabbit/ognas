@@ -14,6 +14,11 @@ namespace Platform.Enum
         EnterRoom,
         UdpMessage,
         ExitRoom,
-        Other
+        Other,
+        DealSeat,
+        DealCards,
+        DealRole,
+        SelectShogun,
+        StateChange
     }
 }

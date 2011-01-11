@@ -45,23 +45,37 @@
     <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Enum\SystemMessage.cs" />
+    <Compile Include="Enum\enumUserRole.cs" />
     <Compile Include="Games\EventCenterRule.cs" />
     <Compile Include="Games\Game.cs" />
     <Compile Include="Games\GameBase.cs" />
     <Compile Include="Model\Delegates.cs" />
     <Compile Include="Games\EventCenter.cs" />
-    <Compile Include="OgnasEventArgs\CardUseEventArgs.cs" />
-    <Compile Include="OgnasEventArgs\DealCardsArgs.cs" />
-    <Compile Include="OgnasEventArgs\GameEventArgs.cs" />
-    <Compile Include="OgnasEventArgs\RecivedMessageArgs.cs" />
-    <Compile Include="OgnasEventArgs\SendMessageArgs.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\RoomPort.cs" />
     <Compile Include="MainFrame.cs" />
     <Compile Include="Model\ProtocalParam.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="OgnasEventArgs\CardUseEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OgnasEventArgs\DealCardsArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OgnasEventArgs\GameEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OgnasEventArgs\RecivedMessageArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OgnasEventArgs\SendMessageArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OgnasEventArgs\ShogunSelectArgs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocals\CreateRoomProtocal.cs" />
+    <Compile Include="Protocals\DealRoleProtocal.cs" />
+    <Compile Include="Protocals\DealSeatProtocal.cs" />
     <Compile Include="Protocals\EnterRoomProtocal.cs" />
     <Compile Include="Protocals\ExitRoomProtocal.cs" />
     <Compile Include="Protocals\Protocal.cs" />
