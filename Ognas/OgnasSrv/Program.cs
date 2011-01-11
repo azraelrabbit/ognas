@@ -14,8 +14,18 @@ namespace Ognas.Server
     {
         static void Main(string[] args)
         {
-            MainFrame mainFrame = new MainFrame();
-            mainFrame.Start();            
+            try
+            {
+                MainFrame mainFrame = new MainFrame();
+                mainFrame.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("The following exception occurred in mainframe.");
+                Console.WriteLine(ex.Message + Environment.NewLine + ex.StackTrace);
+                Console.ReadLine();
+            }
+            
         }
     }
 }

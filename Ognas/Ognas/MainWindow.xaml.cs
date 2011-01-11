@@ -52,22 +52,26 @@ namespace Ognas.Client
 
         public void CreateTcpListenerThread()
         {
-            try
-            {
-                Thread thread = new Thread(CreateTcpListenerX);
-                thread.IsBackground = true;
-                thread.Start();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
+            Thread thread = new Thread(CreateTcpListenerX);
+            thread.IsBackground = true;
+            thread.Start();
         }
 
         public void CreateTcpListenerX()
         {
-            TcpListenerX tcpListenerX = new TcpListenerX(SystemIPAddress, Constants.ClientPort, this.ReceiveTcpMessage);
-            tcpListenerX.Run();
+            try
+            {
+                TcpListenerX tcpListenerX = new TcpListenerX(SystemIPAddress, Constants.ClientPort, this.ReceiveTcpMessage);
+                tcpListenerX.Run();
+            }
+            catch (Exception ex)
+            {
+                this.Dispatcher.BeginInvoke((ThreadStart)delegate
+                {
+                    throw ex;
+                });
+            }
+            
         }
 
         public void ShowUserNameWindow()

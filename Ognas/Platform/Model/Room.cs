@@ -85,6 +85,8 @@ namespace Platform.Model
 
         public void Dispose()
         {
+            RoomPort.ReleasePort(this.roomTcpPort);
+
             if (null != this.tcpListenerX)
             {
                 this.tcpListenerX.Stop();
