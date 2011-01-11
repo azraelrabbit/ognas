@@ -8,6 +8,12 @@ namespace Ognas.Lib.Shoguns
 {
     public class Shogun
     {
+        public ShogunCode Code
+        {
+            get;
+            set;
+        }
+
         public string Name
         {
             set;
@@ -26,12 +32,6 @@ namespace Ognas.Lib.Shoguns
             set;
         }
 
-        public int Health
-        {
-            get;
-            set;
-        }
-
         public int HealthMax
         {
             get;
@@ -39,6 +39,12 @@ namespace Ognas.Lib.Shoguns
         }
 
         public Dictionary<StuntCode, Stunt> StuntCollection
+        {
+            get;
+            set;
+        }
+
+        public int Health
         {
             get;
             set;

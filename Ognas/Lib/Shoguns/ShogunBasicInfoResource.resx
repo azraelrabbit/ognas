@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CaoCao" xml:space="preserve">
+    <value>0x01|曹操|0x01|0x01|4</value>
+  </data>
+  <data name="CaoRen" xml:space="preserve">
+    <value>0x09|曹仁|0x01|0x01|4</value>
+  </data>
+  <data name="DaQiao" xml:space="preserve">
+    <value>0x44|大乔|0x02|0x03|3</value>
+  </data>
+  <data name="DiaoChan" xml:space="preserve">
+    <value>0x62|吕布|0x01|0x04|3</value>
+  </data>
+  <data name="GanNing" xml:space="preserve">
+    <value>0x47|甘宁|0x01|0x03|4</value>
+  </data>
+  <data name="GuanYu" xml:space="preserve">
+    <value>0x26|关羽|0x01|0x02|4</value>
+  </data>
+  <data name="GuoJia" xml:space="preserve">
+    <value>0x06|郭嘉|0x01|0x01|3</value>
+  </data>
+  <data name="HuangGai" xml:space="preserve">
+    <value>0x45|黄盖|0x01|0x03|4</value>
+  </data>
+  <data name="HuangYueYing" xml:space="preserve">
+    <value>0x23|黄月英|0x02|0x02|3</value>
+  </data>
+  <data name="HuangZhong" xml:space="preserve">
+    <value>0x28|黄忠|0x01|0x02|4</value>
+  </data>
+  <data name="HuaTuo" xml:space="preserve">
+    <value>0x63|华佗|0x01|0x04|3</value>
+  </data>
+  <data name="LiuBei" xml:space="preserve">
+    <value>0x21|刘备|0x01|0x02|4</value>
+  </data>
+  <data name="LuXun" xml:space="preserve">
+    <value>0x42|陆逊|0x01|0x03|3</value>
+  </data>
+  <data name="LvBu" xml:space="preserve">
+    <value>0x62|吕布|0x01|0x04|4</value>
+  </data>
+  <data name="LvMeng" xml:space="preserve">
+    <value>0x46|吕蒙|0x01|0x03|4</value>
+  </data>
+  <data name="MaChao" xml:space="preserve">
+    <value>0x22|马超|0x01|0x02|4</value>
+  </data>
+  <data name="SiMaYi" xml:space="preserve">
+    <value>0x07|司马懿|0x01|0x01|3</value>
+  </data>
+  <data name="SunQuan" xml:space="preserve">
+    <value>0x41|孙权|0x01|0x03|4</value>
+  </data>
+  <data name="SunShangXiang" xml:space="preserve">
+    <value>0x48|孙尚香|0x02|0x03|3</value>
+  </data>
+  <data name="WeiYan" xml:space="preserve">
+    <value>0x29|魏延|0x01|0x02|4</value>
+  </data>
+  <data name="XiaHouDun" xml:space="preserve">
+    <value>0x03|夏侯惇|0x01|0x01|4</value>
+  </data>
+  <data name="XiaHouYuan" xml:space="preserve">
+    <value>0x08|夏侯渊|0x01|0x01|4</value>
+  </data>
+  <data name="XiaoQiao" xml:space="preserve">
+    <value>0x49|小乔|0x02|0x03|3</value>
+  </data>
+  <data name="XuChu" xml:space="preserve">
+    <value>0x04|许褚|0x01|0x01|4</value>
+  </data>
+  <data name="YuJi" xml:space="preserve">
+    <value>0x65|于吉|0x01|0x04|3</value>
+  </data>
+  <data name="ZhangFei" xml:space="preserve">
+    <value>0x25|张飞|0x01|0x02|4</value>
+  </data>
+  <data name="ZhangJiao" xml:space="preserve">
+    <value>0x64|张角|0x01|0x04|3</value>
+  </data>
+  <data name="ZhangLiao" xml:space="preserve">
+    <value>0x05|张辽|0x01|0x01|4</value>
+  </data>
+  <data name="ZhaoYun" xml:space="preserve">
+    <value>0x24|赵云|0x01|0x02|4</value>
+  </data>
+  <data name="ZhenJi" xml:space="preserve">
+    <value>0x02|甄姬|0x02|0x01|3</value>
+  </data>
+  <data name="ZhouTai" xml:space="preserve">
+    <value>0x61|周泰|0x02|0x03|4</value>
+  </data>
+  <data name="ZhouYu" xml:space="preserve">
+    <value>0x43|周瑜|0x01|0x03|3</value>
+  </data>
+  <data name="ZhuGeLiang" xml:space="preserve">
+    <value>0x27|诸葛亮|0x01|0x02|3</value>
+  </data>
+</root>
