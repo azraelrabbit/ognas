@@ -20,6 +20,16 @@ namespace Platform.Protocals
             get;
             set;
         }
+        public DealSeatProtocal()
+        {
+            this.SystemMessageEnum = SystemMessage.DealSeat;
+        }
+        public DealSeatProtocal(byte[] message)
+        {
+            this.SystemMessageEnum = SystemMessage.DealSeat;
+            this.Data = Encoding.UTF8.GetString(message);
+            this.GetUserSeatList();
+        }
 
         public override byte[] RequestData
         {
@@ -50,10 +60,10 @@ namespace Platform.Protocals
         public List<User> GetUserSeatList()
         {
             string[] datalist = this.Data.Split('|');
-            this.SystemMessageEnum = (SystemMessage)(Encoding.UTF8.GetBytes(datalist[0])[0]);
+            // this.SystemMessageEnum = (SystemMessage)(Encoding.UTF8.GetBytes(datalist[0])[0]);
 
             string[] users = datalist[1].Split(',');
-            this.userList.Clear();
+            this.userList = new List<User>();
             for (int i = 0; i < users.Length; i++)
             {
                 string[] us = users[i].Split('^');
@@ -63,7 +73,17 @@ namespace Platform.Protocals
             }
 
             this.msgText = datalist[2];
+
             return this.userList;
+        }
+
+        public override byte[] ResponseData
+        {
+            get
+            {
+
+                return base.ResponseData;
+            }
         }
 
         public override byte[] OnResponse()

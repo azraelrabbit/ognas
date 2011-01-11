@@ -23,7 +23,7 @@ namespace Platform.Model
 
         private string roomName;
 
-        private int userMaxCount = 8;
+        private int userMaxCount = 2;
 
         private User roomCreator = null;
 

@@ -27,7 +27,7 @@ namespace Ognas.Lib
 
             for (int i = 0; i < temp.Count; i++)
             {
-                int r1 = r.Next( 0,temp.Count );
+                int r1 = r.Next(0, temp.Count);
                 int r2 = r.Next(0, temp.Count);
 
                 T t;

@@ -26,6 +26,17 @@ namespace Platform.Protocals
             get;
             set;
         }
+        public DealRoleProtocal()
+        {
+            this.SystemMessageEnum = SystemMessage.DealRole;
+        }
+
+        public DealRoleProtocal(byte[] message)
+        {
+            this.SystemMessageEnum = SystemMessage.DealRole;
+            this.Data = Encoding.UTF8.GetString(message);
+            GetUserRoleList();
+        }
 
         public override byte[] RequestData
         {
@@ -58,7 +69,7 @@ namespace Platform.Protocals
         public void GetUserRoleList()
         {
             string[] datalist = this.Data.Split('|');
-            this.SystemMessageEnum = (SystemMessage)(Encoding.UTF8.GetBytes(datalist[0])[0]);
+            //this.SystemMessageEnum = (SystemMessage)(Encoding.UTF8.GetBytes(datalist[0])[0]);
 
             string[] users = datalist[1].Split(',');
 

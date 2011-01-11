@@ -34,6 +34,12 @@ namespace Platform.Protocals
                 case SystemMessage.ExitRoom:
                     protocal = new ExitRoomProtocal(message);
                     break;
+                case SystemMessage.DealSeat:
+                    protocal = new DealSeatProtocal(message);
+                    break;
+                case SystemMessage.DealRole:
+                    protocal = new DealRoleProtocal(message);
+                    break;
                 default:
                     break;
             }
