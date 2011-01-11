@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Platform.Model;
 
 namespace Platform.Protocals
 {
@@ -20,7 +21,8 @@ namespace Platform.Protocals
 
         public override byte[] OnResponse()
         {
-            throw new NotImplementedException();
+            Room room = (Room)Host;
+            return room.SendUdpMessage(this.Data);
         }
     }
 }
