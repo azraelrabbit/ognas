@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Platform.Model;
 using Ognas.Lib;
-using Ognas.Server.Cards;
+using Ognas.Lib.Cards;
 using Platform.OgnasEventArgs;
 
 namespace Platform.Games
