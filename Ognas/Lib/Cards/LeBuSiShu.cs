@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ognas.Lib.Cards
 {
-    class LeBuSiShu : TipsDelayCard
+    public class LeBuSiShu : TipsDelayCard
     {
     }
 }

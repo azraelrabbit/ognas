@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ognas.Lib.Cards
 {
-    class GuanShiFu : EquipsCard
+    public class GuanShiFu : EquipsCard
     {
     }
 }
