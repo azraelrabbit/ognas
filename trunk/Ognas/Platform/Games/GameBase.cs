@@ -29,6 +29,15 @@ namespace Platform.Games
             set;
         }
 
+        /// <summary>
+        /// 武将
+        /// </summary>
+        public ShogunCenter shogun
+        {
+            get;
+            set;
+        }
+
         User currentTokenUser
         {
             get;
@@ -46,6 +55,9 @@ namespace Platform.Games
             get;
             set;
         }
+
+
+
 
         public GameBase()
         {
@@ -76,6 +88,12 @@ namespace Platform.Games
             SetUpUserRole();
 
             // 选择武将
+            if (this.OnShogunSelectionBegin != null)
+            {
+                ShogunSelectArgs shogunArgs = new ShogunSelectArgs();
+                shogunArgs.Message = "开始选择武将...";
+                this.OnShogunSelectionBegin(this, shogunArgs);
+            }
 
             // 发牌
             DealCards();
@@ -97,6 +115,7 @@ namespace Platform.Games
         public event SetUpSeatComplete OnSetUpSeatCompleted;
         public event SetUpUserRoleComplete OnSetUpUserRoleCompleted;
         public event DealCardBegin OnDealCardBegins;
+        public event ShogunSelectionBegin OnShogunSelectionBegin;
 
         /// <summary>
         /// 洗牌
