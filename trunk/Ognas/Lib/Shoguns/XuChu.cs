@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Ognas.Lib.Shoguns
 {
-    public class XuZhu:Shogun
+    public class XuChu : Shogun
     {
-        public XuZhu()
+        public XuChu()
         {
             base.Camp = Shoguns.Camp.Wei;
             base.Name = "许褚";
