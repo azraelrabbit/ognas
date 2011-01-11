@@ -26,7 +26,8 @@ namespace Ognas.Lib
 
         public ShogunCenter() 
         {
-            InitialShoguns();
+            //InitialShoguns();
+            _listShogun = ShogunUtility.GetShogunList();
         }
 
         public void InitialShoguns()
