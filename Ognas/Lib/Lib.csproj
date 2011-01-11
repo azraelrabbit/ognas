@@ -60,7 +60,7 @@
     <Compile Include="Shoguns\Stunts\Stunt.cs" />
     <Compile Include="Shoguns\SunQuan.cs" />
     <Compile Include="Shoguns\XiaHouDun.cs" />
-    <Compile Include="Shoguns\XuZhu.cs" />
+    <Compile Include="Shoguns\XuChu.cs" />
     <Compile Include="Shoguns\ZhangLiao.cs" />
     <Compile Include="Shoguns\ZhenJi.cs" />
     <Compile Include="Utility.cs" />

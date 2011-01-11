@@ -41,7 +41,7 @@ namespace Ognas.Lib
             _listShogun.Add(new CaoCao());
             _listShogun.Add(new ZhenJi());
             _listShogun.Add(new XiaHouDun());
-            _listShogun.Add(new XuZhu());
+            _listShogun.Add(new XuChu());
             _listShogun.Add(new ZhangLiao());
             _listShogun.Add(new LiuBei());
             _listShogun.Add(new SunQuan());
