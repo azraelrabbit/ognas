@@ -26,26 +26,7 @@ namespace Ognas.Lib
 
         public ShogunCenter() 
         {
-            //InitialShoguns();
             _listShogun = ShogunUtility.GetShogunList();
-        }
-
-        public void InitialShoguns()
-        {
-            if (_listShogun == null)
-            {
-                _listShogun = new List<Shogun>();
-            }
-
-            _listShogun.Clear();
-
-            _listShogun.Add(new CaoCao());
-            _listShogun.Add(new ZhenJi());
-            _listShogun.Add(new XiaHouDun());
-            _listShogun.Add(new XuChu());
-            _listShogun.Add(new ZhangLiao());
-            _listShogun.Add(new LiuBei());
-            _listShogun.Add(new SunQuan());
         }
 
         public List<Shogun> GetSubShogunList(TypeofInitialShogunList tisl)
@@ -58,16 +39,23 @@ namespace Ognas.Lib
                     Utility.RemoveItemsFromList<Shogun>(_listShogun, shogunList);
                     break;
                 case TypeofInitialShogunList.ForMaster:
-                    Utility.RemoveItemsFromList<Shogun>(_listShogun, _listShogun.FindAll(delegate(Shogun s) { return s.Name == "曹操" || s.Name == "孙权" || s.Name == "刘备"; }));
-                    shogunList = Utility.GetRandomList<Shogun>(_listShogun, 2);
+                    // 为主公发武将选择牌
+                    // 获取全部武将列表
+                    List<Shogun> list = ShogunUtility.GetShogunList();
+                    // 从该列表中移除曹操，孙权，刘备
+                    Utility.RemoveItemsFromList<Shogun>(list, _listShogun.FindAll(delegate(Shogun s) { return s.Code == ShogunCode.CaoCao || s.Code == ShogunCode.LiuBei || s.Code == ShogunCode.SunQuan; }));
+                    // 从该列表中随机选取两名武将生成待主公选择武将列表
+                    shogunList = Utility.GetRandomList<Shogun>(list, 2);
 
-                    shogunList.Add(new CaoCao());
-                    shogunList.Add(new LiuBei());
-                    shogunList.Add(new SunQuan());
+                    // 为待主公选择武将列表添加3个必选项：刘备，孙权，曹操
+                    shogunList.Add(ShogunUtility.GetShogun(ShogunCode.LiuBei));
+                    shogunList.Add(ShogunUtility.GetShogun(ShogunCode.SunQuan));
+                    shogunList.Add(ShogunUtility.GetShogun(ShogunCode.CaoCao));
                     break;
                 default:
                     throw new Exception();
             }
+            // 反转待选择武将列表
             shogunList.Reverse();
             return shogunList;
         }

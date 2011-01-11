@@ -84,17 +84,6 @@ namespace Test.Ognas.Lib
         }
 
         /// <summary>
-        ///InitialShoguns 的测试
-        ///</summary>
-        [TestMethod()]
-        public void InitialShogunsTest()
-        {
-            ShogunCenter target = new ShogunCenter(); // TODO: 初始化为适当的值
-            target.InitialShoguns();
-            Assert.Inconclusive("无法验证不返回值的方法。");
-        }
-
-        /// <summary>
         ///GetSubShogunList 的测试
         ///</summary>
         [TestMethod()]
