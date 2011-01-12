@@ -11,18 +11,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SocketUtils;
 using System.Configuration;
 using System.Net;
 using System.Threading;
 using Ognas.Client.Model;
-using Platform.Protocols;
-using Platform.CommonUtils;
-using Platform.SocketUtils;
 using System.Windows.Threading;
-using Platform.Model;
 using Ognas.Lib;
 using Ognas.Lib.Protocols;
+using Ognas.Client.Protocols;
+using Ognas.Lib.SocketUtils;
 
 namespace Ognas.Client
 {
@@ -98,7 +95,7 @@ namespace Ognas.Client
                 return;
             }
 
-            ServerEnterRoomProtocol protocol = new ServerEnterRoomProtocol();
+            ClientEnterRoomProtocol protocol = new ClientEnterRoomProtocol();
             protocol.Data = txtRoomName.Text;
 
             this.EnterRoom(protocol);
@@ -111,7 +108,7 @@ namespace Ognas.Client
                 return;
             }
 
-            ServerCreateRoomProtocol protocol = new ServerCreateRoomProtocol();
+            ClientCreateRoomProtocol protocol = new ClientCreateRoomProtocol();
             protocol.Data = txtRoomName.Text;
 
             this.EnterRoom(protocol);
@@ -143,18 +140,6 @@ namespace Ognas.Client
                 Protocol protocol = ProtocolFactory.CreateProtocol(bytes);
                 protocol.Host = this;
                 protocol.OnResponse();
-                
-                if (protocol is ServerDealRoleProtocol)
-                {
-                    this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
-                    {
-                        // this.richMessage.AppendText(protocol.Data + Environment.NewLine);
-                        ServerDealRoleProtocol drp = (ServerDealRoleProtocol)protocol;
-                        localUser.UserRole = drp.player.UserRole;
-                        string m = localUser.UserRole.ToString();
-                        this.richMessage.AppendText("your role is : " + m + Environment.NewLine + " the Lord is : " + drp.playerKing.UserName + Environment.NewLine);
-                    });
-                }
             }
             return null;
         }
@@ -166,7 +151,7 @@ namespace Ognas.Client
 
         private void btnExitRoom_Click(object sender, RoutedEventArgs e)
         {
-            ServerExitRoomProtocol protocol = new ServerExitRoomProtocol();
+            ExitRoomProtocol protocol = new ExitRoomProtocol();
             protocol.Data = txtRoomName.Text;
 
             this.TcpClientRoom.SendData(protocol);
@@ -181,7 +166,7 @@ namespace Ognas.Client
             string inputMessage = new TextRange(richInputMessage.Document.ContentStart, richInputMessage.Document.ContentEnd).Text;
             if (!string.IsNullOrWhiteSpace(inputMessage))
             {
-                Protocol udpMessageProtocol = new ServerUdpMessageProtocol();
+                Protocol udpMessageProtocol = new ClientUdpMessageProtocol();
                 udpMessageProtocol.Data = inputMessage;
                 this.TcpClientRoom.SendData(udpMessageProtocol);
             }

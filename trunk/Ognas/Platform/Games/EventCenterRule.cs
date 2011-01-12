@@ -9,7 +9,7 @@ using LibProtocols = Ognas.Lib.Protocols;
 using Ognas.Lib.Protocols;
 using Ognas.Lib;
 using Ognas.Lib.Enum;
-using Platform.SocketUtils;
+using Ognas.Lib.SocketUtils;
 
 namespace Platform.Games
 {

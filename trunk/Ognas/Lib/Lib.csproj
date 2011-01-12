@@ -76,6 +76,9 @@
     <Compile Include="Cards\WuZhongShengYou.cs" />
     <Compile Include="Cards\ZhangBaSheMao.cs" />
     <Compile Include="Cards\ZhuGeLianNu.cs" />
+    <Compile Include="CommonUtils\CommonUtil.cs" />
+    <Compile Include="CommonUtils\ProtocolUtils.cs" />
+    <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Enums\enumUserRole.cs" />
     <Compile Include="Enums\SystemMessage.cs" />
@@ -96,6 +99,8 @@
     <Compile Include="Shoguns\ShogunUtility.cs" />
     <Compile Include="Shoguns\Stunts\LuoShen.cs" />
     <Compile Include="Shoguns\Stunts\Stunt.cs" />
+    <Compile Include="SocketUtils\TcpClientUtils.cs" />
+    <Compile Include="SocketUtils\TcpListenerX.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>

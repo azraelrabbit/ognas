@@ -5,7 +5,7 @@ using System.Text;
 using System.IO;
 using System.Net.Sockets;
 
-namespace Platform.CommonUtils
+namespace Ognas.Lib.CommonUtils
 {
     public static class StreamUtils
     {
