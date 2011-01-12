@@ -13,7 +13,7 @@ namespace Ognas.Lib
             get;
             set;
         }
-        public enumUserRole UserRole
+        public EnumUserRole UserRole
         {
             get;
             set;

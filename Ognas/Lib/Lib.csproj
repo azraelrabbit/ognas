@@ -80,7 +80,7 @@
     <Compile Include="CommonUtils\ProtocolUtils.cs" />
     <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Enums.cs" />
-    <Compile Include="Enums\enumUserRole.cs" />
+    <Compile Include="Enums\EnumUserRole.cs" />
     <Compile Include="Enums\SystemMessage.cs" />
     <Compile Include="EventCenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

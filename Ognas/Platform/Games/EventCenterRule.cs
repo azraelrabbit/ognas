@@ -62,7 +62,7 @@ namespace Platform.Games
 
             foreach (User ul in args.userList)
             {
-                if (ul.UserRole == enumUserRole.Lord)
+                if (ul.UserRole == EnumUserRole.Lord)
                 {
                     ku = ul;
                 }

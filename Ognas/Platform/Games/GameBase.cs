@@ -12,52 +12,60 @@ namespace Platform.Games
     public class GameBase
     {
         /// <summary>
-        /// 底牌堆
+        /// 卡牌中心
         /// </summary>
-        public List<Card> cardsList
+        public CardCenter cardCenter
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 弃牌堆
+        /// 武将中心
         /// </summary>
-        public List<Card> dropCardsList
+        public ShogunCenter shogunCenter
         {
             get;
             set;
         }
 
         /// <summary>
-        /// 武将
+        /// 当前令牌用户
         /// </summary>
-        public ShogunCenter shogun
-        {
-            get;
-            set;
-        }
-
         User currentTokenUser
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// 玩家列表
+        /// </summary>
         public List<User> userList
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// 当前游戏房间
+        /// </summary>
         Room currentRoom
         {
             get;
             set;
         }
 
+        /// <summary>
+        /// 事件规则处理中心
+        /// </summary>
+        EventCenterRule eventCenterRule;
 
-
+        public event ShuffleCardComplete OnShuffleCardCompleted;
+        public event SetUpSeatComplete OnSetUpSeatCompleted;
+        public event SetUpUserRoleComplete OnSetUpUserRoleCompleted;
+        public event DealCardBegin OnDealCardBegins;
+        public event ShogunSelectionBegin OnShogunSelectionBegin;
 
         public GameBase()
         {
@@ -67,8 +75,6 @@ namespace Platform.Games
         {
             this.userList = userlist;
         }
-
-        EventCenterRule eventCenterRule;
 
         /// <summary>
         /// Game Starting
@@ -112,13 +118,10 @@ namespace Platform.Games
         private void LoadCards()
         {
             // 读取所有的牌到牌堆中
-        }
+            cardCenter = new CardCenter();
+            CardFactory.CreateCard();
 
-        public event ShuffleCardComplete OnShuffleCardCompleted;
-        public event SetUpSeatComplete OnSetUpSeatCompleted;
-        public event SetUpUserRoleComplete OnSetUpUserRoleCompleted;
-        public event DealCardBegin OnDealCardBegins;
-        public event ShogunSelectionBegin OnShogunSelectionBegin;
+        }
 
         /// <summary>
         /// 洗牌
@@ -127,9 +130,11 @@ namespace Platform.Games
         {
             // TODO: 洗牌
             //  this.cardsList = Utility.GetRandomList(this.cardsList, this.cardsList.Count);
+            this.cardCenter.Shuffle();
+
             // 洗牌完成 触发事件
             GameEventArgs gameArgs = new GameEventArgs();
-            gameArgs.cardList = this.cardsList;
+            gameArgs.sc = this.cardCenter;
             gameArgs.Messages = "洗牌完成...";
 
             if (OnShuffleCardCompleted != null)
@@ -146,7 +151,7 @@ namespace Platform.Games
             // TODO: 发牌
             // 发牌
             DealCardsArgs dcArgs = new DealCardsArgs();
-            dcArgs.cardList = this.cardsList;
+            dcArgs.sc = this.cardCenter;
             dcArgs.Messages = "开始发牌...";
             if (this.OnDealCardBegins != null)
             {

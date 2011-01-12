@@ -15,7 +15,11 @@ namespace Platform.OgnasEventArgs
             get;
             set;
         }
-
+        public CardCenter sc
+        {
+            get;
+            set;
+        }
         public List<User> userList
         {
             get;
