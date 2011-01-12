@@ -8,17 +8,26 @@ namespace Ognas.Lib
     {
         private Utility() { }
 
+        /// <summary>
+        /// 随机因子
+        /// </summary>
         private static int _iRandom = 0;
 
+        /// <summary>
+        /// 获取计算随机数的随机因子
+        /// </summary>
+        /// <returns></returns>
         private static int ComputerIRandom()
         {
+            // 随机因子在1到10000之间循环，每次调用+1
             _iRandom++;
-            if (_iRandom > 9999)
+            if (_iRandom > 10000)
             {
                 _iRandom = 0;
             }
 
-            return ("R" + _iRandom.ToString()).GetHashCode();
+            // 返回Ognas+随机因子的哈希值作为随机数生成器所使用的随机因子
+            return ("Ognas" + _iRandom.ToString()).GetHashCode();
         }
 
         /// <summary>
@@ -30,7 +39,7 @@ namespace Ognas.Lib
         public static List<T> GetRandomList<T>(List<T> list)
         {
             // 随机数生成器
-            Random r = new Random();
+            Random r = new Random(ComputerIRandom());
 
             // 用于重新排序的临时列表
             List<T> temp = new List<T>();
@@ -133,8 +142,6 @@ namespace Ognas.Lib
                 temp.Add(o);
             }
 
-            //temp = GetRandomList<T>(temp);
-
             for (int i = 0; i < count; i++)
             { 
                 // 获取随机对象
@@ -178,8 +185,6 @@ namespace Ognas.Lib
                 }
             }
 
-            //temp = GetRandomList<T>(temp);
-
             foreach( T p in dic.Keys )
             {
                 // 获取随机对象
@@ -187,7 +192,7 @@ namespace Ognas.Lib
                 // 把随机对象增加到返回列表
                 listReturn.Add(t);
 
-                // 如果取得的对象不在DIC列表中 则从劣势列表中删除，防止再次取得
+                // 如果取得的对象不在DIC列表中 则从临时列表中删除，防止再次取得
                 if (!t.Equals(p))
                 {
                     RemoveItemsFromList(temp, t);
