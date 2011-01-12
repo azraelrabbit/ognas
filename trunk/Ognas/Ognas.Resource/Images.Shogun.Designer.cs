@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ognas.Resource
-{
-
-
+namespace Ognas.Resource {
+    using System;
+    
+    
     /// <summary>
     ///   一个强类型的资源类，用于查找本地化的字符串等。
     /// </summary>
@@ -22,7 +22,7 @@ namespace Ognas.Resource
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Images_Shogun {
+    public class Images_Shogun {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Ognas.Resource
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ognas.Resource.Images.Shogun", typeof(Images_Shogun).Assembly);
@@ -51,7 +51,7 @@ namespace Ognas.Resource
         ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -60,231 +60,231 @@ namespace Ognas.Resource
             }
         }
         
-        internal static System.Drawing.Bitmap SH01 {
+        public static System.Drawing.Bitmap SH01 {
             get {
                 object obj = ResourceManager.GetObject("SH01", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH02 {
+        public static System.Drawing.Bitmap SH02 {
             get {
                 object obj = ResourceManager.GetObject("SH02", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH03 {
+        public static System.Drawing.Bitmap SH03 {
             get {
                 object obj = ResourceManager.GetObject("SH03", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH04 {
+        public static System.Drawing.Bitmap SH04 {
             get {
                 object obj = ResourceManager.GetObject("SH04", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH05 {
+        public static System.Drawing.Bitmap SH05 {
             get {
                 object obj = ResourceManager.GetObject("SH05", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH06 {
+        public static System.Drawing.Bitmap SH06 {
             get {
                 object obj = ResourceManager.GetObject("SH06", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH07 {
+        public static System.Drawing.Bitmap SH07 {
             get {
                 object obj = ResourceManager.GetObject("SH07", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH08 {
+        public static System.Drawing.Bitmap SH08 {
             get {
                 object obj = ResourceManager.GetObject("SH08", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH09 {
+        public static System.Drawing.Bitmap SH09 {
             get {
                 object obj = ResourceManager.GetObject("SH09", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH21 {
+        public static System.Drawing.Bitmap SH21 {
             get {
                 object obj = ResourceManager.GetObject("SH21", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH22 {
+        public static System.Drawing.Bitmap SH22 {
             get {
                 object obj = ResourceManager.GetObject("SH22", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH23 {
+        public static System.Drawing.Bitmap SH23 {
             get {
                 object obj = ResourceManager.GetObject("SH23", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH24 {
+        public static System.Drawing.Bitmap SH24 {
             get {
                 object obj = ResourceManager.GetObject("SH24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH25 {
+        public static System.Drawing.Bitmap SH25 {
             get {
                 object obj = ResourceManager.GetObject("SH25", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH26 {
+        public static System.Drawing.Bitmap SH26 {
             get {
                 object obj = ResourceManager.GetObject("SH26", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH27 {
+        public static System.Drawing.Bitmap SH27 {
             get {
                 object obj = ResourceManager.GetObject("SH27", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH28 {
+        public static System.Drawing.Bitmap SH28 {
             get {
                 object obj = ResourceManager.GetObject("SH28", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH29 {
+        public static System.Drawing.Bitmap SH29 {
             get {
                 object obj = ResourceManager.GetObject("SH29", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH41 {
+        public static System.Drawing.Bitmap SH41 {
             get {
                 object obj = ResourceManager.GetObject("SH41", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH42 {
+        public static System.Drawing.Bitmap SH42 {
             get {
                 object obj = ResourceManager.GetObject("SH42", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH43 {
+        public static System.Drawing.Bitmap SH43 {
             get {
                 object obj = ResourceManager.GetObject("SH43", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH44 {
+        public static System.Drawing.Bitmap SH44 {
             get {
                 object obj = ResourceManager.GetObject("SH44", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH45 {
+        public static System.Drawing.Bitmap SH45 {
             get {
                 object obj = ResourceManager.GetObject("SH45", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH46 {
+        public static System.Drawing.Bitmap SH46 {
             get {
                 object obj = ResourceManager.GetObject("SH46", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH47 {
+        public static System.Drawing.Bitmap SH47 {
             get {
                 object obj = ResourceManager.GetObject("SH47", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH48 {
+        public static System.Drawing.Bitmap SH48 {
             get {
                 object obj = ResourceManager.GetObject("SH48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH49 {
+        public static System.Drawing.Bitmap SH49 {
             get {
                 object obj = ResourceManager.GetObject("SH49", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH4A {
+        public static System.Drawing.Bitmap SH4A {
             get {
                 object obj = ResourceManager.GetObject("SH4A", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH61 {
+        public static System.Drawing.Bitmap SH61 {
             get {
                 object obj = ResourceManager.GetObject("SH61", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH62 {
+        public static System.Drawing.Bitmap SH62 {
             get {
                 object obj = ResourceManager.GetObject("SH62", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH63 {
+        public static System.Drawing.Bitmap SH63 {
             get {
                 object obj = ResourceManager.GetObject("SH63", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH64 {
+        public static System.Drawing.Bitmap SH64 {
             get {
                 object obj = ResourceManager.GetObject("SH64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap SH65 {
+        public static System.Drawing.Bitmap SH65 {
             get {
                 object obj = ResourceManager.GetObject("SH65", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

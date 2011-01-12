@@ -81,6 +81,10 @@
       <Project>{61759E69-1213-4144-B33B-9C75B5F78A2C}</Project>
       <Name>Lib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ognas.Resource\Ognas.Resource.csproj">
+      <Project>{F47F1C41-E547-481F-9CB7-B2E766894029}</Project>
+      <Name>Ognas.Resource</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
