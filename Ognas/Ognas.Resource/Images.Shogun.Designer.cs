@@ -249,6 +249,13 @@ namespace Ognas.Resource {
             }
         }
         
+        internal static System.Drawing.Bitmap SH4A {
+            get {
+                object obj = ResourceManager.GetObject("SH4A", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap SH61 {
             get {
                 object obj = ResourceManager.GetObject("SH61", resourceCulture);

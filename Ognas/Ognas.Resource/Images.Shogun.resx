@@ -199,6 +199,9 @@
   <data name="SH49" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\SH49.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="SH4A" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>resources\sh4a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SH61" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\SH61.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
