@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace Ognas.Lib
@@ -80,7 +79,7 @@ namespace Ognas.Lib
             T rReturn = default(T);
 
             // 执行一次Roll以获取一个0-100的随机整数，如果该数字小于odds（几率），直接获取该对象
-            if (Roll() < odds)
+            if (Roll() <= odds)
             {
                 rReturn = t;
             }
@@ -93,6 +92,13 @@ namespace Ognas.Lib
             return rReturn;
         }
 
+        /// <summary>
+        /// 从一个指定的列表获取指定长度的随机列表
+        /// </summary>
+        /// <typeparam name="T">对象类型</typeparam>
+        /// <param name="list">源列表</param>
+        /// <param name="count">长度</param>
+        /// <returns>随机列表</returns>
         public static List<T> GetRandomList<T>(List<T> list, int count)
         {
             // 参数判定：随机列表长度应不大于原始列表
@@ -163,6 +169,7 @@ namespace Ognas.Lib
                 // 把随机对象增加到返回列表
                 listReturn.Add(t);
 
+                // 如果取得的对象不在DIC列表中 则从劣势列表中删除，防止再次取得
                 if (!t.Equals(p))
                 {
                     RemoveItemsFromList(temp, t);
@@ -173,51 +180,6 @@ namespace Ognas.Lib
             
             return listReturn;
         }
-
-
-        ///// <summary>
-        ///// 获取随机数组
-        ///// </summary>
-        ///// <typeparam name="T">数组</typeparam>
-        ///// <param name="array">源数组</param>
-        ///// <param name="length">要获取的数组的长度</param>
-        ///// <returns>特定长度的随机数组</returns>
-        //public static List<T> GetRandomList<T>(List<T> list, int length)
-        //{
-        //    Random r = new Random();
-
-        //    List<T> temp = new List<T>();
-        //    foreach (T o in list)
-        //    {
-        //        temp.Add(o);
-        //    }
-
-        //    for (int i = 0; i < temp.Count; i++)
-        //    {
-        //        int r1 = r.Next(0, temp.Count);
-        //        int r2 = r.Next(0, temp.Count);
-
-        //        T t;
-        //        t = temp[r1];
-        //        temp[r1] = temp[r2];
-        //        temp[r2] = t;
-        //    }
-
-        //    List<T> tR = new List<T>();
-        //    int iS = r.Next(0, temp.Count);
-
-        //    for (int j = iS; j < length + iS; j++)
-        //    {
-        //        int index = j;
-        //        if (j >= length)
-        //        {
-        //            index -= length;
-        //        }
-        //        tR.Add(temp[index]);
-        //    }
-
-        //    return tR;
-        //}
 
         /// <summary>
         /// 从给定的列表中移除特定的对象(组)
