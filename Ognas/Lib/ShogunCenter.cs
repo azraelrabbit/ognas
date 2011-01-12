@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Ognas.Lib.Shoguns;
 
@@ -29,6 +27,14 @@ namespace Ognas.Lib
             _listShogun = ShogunUtility.GetShogunList();
         }
 
+        public List<Shogun> GetSubShogunList(int count)
+        {
+            Dictionary<Shogun, int> dic = new Dictionary<Shogun, int>();
+            dic.Add(_listShogun.Find(delegate(Shogun s) { return s.Code == ShogunCode.SunShangXiang; }), 50);
+
+            return Utility.GetRandomList<Shogun>(_listShogun, dic, count);
+        }
+
         public List<Shogun> GetSubShogunList(TypeofInitialShogunList tisl)
         {
             List<Shogun> shogunList = new List<Shogun>();
@@ -39,18 +45,8 @@ namespace Ognas.Lib
                     Utility.RemoveItemsFromList<Shogun>(_listShogun, shogunList);
                     break;
                 case TypeofInitialShogunList.ForMaster:
-                    //// 为主公发武将选择牌
-                    //// 获取全部武将列表
-                    //List<Shogun> list = ShogunUtility.GetShogunList();
-                    //// 从该列表中移除曹操，孙权，刘备
-                    //Utility.RemoveItemsFromList<Shogun>(list, _listShogun.FindAll(delegate(Shogun s) { return s.Code == ShogunCode.CaoCao || s.Code == ShogunCode.LiuBei || s.Code == ShogunCode.SunQuan; }));
-                    //// 从该列表中随机选取两名武将生成待主公选择武将列表
-                    //shogunList = Utility.GetRandomList<Shogun>(list, 2);
-
-                    //// 为待主公选择武将列表添加3个必选项：刘备，孙权，曹操
-                    //shogunList.Add(ShogunUtility.GetShogun(ShogunCode.LiuBei));
-                    //shogunList.Add(ShogunUtility.GetShogun(ShogunCode.SunQuan));
-                    //shogunList.Add(ShogunUtility.GetShogun(ShogunCode.CaoCao));
+                    // 为主公发武将选择牌
+                    // 为待主公选择武将列表添加3个必选项：刘备，孙权，曹操
                     Dictionary<Shogun,int> dic = new Dictionary<Shogun,int>();
                     dic.Add(_listShogun.Find(delegate(Shogun s) { return s.Code == ShogunCode.CaoCao; }), 100);
                     dic.Add(_listShogun.Find(delegate(Shogun s) { return s.Code == ShogunCode.LiuBei; }), 100);
