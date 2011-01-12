@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Platform.Model;
-using Platform.Enum;
+using Ognas.Lib.Enums;
 
-namespace Platform.Protocals
+namespace Ognas.Lib.Protocols
 {
-    public class DealSeatProtocal : Protocal
+    public class DealSeatProtocol : Protocol
     {
         public List<User> userList
         {
@@ -20,11 +19,12 @@ namespace Platform.Protocals
             get;
             set;
         }
-        public DealSeatProtocal()
+        public DealSeatProtocol()
         {
             this.SystemMessageEnum = SystemMessage.DealSeat;
         }
-        public DealSeatProtocal(byte[] message)
+
+        public DealSeatProtocol(byte[] message)
         {
             this.SystemMessageEnum = SystemMessage.DealSeat;
             this.Data = Encoding.UTF8.GetString(message);

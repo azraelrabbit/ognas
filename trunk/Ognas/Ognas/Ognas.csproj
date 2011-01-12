@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Constants.cs" />
+    <Compile Include="Protocols\ClientDealRoleProtocol.cs" />
+    <Compile Include="Protocols\ClientDealSeatProtocol.cs" />
+    <Compile Include="Protocols\ClientRegisterUserProtocol.cs" />
+    <Compile Include="Protocols\ClientUdpMessageProtocol.cs" />
     <Compile Include="UserNameWindow.xaml.cs">
       <DependentUpon>UserNameWindow.xaml</DependentUpon>
     </Compile>
@@ -107,10 +111,19 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lib\Lib.csproj">
+      <Project>{61759E69-1213-4144-B33B-9C75B5F78A2C}</Project>
+      <Name>Lib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Platform\Platform.csproj">
       <Project>{6D2F5316-19A8-41FE-AC75-9B911689E7EE}</Project>
       <Name>Platform</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProtocolConfiguration.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

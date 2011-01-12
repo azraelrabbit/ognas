@@ -12,7 +12,7 @@ namespace Ognas.Lib.Shoguns
         {
             Shogun s = new Shogun();
 
-            SetProperties(s,Ognas.Resource.Shoguns.ResourceManager.GetString(Enum.GetName(typeof(ShogunCode), code)));
+            SetProperties(s,Ognas.Resource.Shoguns.ResourceManager.GetString(System.Enum.GetName(typeof(ShogunCode), code)));
 
             return s;
         }
@@ -31,7 +31,7 @@ namespace Ognas.Lib.Shoguns
         {
             List<Shogun> listShogun = new List<Shogun>();
 
-            foreach (ShogunCode code in Enum.GetValues(typeof(ShogunCode)))
+            foreach (ShogunCode code in System.Enum.GetValues(typeof(ShogunCode)))
             {
                 listShogun.Add(GetShogun(code));
             }

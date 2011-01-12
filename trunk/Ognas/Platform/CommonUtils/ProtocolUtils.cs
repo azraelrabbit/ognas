@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Platform.CommonUtils
 {
-    public class ProtocalUtils
+    public class ProtocolUtils
     {
         //public static bool GetBoolean(byte[] bytes)
         //{

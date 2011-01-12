@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Ognas.Client.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="768" Width="1024">
+        Title="MainWindow" Height="768" Width="1024" Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions >
             <RowDefinition Height="35"   />
@@ -38,8 +38,14 @@
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical">
-            <RichTextBox x:Name="richMessage" Height="400" IsReadOnly="True"></RichTextBox>
-            <RichTextBox x:Name="richInputMessage" Height="50"></RichTextBox> 
+            <RichTextBox x:Name="richMessage" Height="400" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <RichTextBox.Resources>
+                    <Style TargetType="{x:Type Paragraph}">
+                        <Setter Property="Margin" Value="2"></Setter>
+                    </Style>
+                </RichTextBox.Resources>
+            </RichTextBox>
+            <RichTextBox x:Name="richInputMessage" Height="50" SpellCheck.IsEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Auto"></RichTextBox> 
             <Button x:Name="btnSendMessage" Click="btnSendMessage_Click" Content="SendMessage"></Button>
         </StackPanel>
     </Grid>

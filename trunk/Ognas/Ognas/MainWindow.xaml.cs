@@ -14,14 +14,15 @@ using System.Windows.Shapes;
 using SocketUtils;
 using System.Configuration;
 using System.Net;
-using Platform.Enum;
 using System.Threading;
 using Ognas.Client.Model;
-using Platform.Protocals;
+using Platform.Protocols;
 using Platform.CommonUtils;
 using Platform.SocketUtils;
 using System.Windows.Threading;
 using Platform.Model;
+using Ognas.Lib;
+using Ognas.Lib.Protocols;
 
 namespace Ognas.Client
 {
@@ -97,10 +98,10 @@ namespace Ognas.Client
                 return;
             }
 
-            EnterRoomProtocal protocal = new EnterRoomProtocal();
-            protocal.Data = txtRoomName.Text;
+            ServerEnterRoomProtocol protocol = new ServerEnterRoomProtocol();
+            protocol.Data = txtRoomName.Text;
 
-            this.EnterRoom(protocal);
+            this.EnterRoom(protocol);
         }
 
         private void btnCreateRoom_Click(object sender, RoutedEventArgs e)
@@ -110,16 +111,16 @@ namespace Ognas.Client
                 return;
             }
 
-            CreateRoomProtocal protocal = new CreateRoomProtocal();
-            protocal.Data = txtRoomName.Text;
+            ServerCreateRoomProtocol protocol = new ServerCreateRoomProtocol();
+            protocol.Data = txtRoomName.Text;
 
-            this.EnterRoom(protocal);
+            this.EnterRoom(protocol);
 
         }
 
-        private void EnterRoom(Protocal protocal)
+        private void EnterRoom(Protocol protocol)
         {
-            int port = BitConverter.ToInt32(MainWindow.TcpClientSystem.SendData(protocal), 0);
+            int port = BitConverter.ToInt32(MainWindow.TcpClientSystem.SendData(protocol), 0);
             if (0 == port)
             {
                 lblError.Content = "The name you entered is not existed.";
@@ -139,36 +140,16 @@ namespace Ognas.Client
         {
             if (null != bytes && bytes.Length > 0)
             {
-                Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
-                if (protocal is UdpMessageProtocal)
+                Protocol protocol = ProtocolFactory.CreateProtocol(bytes);
+                protocol.Host = this;
+                protocol.OnResponse();
+                
+                if (protocol is ServerDealRoleProtocol)
                 {
                     this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
                     {
-                        this.richMessage.AppendText(protocal.Data + Environment.NewLine);
-                    });
-                }
-                if (protocal is DealSeatProtocal)
-                {
-                    this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
-                    {
-                        // this.richMessage.AppendText(protocal.Data + Environment.NewLine);
-                        DealSeatProtocal dsp = (DealSeatProtocal)protocal;
-                        foreach (User u in dsp.userList)
-                        {
-                            if (u.Address == localUser.Address)
-                            {
-                                localUser = u;
-                            }
-                        }
-                        this.richMessage.AppendText("your seat number : " + localUser.SeatNum + Environment.NewLine);
-                    });
-                }
-                if (protocal is DealRoleProtocal)
-                {
-                    this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
-                    {
-                        // this.richMessage.AppendText(protocal.Data + Environment.NewLine);
-                        DealRoleProtocal drp = (DealRoleProtocal)protocal;
+                        // this.richMessage.AppendText(protocol.Data + Environment.NewLine);
+                        ServerDealRoleProtocol drp = (ServerDealRoleProtocol)protocol;
                         localUser.UserRole = drp.player.UserRole;
                         string m = localUser.UserRole.ToString();
                         this.richMessage.AppendText("your role is : " + m + Environment.NewLine + " the Lord is : " + drp.playerKing.UserName + Environment.NewLine);
@@ -180,15 +161,15 @@ namespace Ognas.Client
 
         public void CreateTcpListener(int port)
         {
-
+            
         }
 
         private void btnExitRoom_Click(object sender, RoutedEventArgs e)
         {
-            ExitRoomProtocal protocal = new ExitRoomProtocal();
-            protocal.Data = txtRoomName.Text;
+            ServerExitRoomProtocol protocol = new ServerExitRoomProtocol();
+            protocol.Data = txtRoomName.Text;
 
-            this.TcpClientRoom.SendData(protocal);
+            this.TcpClientRoom.SendData(protocol);
 
             this.lblRoomInfo.Content = "";
             this.btnExitRoom.Visibility = System.Windows.Visibility.Collapsed;
@@ -200,10 +181,15 @@ namespace Ognas.Client
             string inputMessage = new TextRange(richInputMessage.Document.ContentStart, richInputMessage.Document.ContentEnd).Text;
             if (!string.IsNullOrWhiteSpace(inputMessage))
             {
-                Protocal udpMessageProtocal = new UdpMessageProtocal();
-                udpMessageProtocal.Data = inputMessage;
-                this.TcpClientRoom.SendData(udpMessageProtocal);
+                Protocol udpMessageProtocol = new ServerUdpMessageProtocol();
+                udpMessageProtocol.Data = inputMessage;
+                this.TcpClientRoom.SendData(udpMessageProtocol);
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.txtRoomName.Focus();
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Platform.OgnasEventArgs
 {
     public class RecivedMessageArgs : EventArgs
     {
-        public Protocals.UdpMessageProtocal Message
+        public Protocols.ServerUdpMessageProtocol Message
         {
             get;
             set;

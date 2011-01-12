@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Platform.Model;
-using Platform.Protocals;
-using Platform.Enum;
-using Platform.SocketUtils;
+using Platform.Protocols;
 using System.Collections;
+using LibProtocols = Ognas.Lib.Protocols;
+using Ognas.Lib.Protocols;
+using Ognas.Lib;
+using Ognas.Lib.Enum;
+using Platform.SocketUtils;
 
 namespace Platform.Games
 {
@@ -67,7 +70,7 @@ namespace Platform.Games
 
             foreach (User u in args.userList)
             {
-                DealRoleProtocal drp = new DealRoleProtocal();
+                ServerDealRoleProtocol drp = new ServerDealRoleProtocol();
                 drp.ClientAddress = u.Address;
                 drp.player = u;
                 drp.playerKing = ku;
@@ -85,7 +88,7 @@ namespace Platform.Games
             // TODO: 通知客户端座位结果
             Console.WriteLine(args.Messages);
 
-            DealSeatProtocal dsp = new DealSeatProtocal();
+            ServerDealSeatProtocol dsp = new ServerDealSeatProtocol();
 
             dsp.userList = args.userList;
             SendMessageAll(dsp, args.userList);
@@ -107,7 +110,7 @@ namespace Platform.Games
         /// <param name="message"></param>
         /// <param name="userList"></param>
         /// <returns></returns>
-        internal byte[] SendMessageAll(Protocal message, List<User> userList)
+        internal byte[] SendMessageAll(Protocol message, List<User> userList)
         {
             foreach (var user in userList)
             {
@@ -121,7 +124,7 @@ namespace Platform.Games
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
-        internal byte[] SendMessage(Protocal message)
+        internal byte[] SendMessage(Protocol message)
         {
             TcpClientUtils.SendData(message.ClientAddress, Constants.ClientPort, message);
             return null;

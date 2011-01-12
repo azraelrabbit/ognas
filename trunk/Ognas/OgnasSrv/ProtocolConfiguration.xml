@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Protocol>
+	<UdpMessageProtocol EnumName="RegisterUserNameProtocol" ClassName="ServerRegisterUserNameProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="CreateRoomProtocol" ClassName="ServerCreateRoomProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="ServerRoomPortProtocol" ClassName="ServerServerRoomPortProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="EnterRoomProtocol" ClassName="ServerEnterRoomProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="UdpMessageProtocol" ClassName="ServerUdpMessageProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="ExitRoomProtocol" ClassName="ServerExitRoomProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="DealSeatProtocol" ClassName="ServerDealSeatProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="DealCardsProtocol" ClassName="ServerDealCardsProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="DealRoleProtocol" ClassName="ServerDealRoleProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="SelectShogunProtocol" ClassName="ServerSelectShogunProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="StateChangeProtocol" ClassName="ServerStateChangeProtocol"></UdpMessageProtocol>
+</Protocol>

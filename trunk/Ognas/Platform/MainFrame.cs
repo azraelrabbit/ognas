@@ -6,11 +6,12 @@ using SocketUtils;
 using System.Net;
 using System.Configuration;
 using System.Threading;
-using Platform.Enum;
 using System.Net.Sockets;
 using Platform.Model;
-using Platform.Protocals;
+using Platform.Protocols;
 using Platform.CommonUtils;
+using Ognas.Lib.Protocols;
+using Ognas.Lib;
 
 namespace Platform
 {
@@ -27,6 +28,8 @@ namespace Platform
         private Dictionary<string, User> userDictionary = new Dictionary<string, User>();
 
         private Dictionary<string, User> AddressDictionary = new Dictionary<string, User>();
+
+        private Dictionary<string, Room> UserRoomDictionary = new Dictionary<string, Room>();
 
         public object maimFrameLock = new object();
 
@@ -48,10 +51,10 @@ namespace Platform
             {
                 if (null != bytes && bytes.Length > 0)
                 {
-                    Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
-                    protocal.Host = this;
-                    protocal.ClientAddress = address;
-                    return protocal.OnResponse();
+                    Protocol protocol = ProtocolFactory.CreateProtocol(bytes);
+                    protocol.Host = this;
+                    protocol.ClientAddress = address;
+                    return protocol.OnResponse();
                 }
             }
             catch (Exception ex)
@@ -61,20 +64,20 @@ namespace Platform
             return null;
         }
 
-        public byte[] CreateRoomThread(Protocal protocal)
+        public byte[] CreateRoomThread(Protocol protocol)
         {
             try
             {
-                ProtocalParam protocalParam = new ProtocalParam();
-                protocalParam.Protocal = protocal;
+                ProtocolParam protocolParam = new ProtocolParam();
+                protocolParam.Protocol = protocol;
                 Thread thread = new Thread(new ParameterizedThreadStart(CreateRoom));
                 thread.IsBackground = true;                
-                thread.Start(protocalParam);
-                while (null == protocalParam.Param)
+                thread.Start(protocolParam);
+                while (null == protocolParam.Param)
                 {
                     Thread.Sleep(100);
                 }
-                return BitConverter.GetBytes((int)protocalParam.Param);
+                return BitConverter.GetBytes((int)protocolParam.Param);
             }
             catch (Exception ex)
             {
@@ -86,12 +89,12 @@ namespace Platform
         public void CreateRoom(object obj)
         {
             int port = 0;
-            ProtocalParam protocalParam = (ProtocalParam)obj;
-            string roomName = (string)protocalParam.Protocal.Data;
+            ProtocolParam protocolParam = (ProtocolParam)obj;
+            string roomName = (string)protocolParam.Protocol.Data;
             Room room = null;
             try
             {
-                User user = this.AddressDictionary[protocalParam.Protocal.ClientAddress];
+                User user = this.AddressDictionary[protocolParam.Protocol.ClientAddress];
                 lock (this.maimFrameLock)
                 {
                     if (!string.IsNullOrWhiteSpace(roomName) && 
@@ -99,13 +102,20 @@ namespace Platform
                     {
                         room = new Room(roomName, user);
                         room.RoomEnd = this.DisposeRoom;
-                        user.Room = room;
+                        if (this.UserRoomDictionary.ContainsKey(user.UserName))
+                        {
+                            this.UserRoomDictionary[user.UserName] = room;
+                        }
+                        else
+                        {
+                            this.UserRoomDictionary.Add(user.UserName, room);
+                        }
                         this.roomDictionary.Add(roomName, room);
                         port = room.RoomTcpPort;
                     }
                 }
 
-                protocalParam.Param = port;
+                protocolParam.Param = port;
                 if (null != room)
                 {
                     room.Start();
@@ -131,37 +141,44 @@ namespace Platform
             }
         }
 
-        public byte[] EnterRoom(Protocal protocal)
+        public byte[] EnterRoom(Protocol protocol)
         {
             int port = 0;
-            string roomName = protocal.Data;
+            string roomName = protocol.Data;
             if (!string.IsNullOrWhiteSpace(roomName) && this.roomDictionary.ContainsKey(roomName) && !this.roomDictionary[roomName].IsFull)
             {
-                User user = this.AddressDictionary[protocal.ClientAddress];
-                user.Room = this.roomDictionary[roomName];
+                User user = this.AddressDictionary[protocol.ClientAddress];
+                if (this.UserRoomDictionary.ContainsKey(user.UserName))
+                {
+                    this.UserRoomDictionary[user.UserName] = this.roomDictionary[roomName];
+                }
+                else
+                {
+                    this.UserRoomDictionary.Add(user.UserName, this.roomDictionary[roomName]);
+                }
                 this.roomDictionary[roomName].AddUser(user);
                 port = this.roomDictionary[roomName].RoomTcpPort;
             }
             return BitConverter.GetBytes(port);
         }
 
-        public byte[] RegisterUser(Protocal protocal)
+        public byte[] RegisterUser(Protocol protocol)
         {
             bool rtn = true;
-            string userName = protocal.Data;
+            string userName = protocol.Data;
             if (this.userDictionary.ContainsKey(userName))
             {
                 // update user address to avoiding user address change
-                if(protocal.ClientAddress != this.userDictionary[userName].Address)
+                if(protocol.ClientAddress != this.userDictionary[userName].Address)
                 {
                     this.AddressDictionary.Remove(this.userDictionary[userName].Address);
-                    if (this.AddressDictionary.ContainsKey(protocal.ClientAddress))
+                    if (this.AddressDictionary.ContainsKey(protocol.ClientAddress))
                     {
-                        this.AddressDictionary[protocal.ClientAddress] = this.userDictionary[userName];
+                        this.AddressDictionary[protocol.ClientAddress] = this.userDictionary[userName];
                     }
                     else
                     {
-                        this.AddressDictionary.Add(protocal.ClientAddress, this.userDictionary[userName]);
+                        this.AddressDictionary.Add(protocol.ClientAddress, this.userDictionary[userName]);
                     }
                 }
 
@@ -169,7 +186,7 @@ namespace Platform
             else
             {
                 User user = new User(userName);
-                user.Address = protocal.ClientAddress;
+                user.Address = protocol.ClientAddress;
                 this.userDictionary.Add(userName, user);
                 if (this.AddressDictionary.ContainsKey(user.Address))
                 {
