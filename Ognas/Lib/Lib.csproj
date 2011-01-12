@@ -99,6 +99,9 @@
     <Compile Include="Shoguns\ShogunUtility.cs" />
     <Compile Include="Shoguns\Stunts\LuoShen.cs" />
     <Compile Include="Shoguns\Stunts\Stunt.cs" />
+    <Compile Include="Skills\Enums.cs" />
+    <Compile Include="Skills\Skill.cs" />
+    <Compile Include="Skills\SkillUtility.cs" />
     <Compile Include="SocketUtils\TcpClientUtils.cs" />
     <Compile Include="SocketUtils\TcpListenerX.cs" />
     <Compile Include="User.cs" />

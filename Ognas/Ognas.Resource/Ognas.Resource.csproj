@@ -53,6 +53,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Skills.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Skills.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images.Shogun.resx">
@@ -62,6 +67,10 @@
     <EmbeddedResource Include="Shoguns.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Shoguns.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Skills.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Skills.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
