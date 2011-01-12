@@ -19,7 +19,7 @@ namespace Platform.Model
 
         private int roomTcpPort = 0;
 
-        private Dictionary<string, User> userDoctionary = new Dictionary<string, User>();
+        private Dictionary<string, User> addressUserDoctionary = new Dictionary<string, User>();
 
         private string roomName;
 
@@ -37,7 +37,7 @@ namespace Platform.Model
         {
             get
             {
-                return userDoctionary.Count == userMaxCount;
+                return addressUserDoctionary.Count == userMaxCount;
             }
         }
 
@@ -107,13 +107,13 @@ namespace Platform.Model
         {
             lock (roomLock)
             {
-                userDoctionary.Add(user.Address, user);
+                addressUserDoctionary.Add(user.Address, user);
                 this.SendUdpMessage(string.Format("User {0} has entered the room {1}.", user.UserName, this.roomName));
 
                 if (IsFull)
                 {
                     // initialize game
-                    this.gameBase = new Games.Game(userDoctionary.Values.ToList());
+                    this.gameBase = new Games.Game(addressUserDoctionary.Values.ToList());
                     this.gameBase.GameStart();
                 }
             }
@@ -125,9 +125,9 @@ namespace Platform.Model
             {
                 // notify play
                 // send Udp message
-                this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.userDoctionary[protocol.ClientAddress].UserName, this.roomName));
+                this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.addressUserDoctionary[protocol.ClientAddress].UserName, this.roomName));
                 // trigger room exit event.
-                if (this.userDoctionary.Count < 1 && null != this.RoomEnd)
+                if (this.addressUserDoctionary.Count < 1 && null != this.RoomEnd)
                 {
                     this.RoomEnd(this);
                 }
@@ -138,7 +138,7 @@ namespace Platform.Model
 
         internal byte[] SendUdpMessage(string message)
         {
-            foreach (var address in userDoctionary.Keys)
+            foreach (var address in addressUserDoctionary.Keys)
             {
                 Protocol protocol = new ServerUdpMessageProtocol();
                 protocol.Data = message;
@@ -149,7 +149,7 @@ namespace Platform.Model
 
         internal byte[] SendMessageAll(Protocol message)
         {
-            foreach (var address in userDoctionary.Keys)
+            foreach (var address in addressUserDoctionary.Keys)
             {
                 TcpClientUtils.SendData(address, Constants.ClientPort, message);
             }
