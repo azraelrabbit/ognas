@@ -129,5 +129,26 @@ namespace Test.Ognas.Lib
             Utility_Accessor target = new Utility_Accessor();
             Assert.Inconclusive("TODO: 实现用来验证目标的代码");
         }
+
+        /// <summary>
+        ///GetRandomList 的测试
+        ///</summary>
+        public void GetRandomListTest1Helper<T>()
+        {
+            List<T> list = null; // TODO: 初始化为适当的值
+            Dictionary<T, int> dic = null; // TODO: 初始化为适当的值
+            int count = 0; // TODO: 初始化为适当的值
+            List<T> expected = null; // TODO: 初始化为适当的值
+            List<T> actual;
+            actual = Utility.GetRandomList<T>(list, dic, count);
+            Assert.AreEqual(expected, actual);
+            Assert.Inconclusive("验证此测试方法的正确性。");
+        }
+
+        [TestMethod()]
+        public void GetRandomListTest1()
+        {
+            GetRandomListTest1Helper<GenericParameterHelper>();
+        }
     }
 }

@@ -66,23 +66,6 @@ namespace Test.Ognas.Lib
         //
         #endregion
 
-
-        /// <summary>
-        ///AllShoguns 的测试
-        ///</summary>
-        [TestMethod()]
-        [DeploymentItem("Ognas.Lib.dll")]
-        public void AllShogunsTest()
-        {
-            ShogunCenter_Accessor target = new ShogunCenter_Accessor(); // TODO: 初始化为适当的值
-            List<Shogun> expected = null; // TODO: 初始化为适当的值
-            List<Shogun> actual;
-            target.AllShoguns = expected;
-            actual = target.AllShoguns;
-            Assert.AreEqual(expected, actual);
-            Assert.Inconclusive("验证此测试方法的正确性。");
-        }
-
         /// <summary>
         ///GetSubShogunList 的测试
         ///</summary>

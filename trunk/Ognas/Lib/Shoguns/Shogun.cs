@@ -73,5 +73,38 @@ namespace Ognas.Lib.Shoguns
             get;
             set;
         }
+
+        public Shogun()
+        { }
+
+
+        #region Override Operators
+        public static bool operator ==(Shogun s1,Shogun s2)
+        {
+            return s1.Code == s2.Code;
+        }
+
+        public static bool operator !=(Shogun s1, Shogun s2)
+        {
+            return s1.Code != s2.Code;
+        }
+        public override bool Equals(object obj)
+        {
+            if (obj is Shogun)
+            {
+                return this.Code == ((Shogun)obj).Code;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+        #endregion
+
     }
 }
