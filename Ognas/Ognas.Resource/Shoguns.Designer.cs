@@ -331,7 +331,7 @@ namespace Ognas.Resource {
         }
         
         /// <summary>
-        ///   查找类似 0x4A|周泰|0x02|0x03|4 的本地化字符串。
+        ///   查找类似 0x4A|周泰|0x02|0x03|4|SH4A 的本地化字符串。
         /// </summary>
         public static string ZhouTai {
             get {
