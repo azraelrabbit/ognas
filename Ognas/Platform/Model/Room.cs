@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using SocketUtils;
 using System.Net.Sockets;
-using Platform.Enum;
 using System.Net;
 using Platform.SocketUtils;
-using Platform.Protocals;
+using Platform.Protocols;
 using Platform.Games;
 using Platform.CommonUtils;
+using Ognas.Lib.Protocols;
+using Ognas.Lib;
 
 namespace Platform.Model
 {
@@ -76,10 +77,10 @@ namespace Platform.Model
             {
                 if (null != bytes && bytes.Length > 0)
                 {
-                    Protocal protocal = ProtocalFactory.CreateProtocal(bytes);
-                    protocal.Host = this;
-                    protocal.ClientAddress = address;
-                    return protocal.OnResponse();
+                    Protocol protocol = ProtocolFactory.CreateProtocol(bytes);
+                    protocol.Host = this;
+                    protocol.ClientAddress = address;
+                    return protocol.OnResponse();
                 }
             }
             catch (Exception ex)
@@ -119,15 +120,13 @@ namespace Platform.Model
             }
         }
 
-        internal byte[] UserExit(Protocal protocal)
+        internal byte[] UserExit(Protocol protocol)
         {
             lock (roomLock)
             {
                 // notify play
-                // set the user as exit status.
-                this.userDoctionary[protocal.ClientAddress].Room = null;
                 // send Udp message
-                this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.userDoctionary[protocal.ClientAddress].UserName, this.roomName));
+                this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.userDoctionary[protocol.ClientAddress].UserName, this.roomName));
                 // trigger room exit event.
                 if (this.userDoctionary.Count < 1 && null != this.RoomEnd)
                 {
@@ -142,14 +141,14 @@ namespace Platform.Model
         {
             foreach (var address in userDoctionary.Keys)
             {
-                Protocal protocal = new UdpMessageProtocal();
-                protocal.Data = message;
-                TcpClientUtils.SendData(address, Constants.ClientPort, protocal);
+                Protocol protocol = new ServerUdpMessageProtocol();
+                protocol.Data = message;
+                TcpClientUtils.SendData(address, Constants.ClientPort, protocol);
             }
             return null;
         }
 
-        internal byte[] SendMessageAll(Protocal message)
+        internal byte[] SendMessageAll(Protocol message)
         {
             foreach (var address in userDoctionary.Keys)
             {
@@ -158,7 +157,7 @@ namespace Platform.Model
             return null;
         }
 
-        internal byte[] SendMessage(Protocal message)
+        internal byte[] SendMessage(Protocol message)
         {
             TcpClientUtils.SendData(message.ClientAddress, Constants.ClientPort, message);
             return null;

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Platform.Enum;
+using Ognas.Lib.Enum;
 
-namespace Platform.Model
+namespace Ognas.Lib
 {
     public class User
     {
@@ -32,13 +32,5 @@ namespace Platform.Model
 
 
         public string Address { get; set; }
-
-
-
-        //public Role Role { get; set; }
-
-        //public Generic General { get; set; }
-
-        public Room Room { get; set; }
     }
 }

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Platform.Model;
-using Platform.Enum;
+using Ognas.Lib.Enums;
+using Ognas.Lib.Enum;
 
-namespace Platform.Protocals
+namespace Ognas.Lib.Protocols
 {
-    public class DealRoleProtocal : Protocal
+    public class DealRoleProtocol : Protocol
     {
         public User playerKing
         {
@@ -26,12 +26,13 @@ namespace Platform.Protocals
             get;
             set;
         }
-        public DealRoleProtocal()
+
+        public DealRoleProtocol()
         {
             this.SystemMessageEnum = SystemMessage.DealRole;
         }
 
-        public DealRoleProtocal(byte[] message)
+        public DealRoleProtocol(byte[] message)
         {
             this.SystemMessageEnum = SystemMessage.DealRole;
             this.Data = Encoding.UTF8.GetString(message);

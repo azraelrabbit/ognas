@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Platform.Enum;
-using Platform.Model;
 using System.Net;
+using Ognas.Lib.Enums;
 
-namespace Platform.Protocals
+namespace Ognas.Lib.Protocols
 {
-    public abstract class Protocal
+    public abstract class Protocol
     {
         public SystemMessage SystemMessageEnum { get; set; }
 

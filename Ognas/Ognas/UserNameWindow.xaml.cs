@@ -12,9 +12,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
 using SocketUtils;
-using Platform.Enum;
 using Platform.CommonUtils;
-using Platform.Protocals;
+using Ognas.Client.Protocols;
+using Ognas.Lib.Protocols;
 
 namespace Ognas.Client
 {
@@ -42,9 +42,9 @@ namespace Ognas.Client
                 return false;
             }
 
-            Protocal protocal = new RegisterUserProtocal();
-            protocal.Data = ResponseText;
-            var bytes = MainWindow.TcpClientSystem.SendData(protocal);
+            Protocol protocol = new ClientRegisterUserProtocol();
+            protocol.Data = ResponseText;
+            var bytes = MainWindow.TcpClientSystem.SendData(protocol);
             if (!BitConverter.ToBoolean(bytes, 0))
             {
                 lblError.Content = "An error occurred.";

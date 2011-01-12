@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Platform.Protocals;
+using Platform.Protocols;
+using Ognas.Lib.Protocols;
 
 namespace Platform.Model
 {
-    public class ProtocalParam
+    public class ProtocolParam
     {
-        public Protocal Protocal { get; set; }
+        public Protocol Protocol { get; set; }
         public object Param { get; set; }        
     }
 }

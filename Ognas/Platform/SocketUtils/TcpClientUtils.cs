@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 using System.Net;
-using Platform.Protocals;
+using Platform.Protocols;
 using Platform.CommonUtils;
+using Ognas.Lib.Protocols;
 
 
 namespace Platform.SocketUtils
@@ -24,9 +25,9 @@ namespace Platform.SocketUtils
             this.serverPort = port;
         }
 
-        public byte[] SendData(Protocal protocal)
+        public byte[] SendData(Protocol protocol)
         {
-            return this.SendMessage(protocal.RequestData);
+            return this.SendMessage(protocol.RequestData);
         }
 
         private byte[] SendData(byte message)
@@ -49,9 +50,9 @@ namespace Platform.SocketUtils
             return SendMessage(this.serverName, this.serverPort, message);            
         }
 
-        public static byte[] SendData(String server, int port, Protocal protocal)
+        public static byte[] SendData(String server, int port, Protocol protocol)
         {
-            return SendMessage(server, port, protocal.RequestData);
+            return SendMessage(server, port, protocol.RequestData);
         }
 
         private static byte[] SendData(String server, int port, byte[] message)
