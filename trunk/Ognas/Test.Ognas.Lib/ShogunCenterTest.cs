@@ -6,8 +6,6 @@ using Ognas.Lib.Shoguns;
 
 namespace Test.Ognas.Lib
 {
-    
-    
     /// <summary>
     ///这是 ShogunCenterTest 的测试类，旨在
     ///包含所有 ShogunCenterTest 单元测试
@@ -15,8 +13,6 @@ namespace Test.Ognas.Lib
     [TestClass()]
     public class ShogunCenterTest
     {
-
-
         private TestContext testContextInstance;
 
         /// <summary>
