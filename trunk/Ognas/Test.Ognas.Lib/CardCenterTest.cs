@@ -1,6 +1,5 @@
-﻿using Ognas.Lib;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Ognas.Lib;
 
 namespace Test.Ognas.Lib
 {

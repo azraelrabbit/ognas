@@ -1,7 +1,6 @@
-﻿using Ognas.Lib;
+﻿using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
+using Ognas.Lib;
 
 namespace Test.Ognas.Lib
 {
