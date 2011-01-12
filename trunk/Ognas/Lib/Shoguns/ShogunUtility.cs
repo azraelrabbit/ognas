@@ -12,7 +12,7 @@ namespace Ognas.Lib.Shoguns
         {
             Shogun s = new Shogun();
 
-            SetProperties(s,ShogunBasicInfoResource.ResourceManager.GetString(Enum.GetName(typeof(ShogunCode), code)));
+            SetProperties(s,Ognas.Resource.Shoguns.ResourceManager.GetString(Enum.GetName(typeof(ShogunCode), code)));
 
             return s;
         }

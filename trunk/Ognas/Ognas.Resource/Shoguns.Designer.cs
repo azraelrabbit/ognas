@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Ognas.Lib.Shoguns {
+namespace Ognas.Resource {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace Ognas.Lib.Shoguns {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ShogunBasicInfoResource {
+    public class Shoguns {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal ShogunBasicInfoResource() {
+        internal Shoguns() {
         }
         
         /// <summary>
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ognas.Lib.Shoguns.ShogunBasicInfoResource", typeof(ShogunBasicInfoResource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Ognas.Resource.Shoguns", typeof(Shoguns).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Ognas.Lib.Shoguns {
         ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,297 +61,297 @@ namespace Ognas.Lib.Shoguns {
         }
         
         /// <summary>
-        ///   查找类似 0x01|曹操|0x01|0x01|4 的本地化字符串。
+        ///   查找类似 0x01|曹操|0x01|0x01|4|SH01 的本地化字符串。
         /// </summary>
-        internal static string CaoCao {
+        public static string CaoCao {
             get {
                 return ResourceManager.GetString("CaoCao", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x09|曹仁|0x01|0x01|4 的本地化字符串。
+        ///   查找类似 0x09|曹仁|0x01|0x01|4|SH09 的本地化字符串。
         /// </summary>
-        internal static string CaoRen {
+        public static string CaoRen {
             get {
                 return ResourceManager.GetString("CaoRen", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x44|大乔|0x02|0x03|3 的本地化字符串。
+        ///   查找类似 0x44|大乔|0x02|0x03|3|SH44 的本地化字符串。
         /// </summary>
-        internal static string DaQiao {
+        public static string DaQiao {
             get {
                 return ResourceManager.GetString("DaQiao", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x62|吕布|0x01|0x04|3 的本地化字符串。
+        ///   查找类似 0x61|貂蝉|0x01|0x04|3|SH61 的本地化字符串。
         /// </summary>
-        internal static string DiaoChan {
+        public static string DiaoChan {
             get {
                 return ResourceManager.GetString("DiaoChan", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x47|甘宁|0x01|0x03|4 的本地化字符串。
+        ///   查找类似 0x47|甘宁|0x01|0x03|4|SH47 的本地化字符串。
         /// </summary>
-        internal static string GanNing {
+        public static string GanNing {
             get {
                 return ResourceManager.GetString("GanNing", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x26|关羽|0x01|0x02|4 的本地化字符串。
+        ///   查找类似 0x26|关羽|0x01|0x02|4|SH26 的本地化字符串。
         /// </summary>
-        internal static string GuanYu {
+        public static string GuanYu {
             get {
                 return ResourceManager.GetString("GuanYu", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x06|郭嘉|0x01|0x01|3 的本地化字符串。
+        ///   查找类似 0x06|郭嘉|0x01|0x01|3|SH06 的本地化字符串。
         /// </summary>
-        internal static string GuoJia {
+        public static string GuoJia {
             get {
                 return ResourceManager.GetString("GuoJia", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x45|黄盖|0x01|0x03|4 的本地化字符串。
+        ///   查找类似 0x45|黄盖|0x01|0x03|4|SH45 的本地化字符串。
         /// </summary>
-        internal static string HuangGai {
+        public static string HuangGai {
             get {
                 return ResourceManager.GetString("HuangGai", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x23|黄月英|0x02|0x02|3 的本地化字符串。
+        ///   查找类似 0x23|黄月英|0x02|0x02|3|SH23 的本地化字符串。
         /// </summary>
-        internal static string HuangYueYing {
+        public static string HuangYueYing {
             get {
                 return ResourceManager.GetString("HuangYueYing", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x28|黄忠|0x01|0x02|4 的本地化字符串。
+        ///   查找类似 0x28|黄忠|0x01|0x02|4|SH28 的本地化字符串。
         /// </summary>
-        internal static string HuangZhong {
+        public static string HuangZhong {
             get {
                 return ResourceManager.GetString("HuangZhong", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x63|华佗|0x01|0x04|3 的本地化字符串。
+        ///   查找类似 0x63|华佗|0x01|0x04|3|SH63 的本地化字符串。
         /// </summary>
-        internal static string HuaTuo {
+        public static string HuaTuo {
             get {
                 return ResourceManager.GetString("HuaTuo", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x21|刘备|0x01|0x02|4 的本地化字符串。
+        ///   查找类似 0x21|刘备|0x01|0x02|4|SH21 的本地化字符串。
         /// </summary>
-        internal static string LiuBei {
+        public static string LiuBei {
             get {
                 return ResourceManager.GetString("LiuBei", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x42|陆逊|0x01|0x03|3 的本地化字符串。
+        ///   查找类似 0x42|陆逊|0x01|0x03|3|SH42 的本地化字符串。
         /// </summary>
-        internal static string LuXun {
+        public static string LuXun {
             get {
                 return ResourceManager.GetString("LuXun", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x62|吕布|0x01|0x04|4 的本地化字符串。
+        ///   查找类似 0x62|吕布|0x01|0x04|4|SH62 的本地化字符串。
         /// </summary>
-        internal static string LvBu {
+        public static string LvBu {
             get {
                 return ResourceManager.GetString("LvBu", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x46|吕蒙|0x01|0x03|4 的本地化字符串。
+        ///   查找类似 0x46|吕蒙|0x01|0x03|4|SH46 的本地化字符串。
         /// </summary>
-        internal static string LvMeng {
+        public static string LvMeng {
             get {
                 return ResourceManager.GetString("LvMeng", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x22|马超|0x01|0x02|4 的本地化字符串。
+        ///   查找类似 0x22|马超|0x01|0x02|4|SH22 的本地化字符串。
         /// </summary>
-        internal static string MaChao {
+        public static string MaChao {
             get {
                 return ResourceManager.GetString("MaChao", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x07|司马懿|0x01|0x01|3 的本地化字符串。
+        ///   查找类似 0x07|司马懿|0x01|0x01|3|SH07 的本地化字符串。
         /// </summary>
-        internal static string SiMaYi {
+        public static string SiMaYi {
             get {
                 return ResourceManager.GetString("SiMaYi", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x41|孙权|0x01|0x03|4 的本地化字符串。
+        ///   查找类似 0x41|孙权|0x01|0x03|4|SH41 的本地化字符串。
         /// </summary>
-        internal static string SunQuan {
+        public static string SunQuan {
             get {
                 return ResourceManager.GetString("SunQuan", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x48|孙尚香|0x02|0x03|3 的本地化字符串。
+        ///   查找类似 0x48|孙尚香|0x02|0x03|3|SH48 的本地化字符串。
         /// </summary>
-        internal static string SunShangXiang {
+        public static string SunShangXiang {
             get {
                 return ResourceManager.GetString("SunShangXiang", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x29|魏延|0x01|0x02|4 的本地化字符串。
+        ///   查找类似 0x29|魏延|0x01|0x02|4|SH29 的本地化字符串。
         /// </summary>
-        internal static string WeiYan {
+        public static string WeiYan {
             get {
                 return ResourceManager.GetString("WeiYan", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x03|夏侯惇|0x01|0x01|4 的本地化字符串。
+        ///   查找类似 0x03|夏侯惇|0x01|0x01|4|SH03 的本地化字符串。
         /// </summary>
-        internal static string XiaHouDun {
+        public static string XiaHouDun {
             get {
                 return ResourceManager.GetString("XiaHouDun", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x08|夏侯渊|0x01|0x01|4 的本地化字符串。
+        ///   查找类似 0x08|夏侯渊|0x01|0x01|4|SH08 的本地化字符串。
         /// </summary>
-        internal static string XiaHouYuan {
+        public static string XiaHouYuan {
             get {
                 return ResourceManager.GetString("XiaHouYuan", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x49|小乔|0x02|0x03|3 的本地化字符串。
+        ///   查找类似 0x49|小乔|0x02|0x03|3|SH49 的本地化字符串。
         /// </summary>
-        internal static string XiaoQiao {
+        public static string XiaoQiao {
             get {
                 return ResourceManager.GetString("XiaoQiao", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x04|许褚|0x01|0x01|4 的本地化字符串。
+        ///   查找类似 0x04|许褚|0x01|0x01|4|SH04 的本地化字符串。
         /// </summary>
-        internal static string XuChu {
+        public static string XuChu {
             get {
                 return ResourceManager.GetString("XuChu", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x65|于吉|0x01|0x04|3 的本地化字符串。
+        ///   查找类似 0x65|于吉|0x01|0x04|3|SH65 的本地化字符串。
         /// </summary>
-        internal static string YuJi {
+        public static string YuJi {
             get {
                 return ResourceManager.GetString("YuJi", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x25|张飞|0x01|0x02|4 的本地化字符串。
+        ///   查找类似 0x25|张飞|0x01|0x02|4|SH25 的本地化字符串。
         /// </summary>
-        internal static string ZhangFei {
+        public static string ZhangFei {
             get {
                 return ResourceManager.GetString("ZhangFei", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x64|张角|0x01|0x04|3 的本地化字符串。
+        ///   查找类似 0x64|张角|0x01|0x04|3|SH64 的本地化字符串。
         /// </summary>
-        internal static string ZhangJiao {
+        public static string ZhangJiao {
             get {
                 return ResourceManager.GetString("ZhangJiao", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x05|张辽|0x01|0x01|4 的本地化字符串。
+        ///   查找类似 0x05|张辽|0x01|0x01|4|SH05 的本地化字符串。
         /// </summary>
-        internal static string ZhangLiao {
+        public static string ZhangLiao {
             get {
                 return ResourceManager.GetString("ZhangLiao", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x24|赵云|0x01|0x02|4 的本地化字符串。
+        ///   查找类似 0x24|赵云|0x01|0x02|4|SH24 的本地化字符串。
         /// </summary>
-        internal static string ZhaoYun {
+        public static string ZhaoYun {
             get {
                 return ResourceManager.GetString("ZhaoYun", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x02|甄姬|0x02|0x01|3 的本地化字符串。
+        ///   查找类似 0x02|甄姬|0x02|0x01|3|SH02 的本地化字符串。
         /// </summary>
-        internal static string ZhenJi {
+        public static string ZhenJi {
             get {
                 return ResourceManager.GetString("ZhenJi", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x61|周泰|0x02|0x03|4 的本地化字符串。
+        ///   查找类似 0x4A|周泰|0x02|0x03|4 的本地化字符串。
         /// </summary>
-        internal static string ZhouTai {
+        public static string ZhouTai {
             get {
                 return ResourceManager.GetString("ZhouTai", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x43|周瑜|0x01|0x03|3 的本地化字符串。
+        ///   查找类似 0x43|周瑜|0x01|0x03|3|SH43 的本地化字符串。
         /// </summary>
-        internal static string ZhouYu {
+        public static string ZhouYu {
             get {
                 return ResourceManager.GetString("ZhouYu", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   查找类似 0x27|诸葛亮|0x01|0x02|3 的本地化字符串。
+        ///   查找类似 0x27|诸葛亮|0x01|0x02|3|SH27 的本地化字符串。
         /// </summary>
-        internal static string ZhuGeLiang {
+        public static string ZhuGeLiang {
             get {
                 return ResourceManager.GetString("ZhuGeLiang", resourceCulture);
             }

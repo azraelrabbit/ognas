@@ -118,102 +118,102 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CaoCao" xml:space="preserve">
-    <value>0x01|曹操|0x01|0x01|4</value>
+    <value>0x01|曹操|0x01|0x01|4|SH01</value>
   </data>
   <data name="CaoRen" xml:space="preserve">
-    <value>0x09|曹仁|0x01|0x01|4</value>
+    <value>0x09|曹仁|0x01|0x01|4|SH09</value>
   </data>
   <data name="DaQiao" xml:space="preserve">
-    <value>0x44|大乔|0x02|0x03|3</value>
+    <value>0x44|大乔|0x02|0x03|3|SH44</value>
   </data>
   <data name="DiaoChan" xml:space="preserve">
-    <value>0x62|吕布|0x01|0x04|3</value>
+    <value>0x61|貂蝉|0x01|0x04|3|SH61</value>
   </data>
   <data name="GanNing" xml:space="preserve">
-    <value>0x47|甘宁|0x01|0x03|4</value>
+    <value>0x47|甘宁|0x01|0x03|4|SH47</value>
   </data>
   <data name="GuanYu" xml:space="preserve">
-    <value>0x26|关羽|0x01|0x02|4</value>
+    <value>0x26|关羽|0x01|0x02|4|SH26</value>
   </data>
   <data name="GuoJia" xml:space="preserve">
-    <value>0x06|郭嘉|0x01|0x01|3</value>
+    <value>0x06|郭嘉|0x01|0x01|3|SH06</value>
   </data>
   <data name="HuangGai" xml:space="preserve">
-    <value>0x45|黄盖|0x01|0x03|4</value>
+    <value>0x45|黄盖|0x01|0x03|4|SH45</value>
   </data>
   <data name="HuangYueYing" xml:space="preserve">
-    <value>0x23|黄月英|0x02|0x02|3</value>
+    <value>0x23|黄月英|0x02|0x02|3|SH23</value>
   </data>
   <data name="HuangZhong" xml:space="preserve">
-    <value>0x28|黄忠|0x01|0x02|4</value>
+    <value>0x28|黄忠|0x01|0x02|4|SH28</value>
   </data>
   <data name="HuaTuo" xml:space="preserve">
-    <value>0x63|华佗|0x01|0x04|3</value>
+    <value>0x63|华佗|0x01|0x04|3|SH63</value>
   </data>
   <data name="LiuBei" xml:space="preserve">
-    <value>0x21|刘备|0x01|0x02|4</value>
+    <value>0x21|刘备|0x01|0x02|4|SH21</value>
   </data>
   <data name="LuXun" xml:space="preserve">
-    <value>0x42|陆逊|0x01|0x03|3</value>
+    <value>0x42|陆逊|0x01|0x03|3|SH42</value>
   </data>
   <data name="LvBu" xml:space="preserve">
-    <value>0x62|吕布|0x01|0x04|4</value>
+    <value>0x62|吕布|0x01|0x04|4|SH62</value>
   </data>
   <data name="LvMeng" xml:space="preserve">
-    <value>0x46|吕蒙|0x01|0x03|4</value>
+    <value>0x46|吕蒙|0x01|0x03|4|SH46</value>
   </data>
   <data name="MaChao" xml:space="preserve">
-    <value>0x22|马超|0x01|0x02|4</value>
+    <value>0x22|马超|0x01|0x02|4|SH22</value>
   </data>
   <data name="SiMaYi" xml:space="preserve">
-    <value>0x07|司马懿|0x01|0x01|3</value>
+    <value>0x07|司马懿|0x01|0x01|3|SH07</value>
   </data>
   <data name="SunQuan" xml:space="preserve">
-    <value>0x41|孙权|0x01|0x03|4</value>
+    <value>0x41|孙权|0x01|0x03|4|SH41</value>
   </data>
   <data name="SunShangXiang" xml:space="preserve">
-    <value>0x48|孙尚香|0x02|0x03|3</value>
+    <value>0x48|孙尚香|0x02|0x03|3|SH48</value>
   </data>
   <data name="WeiYan" xml:space="preserve">
-    <value>0x29|魏延|0x01|0x02|4</value>
+    <value>0x29|魏延|0x01|0x02|4|SH29</value>
   </data>
   <data name="XiaHouDun" xml:space="preserve">
-    <value>0x03|夏侯惇|0x01|0x01|4</value>
+    <value>0x03|夏侯惇|0x01|0x01|4|SH03</value>
   </data>
   <data name="XiaHouYuan" xml:space="preserve">
-    <value>0x08|夏侯渊|0x01|0x01|4</value>
+    <value>0x08|夏侯渊|0x01|0x01|4|SH08</value>
   </data>
   <data name="XiaoQiao" xml:space="preserve">
-    <value>0x49|小乔|0x02|0x03|3</value>
+    <value>0x49|小乔|0x02|0x03|3|SH49</value>
   </data>
   <data name="XuChu" xml:space="preserve">
-    <value>0x04|许褚|0x01|0x01|4</value>
+    <value>0x04|许褚|0x01|0x01|4|SH04</value>
   </data>
   <data name="YuJi" xml:space="preserve">
-    <value>0x65|于吉|0x01|0x04|3</value>
+    <value>0x65|于吉|0x01|0x04|3|SH65</value>
   </data>
   <data name="ZhangFei" xml:space="preserve">
-    <value>0x25|张飞|0x01|0x02|4</value>
+    <value>0x25|张飞|0x01|0x02|4|SH25</value>
   </data>
   <data name="ZhangJiao" xml:space="preserve">
-    <value>0x64|张角|0x01|0x04|3</value>
+    <value>0x64|张角|0x01|0x04|3|SH64</value>
   </data>
   <data name="ZhangLiao" xml:space="preserve">
-    <value>0x05|张辽|0x01|0x01|4</value>
+    <value>0x05|张辽|0x01|0x01|4|SH05</value>
   </data>
   <data name="ZhaoYun" xml:space="preserve">
-    <value>0x24|赵云|0x01|0x02|4</value>
+    <value>0x24|赵云|0x01|0x02|4|SH24</value>
   </data>
   <data name="ZhenJi" xml:space="preserve">
-    <value>0x02|甄姬|0x02|0x01|3</value>
+    <value>0x02|甄姬|0x02|0x01|3|SH02</value>
   </data>
   <data name="ZhouTai" xml:space="preserve">
-    <value>0x61|周泰|0x02|0x03|4</value>
+    <value>0x4A|周泰|0x02|0x03|4</value>
   </data>
   <data name="ZhouYu" xml:space="preserve">
-    <value>0x43|周瑜|0x01|0x03|3</value>
+    <value>0x43|周瑜|0x01|0x03|3|SH43</value>
   </data>
   <data name="ZhuGeLiang" xml:space="preserve">
-    <value>0x27|诸葛亮|0x01|0x02|3</value>
+    <value>0x27|诸葛亮|0x01|0x02|3|SH27</value>
   </data>
 </root>

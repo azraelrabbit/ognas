@@ -82,21 +82,16 @@
     <Compile Include="ShogunCenter.cs" />
     <Compile Include="Shoguns\Enums.cs" />
     <Compile Include="Shoguns\Shogun.cs" />
-    <Compile Include="Shoguns\ShogunBasicInfoResource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShogunBasicInfoResource.resx</DependentUpon>
-    </Compile>
     <Compile Include="Shoguns\ShogunUtility.cs" />
     <Compile Include="Shoguns\Stunts\LuoShen.cs" />
     <Compile Include="Shoguns\Stunts\Stunt.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Shoguns\ShogunBasicInfoResource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>ShogunBasicInfoResource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <ProjectReference Include="..\Ognas.Resource\Ognas.Resource.csproj">
+      <Project>{F47F1C41-E547-481F-9CB7-B2E766894029}</Project>
+      <Name>Ognas.Resource</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F47F1C41-E547-481F-9CB7-B2E766894029}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ognas.Resource</RootNamespace>
+    <AssemblyName>Ognas.Resource</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Images.Shogun.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.Shogun.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shoguns.Designer.cs">
+      <DependentUpon>Shoguns.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images.Shogun.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Shogun.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Shoguns.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Shoguns.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH01.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH02.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH03.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH04.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH05.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH06.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH07.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH08.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH09.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH21.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH22.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH23.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH24.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH25.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH26.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH27.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH28.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH41.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH42.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH43.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH44.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH45.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH46.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH47.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH48.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH49.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH61.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH62.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH63.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH64.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SH65.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

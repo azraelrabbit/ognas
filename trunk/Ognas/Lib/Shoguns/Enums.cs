@@ -170,7 +170,7 @@ namespace Ognas.Lib.Shoguns
         /// <summary>
         /// 周泰
         /// </summary>
-        ZhouTai         = 0x50,
+        ZhouTai         = 0x4A,
 
         /// <summary>
         /// 貂蝉
