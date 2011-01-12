@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 using System.Net;
-using Platform.CommonUtils;
+using Ognas.Lib.CommonUtils;
 
-namespace SocketUtils
+namespace Ognas.Lib.SocketUtils
 {
     public delegate byte[] TcpCallback(byte[] byteArray, string address);
 

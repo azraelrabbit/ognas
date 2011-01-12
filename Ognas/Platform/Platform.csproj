@@ -41,9 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommonUtils\CommonUtil.cs" />
-    <Compile Include="CommonUtils\ProtocolUtils.cs" />
-    <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="Games\EventCenterRule.cs" />
     <Compile Include="Games\Game.cs" />
@@ -78,8 +75,6 @@
     <Compile Include="Protocols\ServerExitRoomProtocol.cs" />
     <Compile Include="Protocols\ServerRegisterUserProtocol.cs" />
     <Compile Include="Protocols\ServerUdpMessageProtocol.cs" />
-    <Compile Include="SocketUtils\TcpClientUtils.cs" />
-    <Compile Include="SocketUtils\TcpListenerX.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Delegates\" />

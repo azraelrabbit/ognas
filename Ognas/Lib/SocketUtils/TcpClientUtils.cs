@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 using System.Net;
-using Platform.Protocols;
-using Platform.CommonUtils;
 using Ognas.Lib.Protocols;
+using Ognas.Lib.CommonUtils;
 
 
-namespace Platform.SocketUtils
+namespace Ognas.Lib.SocketUtils
 {
     public class TcpClientUtils
     {
