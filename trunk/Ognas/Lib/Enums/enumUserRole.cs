@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Ognas.Lib.Enum
 {
-    public enum enumUserRole : byte
+    public enum EnumUserRole : byte
     {
         /// <summary>
         /// 主公

@@ -79,11 +79,11 @@ namespace Ognas.Lib.Protocols
 
             this.player = new User(p[0]);
             this.player.SeatNum = p[1];
-            this.player.UserRole = (enumUserRole)Encoding.UTF8.GetBytes(p[2])[0];
+            this.player.UserRole = (EnumUserRole)Encoding.UTF8.GetBytes(p[2])[0];
 
             this.playerKing = new User(k[0]);
             this.playerKing.SeatNum = k[1];
-            this.playerKing.UserRole = (enumUserRole)Encoding.UTF8.GetBytes(k[2])[0];
+            this.playerKing.UserRole = (EnumUserRole)Encoding.UTF8.GetBytes(k[2])[0];
             this.msgText = datalist[2];
         }
 
