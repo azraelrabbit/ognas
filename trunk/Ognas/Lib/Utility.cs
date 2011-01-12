@@ -1,11 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Ognas.Lib
 {
     public class Utility
     {
         private Utility() { }
+
+        private static int _iRandom = 0;
+
+        private static int ComputerIRandom()
+        {
+            _iRandom++;
+            if (_iRandom > 9999)
+            {
+                _iRandom = 0;
+            }
+
+            return ("R" + _iRandom.ToString()).GetHashCode();
+        }
 
         /// <summary>
         /// 获取随机列表
@@ -49,7 +63,7 @@ namespace Ognas.Lib
         /// <returns>一个随机对象</returns>
         public static T GetRandomObject<T>(List<T> list)
         {
-            Random r = new Random();
+            Random r = new Random(ComputerIRandom());
             return list[r.Next(list.Count)];
         }
 
@@ -119,6 +133,8 @@ namespace Ognas.Lib
                 temp.Add(o);
             }
 
+            //temp = GetRandomList<T>(temp);
+
             for (int i = 0; i < count; i++)
             { 
                 // 获取随机对象
@@ -161,6 +177,8 @@ namespace Ognas.Lib
                     temp.Add(o);
                 }
             }
+
+            //temp = GetRandomList<T>(temp);
 
             foreach( T p in dic.Keys )
             {
@@ -219,7 +237,7 @@ namespace Ognas.Lib
         /// <returns>一个不大于指定值的随机非负整数</returns>
         public static int Roll(int maxValue)
         {
-            Random r = new Random();
+            Random r = new Random(ComputerIRandom());
             return r.Next(maxValue+1);
         }
 
