@@ -71,8 +71,18 @@ namespace Ognas.Lib.Shoguns
             set;
         }
 
+        /// <summary>
+        /// 卡牌图片
+        /// </summary>
+        public string Picture
+        {
+            get;
+            set;
+        }
+
         public Shogun()
         { }
+
 
 
         #region Override Operators

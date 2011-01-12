@@ -23,6 +23,7 @@ namespace Ognas.Lib.Shoguns
             s.Sex = (Shoguns.Sex)int.Parse(sinfo[2].Substring(2), NumberStyles.AllowHexSpecifier);
             s.Camp = (Camp)int.Parse(sinfo[3].Substring(2), NumberStyles.AllowHexSpecifier);
             s.HealthMax = int.Parse(sinfo[4]);
+            s.Picture = sinfo[5];
         }
 
         public static List<Shogun> GetShogunList()
