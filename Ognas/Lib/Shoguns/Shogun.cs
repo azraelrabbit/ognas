@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using Ognas.Lib.Shoguns.Stunts;
 
 namespace Ognas.Lib.Shoguns
@@ -81,12 +78,17 @@ namespace Ognas.Lib.Shoguns
         #region Override Operators
         public static bool operator ==(Shogun s1,Shogun s2)
         {
+            if ((object)s1 == null || (object)s2 == null)
+            {
+                return (object)s1 == null && (object)s2 == null;
+            }
+
             return s1.Code == s2.Code;
         }
 
         public static bool operator !=(Shogun s1, Shogun s2)
         {
-            return s1.Code != s2.Code;
+            return !(s1 == s2);
         }
         public override bool Equals(object obj)
         {
