@@ -1,9 +1,8 @@
-﻿using Ognas.Lib;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using Ognas.Lib.Shoguns;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Diagnostics;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Ognas.Lib;
+using Ognas.Lib.Shoguns;
 
 namespace Test.Ognas.Lib
 {
