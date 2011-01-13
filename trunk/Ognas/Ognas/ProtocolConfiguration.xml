@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Protocol>
-	<UdpMessageProtocol EnumName="RegisterUserNameProtocol" ClassName="ClientRegisterUserNameProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="CreateRoomProtocol" ClassName="ClientCreateRoomProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="ServerRoomPortProtocol" ClassName="ClientServerRoomPortProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="EnterRoomProtocol" ClassName="ClientEnterRoomProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="UdpMessageProtocol" ClassName="ClientUdpMessageProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="ExitRoomProtocol" ClassName="ClientExitRoomProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="DealSeatProtocol" ClassName="ClientDealSeatProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="DealCardsProtocol" ClassName="ClientDealCardsProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="DealRoleProtocol" ClassName="ClientDealRoleProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="SelectShogunProtocol" ClassName="ClientSelectShogunProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="StateChangeProtocol" ClassName="ClientStateChangeProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="RegisterUser" ClassName="Ognas.Client.Protocols.ClientRegisterUserProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="CreateRoom" ClassName="Ognas.Client.Protocols.ClientCreateRoomProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="ServerRoomPort" ClassName="Ognas.Client.Protocols.ClientServerRoomPortProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="EnterRoom" ClassName="Ognas.Client.Protocols.ClientEnterRoomProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="UdpMessage" ClassName="Ognas.Client.Protocols.ClientUdpMessageProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="ExitRoom" ClassName="Ognas.Client.Protocols.ClientExitRoomProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="DealSeat" ClassName="Ognas.Client.Protocols.ClientDealSeatProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="DealCards" ClassName="Ognas.Client.Protocols.ClientDealCardsProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="DealRole" ClassName="Ognas.Client.Protocols.ClientDealRoleProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="SelectShogun" ClassName="Ognas.Client.Protocols.ClientSelectShogunProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="StateChange" ClassName="Ognas.Client.Protocols.ClientStateChangeProtocol"></UdpMessageProtocol>
 </Protocol>

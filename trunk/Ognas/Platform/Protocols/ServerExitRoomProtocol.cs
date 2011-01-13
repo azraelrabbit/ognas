@@ -10,6 +10,15 @@ namespace Platform.Protocols
 {
     public class ServerExitRoomProtocol : ExitRoomProtocol
     {
+        public ServerExitRoomProtocol() : base()
+        {            
+        }
+
+        public ServerExitRoomProtocol(byte[] bytes)
+            : base(bytes)
+        {            
+        }
+
         public override byte[] OnResponse()
         {
             Room room = (Room)Host;

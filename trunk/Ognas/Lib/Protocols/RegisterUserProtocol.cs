@@ -10,12 +10,12 @@ namespace Ognas.Lib.Protocols
     {
         public RegisterUserProtocol()
         {
-            this.SystemMessageEnum = SystemMessage.RegisterUserName;
+            this.SystemMessageEnum = SystemMessage.RegisterUser;
         }
 
         public RegisterUserProtocol(byte[] bytes) 
         {
-            this.SystemMessageEnum = SystemMessage.RegisterUserName;
+            this.SystemMessageEnum = SystemMessage.RegisterUser;
             this.Data = Encoding.UTF8.GetString(bytes);
         }
 

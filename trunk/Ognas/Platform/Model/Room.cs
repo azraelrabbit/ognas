@@ -10,6 +10,7 @@ using Ognas.Lib.Protocols;
 using Ognas.Lib;
 using Ognas.Lib.SocketUtils;
 using Ognas.Lib.CommonUtils;
+using System.Reflection;
 
 namespace Platform.Model
 {
@@ -19,7 +20,15 @@ namespace Platform.Model
 
         private int roomTcpPort = 0;
 
-        private Dictionary<string, User> addressUserDoctionary = new Dictionary<string, User>();
+        private Dictionary<string, User> addressUserDictionary = null;
+
+        public Dictionary<string, User> AddressUserDictionary
+        {
+            get 
+            { 
+                return this.addressUserDictionary; 
+            }            
+        }
 
         private string roomName;
 
@@ -37,7 +46,7 @@ namespace Platform.Model
         {
             get
             {
-                return addressUserDoctionary.Count == userMaxCount;
+                return this.AddressUserDictionary.Count == userMaxCount;
             }
         }
 
@@ -56,6 +65,7 @@ namespace Platform.Model
 
         public Room(string roomName, User user)
         {
+            this.addressUserDictionary = new Dictionary<string, User>();
             this.roomName = roomName;
             this.roomTcpPort = RoomPort.GetRoomTcpPort();
             this.roomCreator = user;
@@ -76,7 +86,7 @@ namespace Platform.Model
             {
                 if (null != bytes && bytes.Length > 0)
                 {
-                    Protocol protocol = ProtocolFactory.CreateProtocol(bytes);
+                    Protocol protocol = ProtocolFactory.CreateProtocol(Assembly.GetExecutingAssembly(), bytes);
                     protocol.Host = this;
                     protocol.ClientAddress = address;
                     return protocol.OnResponse();
@@ -107,13 +117,13 @@ namespace Platform.Model
         {
             lock (roomLock)
             {
-                addressUserDoctionary.Add(user.Address, user);
-                this.SendUdpMessage(string.Format("User {0} has entered the room {1}.", user.UserName, this.roomName));
+                this.AddressUserDictionary.Add(user.Address, user);
+                this.SendUdpMessage(string.Format("{0} User {1} has entered the room {2}.", Constants.SystemMessage, user.UserName, this.roomName));
 
                 if (IsFull)
                 {
                     // initialize game
-                    this.gameBase = new Games.Game(addressUserDoctionary.Values.ToList());
+                    this.gameBase = new Games.Game(this.AddressUserDictionary.Values.ToList());
                     this.gameBase.GameStart();
                 }
             }
@@ -125,9 +135,9 @@ namespace Platform.Model
             {
                 // notify play
                 // send Udp message
-                this.SendUdpMessage(string.Format("the user {0} has exited the room {1}.", this.addressUserDoctionary[protocol.ClientAddress].UserName, this.roomName));
+                this.SendUdpMessage(string.Format("{0} the user {1} has exited the room {2}.", Constants.SystemMessage, this.AddressUserDictionary[protocol.ClientAddress].UserName, this.roomName));
                 // trigger room exit event.
-                if (this.addressUserDoctionary.Count < 1 && null != this.RoomEnd)
+                if (this.AddressUserDictionary.Count < 1 && null != this.RoomEnd)
                 {
                     this.RoomEnd(this);
                 }
@@ -138,7 +148,7 @@ namespace Platform.Model
 
         internal byte[] SendUdpMessage(string message)
         {
-            foreach (var address in addressUserDoctionary.Keys)
+            foreach (var address in this.AddressUserDictionary.Keys)
             {
                 Protocol protocol = new ServerUdpMessageProtocol();
                 protocol.Data = message;
@@ -149,7 +159,7 @@ namespace Platform.Model
 
         internal byte[] SendMessageAll(Protocol message)
         {
-            foreach (var address in addressUserDoctionary.Keys)
+            foreach (var address in this.AddressUserDictionary.Keys)
             {
                 TcpClientUtils.SendData(address, Constants.ClientPort, message);
             }

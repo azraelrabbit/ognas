@@ -8,5 +8,13 @@ namespace Ognas.Client.Protocols
 {
     public class ClientEnterRoomProtocol : EnterRoomProtocol
     {
+        public ClientEnterRoomProtocol() : base()
+        {            
+        }
+
+        public ClientEnterRoomProtocol(byte[] bytes)
+            : base(bytes)
+        {            
+        }
     }
 }

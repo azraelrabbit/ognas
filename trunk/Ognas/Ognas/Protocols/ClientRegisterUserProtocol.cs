@@ -8,9 +8,13 @@ namespace Ognas.Client.Protocols
 {
     public class ClientRegisterUserProtocol : RegisterUserProtocol
     {
-        public ClientRegisterUserProtocol()
-            : base()
-        {
+        public ClientRegisterUserProtocol() : base()
+        {            
+        }
+
+        public ClientRegisterUserProtocol(byte[] bytes)
+            : base(bytes)
+        {            
         }
     }
 }

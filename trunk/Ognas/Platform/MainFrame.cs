@@ -12,6 +12,7 @@ using Ognas.Lib.Protocols;
 using Ognas.Lib;
 using Ognas.Lib.SocketUtils;
 using Ognas.Lib.CommonUtils;
+using System.Reflection;
 
 namespace Platform
 {
@@ -51,10 +52,10 @@ namespace Platform
             {
                 if (null != bytes && bytes.Length > 0)
                 {
-                    Protocol protocol = ProtocolFactory.CreateProtocol(bytes);
+                    Protocol protocol = ProtocolFactory.CreateProtocol(Assembly.GetExecutingAssembly(), bytes);
                     protocol.Host = this;
                     protocol.ClientAddress = address;
-                    return protocol.OnResponse();
+                    return protocol.OnResponse();                    
                 }
             }
             catch (Exception ex)

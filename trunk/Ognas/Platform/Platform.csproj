@@ -78,7 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Delegates\" />
-    <Folder Include="Enum\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lib\Lib.csproj">
