@@ -7,6 +7,7 @@ using Ognas.Lib.Enums;
 
 namespace Ognas.Lib.Protocols
 {
+    public delegate byte[] ResponseDelegate(object host, Protocol protocol);
     public abstract class Protocol
     {
         public SystemMessage SystemMessageEnum { get; set; }
@@ -18,6 +19,8 @@ namespace Ognas.Lib.Protocols
         public string Data { get; set; }
 
         public bool ReturnValue { get; set; }
+
+        public ResponseDelegate OnResponseDelegate = null;
 
         public virtual byte[] RequestData
         {
@@ -38,7 +41,16 @@ namespace Ognas.Lib.Protocols
             }
         }
 
-        public abstract byte[] OnResponse();
-        
+        public virtual byte[] OnResponse()
+        {
+            if (null == this.OnResponseDelegate)
+            {
+                return null; 
+            }
+            else
+            {
+                return this.OnResponseDelegate(this.Host, this);
+            }
+        }        
     }
 }

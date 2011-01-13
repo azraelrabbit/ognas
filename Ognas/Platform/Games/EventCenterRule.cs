@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Platform.Model;
-using Platform.Protocols;
 using System.Collections;
 using LibProtocols = Ognas.Lib.Protocols;
 using Ognas.Lib.Protocols;
@@ -70,7 +69,7 @@ namespace Platform.Games
 
             foreach (User u in args.userList)
             {
-                ServerDealRoleProtocol drp = new ServerDealRoleProtocol();
+                DealRoleProtocol drp = new DealRoleProtocol();
                 drp.ClientAddress = u.Address;
                 drp.player = u;
                 drp.playerKing = ku;
@@ -88,7 +87,7 @@ namespace Platform.Games
             // TODO: 通知客户端座位结果
             Console.WriteLine(args.Messages);
 
-            ServerDealSeatProtocol dsp = new ServerDealSeatProtocol();
+            DealSeatProtocol dsp = new DealSeatProtocol();
 
             dsp.userList = args.userList;
             SendMessageAll(dsp, args.userList);

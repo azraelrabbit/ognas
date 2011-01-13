@@ -18,7 +18,6 @@ using Ognas.Client.Model;
 using System.Windows.Threading;
 using Ognas.Lib;
 using Ognas.Lib.Protocols;
-using Ognas.Client.Protocols;
 using Ognas.Lib.SocketUtils;
 using System.Reflection;
 
@@ -96,7 +95,7 @@ namespace Ognas.Client
                 return;
             }
 
-            ClientEnterRoomProtocol protocol = new ClientEnterRoomProtocol();
+            EnterRoomProtocol protocol = new EnterRoomProtocol();
             protocol.Data = txtRoomName.Text;
 
             this.EnterRoom(protocol);
@@ -109,7 +108,7 @@ namespace Ognas.Client
                 return;
             }
 
-            ClientCreateRoomProtocol protocol = new ClientCreateRoomProtocol();
+            CreateRoomProtocol protocol = new CreateRoomProtocol();
             protocol.Data = txtRoomName.Text;
 
             this.EnterRoom(protocol);
@@ -167,7 +166,7 @@ namespace Ognas.Client
             string inputMessage = new TextRange(richInputMessage.Document.ContentStart, richInputMessage.Document.ContentEnd).Text;
             if (!string.IsNullOrWhiteSpace(inputMessage))
             {
-                Protocol udpMessageProtocol = new ClientUdpMessageProtocol();
+                Protocol udpMessageProtocol = new UdpMessageProtocol();
                 udpMessageProtocol.Data = inputMessage;
                 this.TcpClientRoom.SendData(udpMessageProtocol);
             }

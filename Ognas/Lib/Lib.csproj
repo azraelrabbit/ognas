@@ -92,6 +92,7 @@
     <Compile Include="Protocols\ExitRoomProtocol.cs" />
     <Compile Include="Protocols\Protocol.cs" />
     <Compile Include="Protocols\ProtocolFactory.cs" />
+    <Compile Include="Protocols\ProtocolStruct.cs" />
     <Compile Include="Protocols\RegisterUserProtocol.cs" />
     <Compile Include="Protocols\UdpMessageProtocol.cs" />
     <Compile Include="ShogunCenter.cs" />
