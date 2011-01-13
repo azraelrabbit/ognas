@@ -1,14 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Protocol>
-	<UdpMessageProtocol EnumName="RegisterUser" ClassName="Platform.Protocols.ServerRegisterUserProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="CreateRoom" ClassName="Platform.Protocols.ServerCreateRoomProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="ServerRoomPort" ClassName="Platform.Protocols.ServerServerRoomPortProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="EnterRoom" ClassName="Platform.Protocols.ServerEnterRoomProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="UdpMessage" ClassName="Platform.Protocols.ServerUdpMessageProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="ExitRoom" ClassName="Platform.Protocols.ServerExitRoomProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="DealSeat" ClassName="Platform.Protocols.ServerDealSeatProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="DealCards" ClassName="Platform.Protocols.ServerDealCardsProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="DealRole" ClassName="Platform.Protocols.ServerDealRoleProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="SelectShogun" ClassName="Platform.Protocols.ServerSelectShogunProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="StateChange" ClassName="Platform.Protocols.ServerStateChangeProtocol"></UdpMessageProtocol>
-</Protocol>
+<Protocols>
+	<Protocol EnumName="CreateRoom" ClassName="Ognas.Lib.Protocols.CreateRoomProtocol" ProcessClass="Platform.ProtocolProcess" MethodName="CreateRoomProtocolResponse"></Protocol>
+	<Protocol EnumName="EnterRoom" ClassName="Ognas.Lib.Protocols.EnterRoomProtocol" ProcessClass="Platform.ProtocolProcess" MethodName="EnterRoomProtocolResponse"></Protocol>
+	<Protocol EnumName="ExitRoom" ClassName="Ognas.Lib.Protocols.ExitRoomProtocol" ProcessClass="Platform.ProtocolProcess" MethodName="ExitRoomProtocolResponse"></Protocol>
+	<Protocol EnumName="RegisterUser" ClassName="Ognas.Lib.Protocols.RegisterUserProtocol" ProcessClass="Platform.ProtocolProcess" MethodName="RegisterUserProtocolResponse"></Protocol>
+	<Protocol EnumName="UdpMessage" ClassName="Ognas.Lib.Protocols.UdpMessageProtocol" ProcessClass="Platform.ProtocolProcess" MethodName="UdpMessageProtocolResponse"></Protocol>
+</Protocols>

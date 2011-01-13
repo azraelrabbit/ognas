@@ -11,7 +11,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
-using Ognas.Client.Protocols;
 using Ognas.Lib.Protocols;
 
 namespace Ognas.Client
@@ -40,7 +39,7 @@ namespace Ognas.Client
                 return false;
             }
 
-            Protocol protocol = new ClientRegisterUserProtocol();
+            Protocol protocol = new RegisterUserProtocol();
             protocol.Data = ResponseText;
             var bytes = MainWindow.TcpClientSystem.SendData(protocol);
             if (!BitConverter.ToBoolean(bytes, 0))

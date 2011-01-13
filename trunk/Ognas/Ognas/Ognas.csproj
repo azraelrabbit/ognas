@@ -59,12 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Constants.cs" />
-    <Compile Include="Protocols\ClientCreateRoomProtocol.cs" />
-    <Compile Include="Protocols\ClientDealRoleProtocol.cs" />
-    <Compile Include="Protocols\ClientDealSeatProtocol.cs" />
-    <Compile Include="Protocols\ClientEnterRoomProtocol.cs" />
-    <Compile Include="Protocols\ClientRegisterUserProtocol.cs" />
-    <Compile Include="Protocols\ClientUdpMessageProtocol.cs" />
+    <Compile Include="ProtocolProcess.cs" />
     <Compile Include="UserNameWindow.xaml.cs">
       <DependentUpon>UserNameWindow.xaml</DependentUpon>
     </Compile>
@@ -121,6 +116,7 @@
   <ItemGroup>
     <EmbeddedResource Include="ProtocolConfiguration.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

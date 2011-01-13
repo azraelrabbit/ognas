@@ -18,10 +18,5 @@ namespace Ognas.Lib.Protocols
             this.SystemMessageEnum = SystemMessage.EnterRoom;
             this.Data = Encoding.UTF8.GetString(bytes);
         }
-
-        public override byte[] OnResponse()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

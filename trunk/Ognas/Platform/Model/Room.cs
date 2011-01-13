@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 using System.Net;
-using Platform.Protocols;
 using Platform.Games;
 using Ognas.Lib.Protocols;
 using Ognas.Lib;
@@ -150,7 +149,7 @@ namespace Platform.Model
         {
             foreach (var address in this.AddressUserDictionary.Keys)
             {
-                Protocol protocol = new ServerUdpMessageProtocol();
+                Protocol protocol = new UdpMessageProtocol();
                 protocol.Data = message;
                 TcpClientUtils.SendData(address, Constants.ClientPort, protocol);
             }
