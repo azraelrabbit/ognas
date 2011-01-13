@@ -9,6 +9,6 @@ namespace Platform
     {
         public const int ClientPort = 9001;
 
-        public const string SystemMessage = "System Message : ";
+        public const string SystemMessage = "System : ";
     }
 }

@@ -120,9 +120,11 @@ namespace Platform
                 {
                     room.Start();
                 }
+                Console.WriteLine(string.Format("The room {0} has ended.", roomName));
             }
-            catch
+            catch(Exception ex)
             {
+                Console.WriteLine(ex.ToString());
                 try 
 	            {	        
 		            if (null != room)
@@ -202,8 +204,14 @@ namespace Platform
 
         public void DisposeRoom(Room room)
         {
-            this.roomDictionary.Remove(room.RoomName);
-            room.Dispose();
+            if (null != room)
+            {
+                if (this.roomDictionary.ContainsKey(room.RoomName))
+                {
+                    this.roomDictionary.Remove(room.RoomName);
+                }
+                room.Dispose();
+            }
         }
 
         #region IDisposable Members

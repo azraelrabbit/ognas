@@ -6,6 +6,8 @@ using Ognas.Lib.Protocols;
 using System.Windows.Threading;
 using System.Threading;
 using Ognas.Lib;
+using System.Windows.Documents;
+using Ognas.Client.Model;
 
 namespace Ognas.Client
 {
@@ -49,7 +51,25 @@ namespace Ognas.Client
             UdpMessageProtocol udpMessageProtocol = (UdpMessageProtocol)protocol;
             mainWindow.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
             {
-                mainWindow.richMessage.AppendText(udpMessageProtocol.Data + Environment.NewLine);
+                int index = udpMessageProtocol.Data.IndexOf(':');
+                if (index > -1)
+                {
+                    Paragraph paragraph = new Paragraph();
+                    Span span = new Span();
+                    span.Foreground= Constants.NameColor;
+                    span.Inlines.Add(udpMessageProtocol.Data.Substring(0, index + 1));
+                    paragraph.Inlines.Add(span);
+                    span = new Span();
+                    span.Foreground = Constants.ContentColor;
+                    span.Inlines.Add(udpMessageProtocol.Data.Substring(index + 1));
+                    paragraph.Inlines.Add(span);
+
+                    mainWindow.richMessage.Document.Blocks.Add(paragraph);
+                }
+                else
+                {
+                    mainWindow.richMessage.AppendText(udpMessageProtocol.Data + Environment.NewLine);
+                }
             });
             return null;
         }

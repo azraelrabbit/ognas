@@ -18,7 +18,7 @@ namespace Ognas.Lib
         /// <param name="count">指定张数</param>
         public void Deal(object target, int count)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace Ognas.Lib
         /// </summary>
         public void Shuffle()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }
