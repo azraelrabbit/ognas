@@ -17,7 +17,7 @@ namespace Platform.Model
     {
         private TcpListenerX tcpListenerX = null;
 
-        private int roomTcpPort = 0;
+        private int roomTcpPort = 1;
 
         private Dictionary<string, User> addressUserDictionary = null;
 
@@ -46,7 +46,7 @@ namespace Platform.Model
             get
             {
                 return this.AddressUserDictionary.Count == userMaxCount;
-            }
+            }            
         }
 
         public string RoomName
@@ -69,12 +69,12 @@ namespace Platform.Model
             this.roomTcpPort = RoomPort.GetRoomTcpPort();
             this.roomCreator = user;
             this.AddUser(user);
-            Console.WriteLine(string.Format("The room {0} is created", this.roomName));
+            Console.WriteLine(string.Format("The room {0} is created.", this.roomName));
         }
 
         internal void Start()
         {
-            Console.WriteLine(string.Format("The room {0} is running", this.roomName));
+            Console.WriteLine(string.Format("The room {0} is running.", this.roomName));
             this.tcpListenerX = new TcpListenerX(MainFrame.SystemIPAddress, this.roomTcpPort, ReceiveTcpMessage);
             tcpListenerX.Run();
         }
@@ -102,12 +102,13 @@ namespace Platform.Model
 
         public void Dispose()
         {
-            RoomPort.ReleasePort(this.roomTcpPort);
-
             if (null != this.tcpListenerX)
             {
+                this.tcpListenerX.Running = false;
                 this.tcpListenerX.Stop();
             }
+
+            RoomPort.ReleasePort(this.roomTcpPort);
         }
 
         #endregion
@@ -119,7 +120,7 @@ namespace Platform.Model
                 this.AddressUserDictionary.Add(user.Address, user);
                 this.SendUdpMessage(string.Format("{0} User {1} has entered the room {2}.", Constants.SystemMessage, user.UserName, this.roomName));
 
-                if (IsFull)
+                if (this.IsFull)
                 {
                     // initialize game
                     this.gameBase = new Games.Game(this.AddressUserDictionary.Values.ToList());
@@ -133,8 +134,15 @@ namespace Platform.Model
             lock (roomLock)
             {
                 // notify play
+                
                 // send Udp message
                 this.SendUdpMessage(string.Format("{0} the user {1} has exited the room {2}.", Constants.SystemMessage, this.AddressUserDictionary[protocol.ClientAddress].UserName, this.roomName));
+
+                //remove user
+                if (this.AddressUserDictionary.ContainsKey(protocol.ClientAddress))
+                {
+                    this.AddressUserDictionary.Remove(protocol.ClientAddress);
+                }
                 // trigger room exit event.
                 if (this.AddressUserDictionary.Count < 1 && null != this.RoomEnd)
                 {
