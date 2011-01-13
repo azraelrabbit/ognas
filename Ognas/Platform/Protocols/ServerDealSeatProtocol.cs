@@ -11,6 +11,13 @@ namespace Platform.Protocols
 {
     public class ServerDealSeatProtocol : DealSeatProtocol
     {
-        
+        public ServerDealSeatProtocol() : base()
+        {            
+        }
+
+        public ServerDealSeatProtocol(byte[] bytes)
+            : base(bytes)
+        {            
+        }
     }
 }

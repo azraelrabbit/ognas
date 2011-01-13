@@ -8,6 +8,15 @@ namespace Platform.Protocols
 {
     public class ServerEnterRoomProtocol : EnterRoomProtocol
     {
+        public ServerEnterRoomProtocol() : base()
+        {            
+        }
+
+        public ServerEnterRoomProtocol(byte[] bytes)
+            : base(bytes)
+        {            
+        }
+
         public override byte[] OnResponse()
         {
             MainFrame mainFrame = (MainFrame)this.Host;

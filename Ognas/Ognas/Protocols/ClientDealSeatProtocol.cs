@@ -11,6 +11,15 @@ namespace Ognas.Client.Protocols
 {
     public class ClientDealSeatProtocol : DealSeatProtocol
     {
+        public ClientDealSeatProtocol() : base()
+        {            
+        }
+
+        public ClientDealSeatProtocol(byte[] bytes)
+            : base(bytes)
+        {            
+        }
+
         public override byte[] OnResponse()
         {
             MainWindow mainWindow = (MainWindow)this.Host;

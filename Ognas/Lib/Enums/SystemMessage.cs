@@ -8,7 +8,7 @@ namespace Ognas.Lib.Enums
     public enum SystemMessage : byte
     {
         None,
-        RegisterUserName,
+        RegisterUser,
         CreateRoom,
         ServerRoomPort,
         EnterRoom,

@@ -7,6 +7,7 @@ using System.Reflection;
 using System.IO;
 using System.Xml.Linq;
 using System.Globalization;
+using System.Configuration;
 
 namespace Ognas.Lib.Protocols
 {
@@ -16,35 +17,38 @@ namespace Ognas.Lib.Protocols
 
         private static object protocolLock = new object();
 
-        public static Protocol CreateProtocol(byte[] message)
+        public static Protocol CreateProtocol(Assembly currentAssembly, byte[] message)
         {
             SystemMessage systemMessage = (SystemMessage)message[0];
-            return CreateProtocol(systemMessage, message.Skip(1).ToArray());
+            return CreateProtocol(currentAssembly, systemMessage, message.Skip(1).ToArray());
         }
 
-        private static Protocol CreateProtocol(SystemMessage systemMessage, byte[] message)
+        private static Protocol CreateProtocol(Assembly currentAssembly, SystemMessage systemMessage, byte[] message)
         {
-            Assembly assembly = Assembly.GetEntryAssembly();
-
             if (null == protocolDictionary)
             {
                 lock (protocolLock)
                 {
-                    protocolDictionary = new Dictionary<SystemMessage, string>();
-
-                    using (Stream stream = assembly.GetManifestResourceStream(string.Format("{0}.{1}", assembly.GetName().Name, "ProtocolConfiguration.xml")))
+                    if (null == protocolDictionary)
                     {
-                        XElement xElement = XElement.Load(stream);
+                        protocolDictionary = new Dictionary<SystemMessage, string>();
 
-                        foreach (var element in xElement.Elements())
+                        Assembly assembly = Assembly.GetEntryAssembly();
+
+                        using (Stream stream = assembly.GetManifestResourceStream(ConfigurationManager.AppSettings["ProtocalResource"]))
                         {
-                            protocolDictionary.Add((SystemMessage)System.Enum.Parse(typeof(SystemMessage), element.Attribute("EnumName").Value), element.Attribute("ClassName").Value);
+                            XElement xElement = XElement.Load(stream);
+
+                            foreach (var element in xElement.Elements())
+                            {
+                                protocolDictionary.Add((SystemMessage)System.Enum.Parse(typeof(SystemMessage), element.Attribute("EnumName").Value), element.Attribute("ClassName").Value);
+                            }
                         }
                     }
                 }
             }
 
-            return (Protocol)assembly.CreateInstance(protocolDictionary[systemMessage], false, BindingFlags.CreateInstance, null, new object[] { message }, CultureInfo.InvariantCulture, null);
+            return (Protocol)currentAssembly.CreateInstance(protocolDictionary[systemMessage], false, BindingFlags.CreateInstance, null, new object[] { message }, CultureInfo.InvariantCulture, null);
         }
     }
 }

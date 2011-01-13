@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Protocol>
-	<UdpMessageProtocol EnumName="RegisterUserNameProtocol" ClassName="ServerRegisterUserNameProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="CreateRoomProtocol" ClassName="ServerCreateRoomProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="ServerRoomPortProtocol" ClassName="ServerServerRoomPortProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="EnterRoomProtocol" ClassName="ServerEnterRoomProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="UdpMessageProtocol" ClassName="ServerUdpMessageProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="ExitRoomProtocol" ClassName="ServerExitRoomProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="DealSeatProtocol" ClassName="ServerDealSeatProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="DealCardsProtocol" ClassName="ServerDealCardsProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="DealRoleProtocol" ClassName="ServerDealRoleProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="SelectShogunProtocol" ClassName="ServerSelectShogunProtocol"></UdpMessageProtocol>
-	<UdpMessageProtocol EnumName="StateChangeProtocol" ClassName="ServerStateChangeProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="RegisterUser" ClassName="Platform.Protocols.ServerRegisterUserProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="CreateRoom" ClassName="Platform.Protocols.ServerCreateRoomProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="ServerRoomPort" ClassName="Platform.Protocols.ServerServerRoomPortProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="EnterRoom" ClassName="Platform.Protocols.ServerEnterRoomProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="UdpMessage" ClassName="Platform.Protocols.ServerUdpMessageProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="ExitRoom" ClassName="Platform.Protocols.ServerExitRoomProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="DealSeat" ClassName="Platform.Protocols.ServerDealSeatProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="DealCards" ClassName="Platform.Protocols.ServerDealCardsProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="DealRole" ClassName="Platform.Protocols.ServerDealRoleProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="SelectShogun" ClassName="Platform.Protocols.ServerSelectShogunProtocol"></UdpMessageProtocol>
+	<UdpMessageProtocol EnumName="StateChange" ClassName="Platform.Protocols.ServerStateChangeProtocol"></UdpMessageProtocol>
 </Protocol>

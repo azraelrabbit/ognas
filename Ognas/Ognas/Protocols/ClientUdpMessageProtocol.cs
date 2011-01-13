@@ -10,6 +10,15 @@ namespace Ognas.Client.Protocols
 {
     public class ClientUdpMessageProtocol : UdpMessageProtocol
     {
+        public ClientUdpMessageProtocol() : base()
+        {            
+        }
+
+        public ClientUdpMessageProtocol(byte[] bytes)
+            : base(bytes)
+        {            
+        }
+
         public override byte[] OnResponse()
         {
             MainWindow mainWindow = (MainWindow)this.Host;

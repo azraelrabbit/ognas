@@ -9,7 +9,12 @@ namespace Platform.Protocols
     public class ServerRegisterUserProtocol : RegisterUserProtocol
     {
         public ServerRegisterUserProtocol() : base()
-        {
+        {            
+        }
+
+        public ServerRegisterUserProtocol(byte[] bytes)
+            : base(bytes)
+        {            
         }
 
         public override byte[] OnResponse()

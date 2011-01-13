@@ -20,6 +20,7 @@ using Ognas.Lib;
 using Ognas.Lib.Protocols;
 using Ognas.Client.Protocols;
 using Ognas.Lib.SocketUtils;
+using System.Reflection;
 
 namespace Ognas.Client
 {
@@ -137,7 +138,7 @@ namespace Ognas.Client
         {
             if (null != bytes && bytes.Length > 0)
             {
-                Protocol protocol = ProtocolFactory.CreateProtocol(bytes);
+                Protocol protocol = ProtocolFactory.CreateProtocol(Assembly.GetExecutingAssembly(), bytes);
                 protocol.Host = this;
                 protocol.OnResponse();
             }

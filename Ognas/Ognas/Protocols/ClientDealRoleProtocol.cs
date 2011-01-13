@@ -10,6 +10,15 @@ namespace Ognas.Client.Protocols
 {
     public class ClientDealRoleProtocol : DealRoleProtocol
     {
+        public ClientDealRoleProtocol() : base()
+        {            
+        }
+
+        public ClientDealRoleProtocol(byte[] bytes)
+            : base(bytes)
+        {            
+        }
+
         public override byte[] OnResponse()
         {
             MainWindow mainWindow = (MainWindow)this.Host;

@@ -8,6 +8,15 @@ namespace Platform.Protocols
 {
     public class ServerCreateRoomProtocol : CreateRoomProtocol
     {
+        public ServerCreateRoomProtocol() : base()
+        {            
+        }
+
+        public ServerCreateRoomProtocol(byte[] bytes)
+            : base(bytes)
+        {            
+        }
+
         public override byte[] OnResponse()
         {
             MainFrame mainFrame = (MainFrame)this.Host;

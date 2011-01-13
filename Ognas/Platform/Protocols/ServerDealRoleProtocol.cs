@@ -12,6 +12,13 @@ namespace Platform.Protocols
 {
     public class ServerDealRoleProtocol : DealRoleProtocol
     {
-        
+        public ServerDealRoleProtocol() : base()
+        {            
+        }
+
+        public ServerDealRoleProtocol(byte[] bytes)
+            : base(bytes)
+        {            
+        }
     }
 }
