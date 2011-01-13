@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ognas.Lib.Enums;
-using Ognas.Lib.Enum;
+using Ognas.Lib.Enums;
 
 namespace Ognas.Lib.Protocols
 {
