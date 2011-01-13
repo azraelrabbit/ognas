@@ -7,7 +7,7 @@ using System.Collections;
 using LibProtocols = Ognas.Lib.Protocols;
 using Ognas.Lib.Protocols;
 using Ognas.Lib;
-using Ognas.Lib.Enum;
+using Ognas.Lib.Enums;
 using Ognas.Lib.SocketUtils;
 
 namespace Platform.Games

@@ -6,6 +6,7 @@ using Platform.Model;
 using Ognas.Lib;
 using Ognas.Lib.Cards;
 using Platform.OgnasEventArgs;
+using Ognas.Lib.Enums;
 
 namespace Platform.Games
 {
@@ -28,6 +29,8 @@ namespace Platform.Games
             get;
             set;
         }
+
+        public Dictionary<int, List<EnumUserRole>> seatList;
 
         /// <summary>
         /// 当前令牌用户
@@ -86,7 +89,7 @@ namespace Platform.Games
 
             // 初始化游戏全局变量
             LoadCards();
-
+            InitSeatList();
             // 洗牌
             ShuffleCard();
 
@@ -111,6 +114,22 @@ namespace Platform.Games
 
         }
 
+        private void InitSeatList()
+        {
+            //游戏人数	主公	    忠臣	 反贼	内奸
+            //8	        1	    2	 4	    1
+            List<EnumUserRole> seatSet = new List<EnumUserRole>();
+            seatSet.Add(EnumUserRole.Lord);
+            seatSet.Add(EnumUserRole.Loyal);
+            seatSet.Add(EnumUserRole.Loyal);
+            seatSet.Add(EnumUserRole.rebel);
+            seatSet.Add(EnumUserRole.rebel);
+            seatSet.Add(EnumUserRole.rebel);
+            seatSet.Add(EnumUserRole.rebel);
+            seatSet.Add(EnumUserRole.Traitor);
+
+            seatList.Add(seatSet.Count, seatSet);
+        }
 
         /// <summary>
         /// 读取所有的牌到牌堆中
@@ -130,7 +149,7 @@ namespace Platform.Games
         {
             // TODO: 洗牌
             //  this.cardsList = Utility.GetRandomList(this.cardsList, this.cardsList.Count);
-            this.cardCenter.Shuffle();
+            // this.cardCenter.Shuffle();
 
             // 洗牌完成 触发事件
             GameEventArgs gameArgs = new GameEventArgs();
@@ -188,6 +207,12 @@ namespace Platform.Games
         public void SetUpUserRole()
         {
             // TODO: 分派身份
+            List<EnumUserRole> roleList = this.seatList[8];
+            roleList = Utility.GetRandomList(roleList, roleList.Count);
+            for (int i = 0; i < userList.Count; i++)
+            {
+                this.userList[i].UserRole = roleList[i];
+            }
 
             // 分派身份完毕
             GameEventArgs gameArgs = new GameEventArgs();
