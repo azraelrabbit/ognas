@@ -23,15 +23,15 @@ namespace Platform.Model
 
         public Dictionary<string, User> AddressUserDictionary
         {
-            get 
-            { 
-                return this.addressUserDictionary; 
-            }            
+            get
+            {
+                return this.addressUserDictionary;
+            }
         }
 
         private string roomName;
 
-        private int userMaxCount = 2;
+        private int userMaxCount = 1;
 
         private User roomCreator = null;
 
