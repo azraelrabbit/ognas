@@ -7,6 +7,7 @@ using Ognas.Lib;
 using Ognas.Lib.Cards;
 using Platform.OgnasEventArgs;
 using Ognas.Lib.Enums;
+using Ognas.Lib.Skills;
 
 namespace Platform.Games
 {
@@ -30,6 +31,8 @@ namespace Platform.Games
             get;
             set;
         }
+
+        public List<Skill> CardList;
 
         public Dictionary<int, List<EnumUserRole>> seatList;
 
@@ -99,6 +102,7 @@ namespace Platform.Games
             this.shogunCenter = new ShogunCenter();
             LoadCards();
             InitSeatList();
+
             // 洗牌
             ShuffleCard();
 
@@ -150,8 +154,7 @@ namespace Platform.Games
         private void LoadCards()
         {
             // 读取所有的牌到牌堆中
-            cardCenter = new CardCenter();
-            CardFactory.CreateCard();
+            this.CardList = SkillUtility.GetSkillList();
 
         }
 
@@ -161,12 +164,11 @@ namespace Platform.Games
         public void ShuffleCard()
         {
             // TODO: 洗牌
-            //  this.cardsList = Utility.GetRandomList(this.cardsList, this.cardsList.Count);
-            // this.cardCenter.Shuffle();
+            this.CardList = Utility.GetRandomList(this.CardList, this.CardList.Count);
 
             // 洗牌完成 触发事件
             GameEventArgs gameArgs = new GameEventArgs();
-            gameArgs.sc = this.cardCenter;
+            // gameArgs.sc = this.cardCenter;
             gameArgs.Messages = "洗牌完成...";
 
             if (OnShuffleCardCompleted != null)
@@ -183,7 +185,7 @@ namespace Platform.Games
             // TODO: 发牌
             // 发牌
             DealCardsArgs dcArgs = new DealCardsArgs();
-            dcArgs.sc = this.cardCenter;
+            dcArgs.cardList = this.CardList;
             dcArgs.Messages = "开始发牌...";
             if (this.OnDealCardBegins != null)
             {
