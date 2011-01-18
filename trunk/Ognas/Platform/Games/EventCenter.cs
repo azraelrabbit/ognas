@@ -54,6 +54,8 @@ namespace Platform.Model
 
     #endregion
 
+    public delegate void UserSelectedShogun(object sender, ShogunSelectArgs args);
+
 
     public class EventCenter
     {

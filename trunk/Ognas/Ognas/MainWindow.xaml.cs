@@ -38,6 +38,8 @@ namespace Ognas.Client
         public int currentRoomPort = 0;
         public User localUser = null;
 
+        public List<User> otherUsers = new List<User>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -71,7 +73,7 @@ namespace Ognas.Client
                     throw ex;
                 });
             }
-            
+
         }
 
         public void ShowUserNameWindow()
@@ -86,6 +88,31 @@ namespace Ognas.Client
             {
                 this.Close();
             }
+        }
+        public void ShowSelectShogunWindow(object proctol)
+        {
+            var dialog = new ShogunSelectWindow(proctol);
+            if (dialog.ShowDialog() == true)
+            {
+                Lib.Shoguns.Shogun sg = dialog.sgs;
+                this.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
+                {
+                    this.richMessage.AppendText("your Selected Shogun : " + sg.Name + Environment.NewLine);
+                });
+
+                // 将选择的武将发送到服务器
+                SendSelectShogunMessage(sg);
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void SendSelectShogunMessage(Lib.Shoguns.Shogun sg)
+        {
+            SelectionShogunProtocol ssp = new SelectionShogunProtocol(sg, this.localUser, Lib.Enums.GameState.SelectShogunLordComplete);
+            this.TcpClientRoom.SendData(ssp);
         }
 
         private void btnEnterRoom_Click(object sender, RoutedEventArgs e)
@@ -146,7 +173,7 @@ namespace Ognas.Client
 
         public void CreateTcpListener(int port)
         {
-            
+
         }
 
         private void btnExitRoom_Click(object sender, RoutedEventArgs e)

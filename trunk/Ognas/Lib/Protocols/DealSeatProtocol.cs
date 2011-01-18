@@ -86,10 +86,5 @@ namespace Ognas.Lib.Protocols
             }
         }
 
-        public override byte[] OnResponse()
-        {
-            //throw new NotImplementedException();
-            return Encoding.UTF8.GetBytes(this.Data);
-        }
     }
 }

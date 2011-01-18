@@ -87,9 +87,5 @@ namespace Ognas.Lib.Protocols
             this.msgText = datalist[2];
         }
 
-        public override byte[] OnResponse()
-        {
-            return Encoding.UTF8.GetBytes(this.Data);
-        }
     }
 }

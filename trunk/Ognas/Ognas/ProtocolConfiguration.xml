@@ -3,4 +3,5 @@
 	<Protocol EnumName="UdpMessage" ClassName="Ognas.Lib.Protocols.UdpMessageProtocol" ProcessClass="Ognas.Client.ProtocolProcess" MethodName="UdpMessageProtocolResponse"></Protocol>
 	<Protocol EnumName="DealSeat" ClassName="Ognas.Lib.Protocols.DealSeatProtocol" ProcessClass="Ognas.Client.ProtocolProcess" MethodName="DealSeatProtocolResponse"></Protocol>
 	<Protocol EnumName="DealRole" ClassName="Ognas.Lib.Protocols.DealRoleProtocol" ProcessClass="Ognas.Client.ProtocolProcess" MethodName="DealRoleProtocolResponse"></Protocol>	
+	<Protocol EnumName="SelectShogun" ClassName="Ognas.Lib.Protocols.SelectionShogunProtocol" ProcessClass="Ognas.Client.ProtocolProcess" MethodName="SelectionShogunProtocol"></Protocol>	
 </Protocols>
