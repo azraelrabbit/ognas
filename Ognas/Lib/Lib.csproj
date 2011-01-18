@@ -82,6 +82,7 @@
     <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Enums\EnumUserRole.cs" />
+    <Compile Include="Enums\GameState.cs" />
     <Compile Include="Enums\SystemMessage.cs" />
     <Compile Include="EventCenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Protocols\ProtocolFactory.cs" />
     <Compile Include="Protocols\ProtocolStruct.cs" />
     <Compile Include="Protocols\RegisterUserProtocol.cs" />
+    <Compile Include="Protocols\SelectionShogunProtocol.cs" />
     <Compile Include="Protocols\UdpMessageProtocol.cs" />
     <Compile Include="ShogunCenter.cs" />
     <Compile Include="Shoguns\SystemEnums.cs" />

@@ -7,6 +7,7 @@ using System.Collections;
 using LibProtocols = Ognas.Lib.Protocols;
 using Ognas.Lib.Protocols;
 using Ognas.Lib;
+using Ognas.Lib.Shoguns;
 using Ognas.Lib.Enums;
 using Ognas.Lib.SocketUtils;
 
@@ -16,9 +17,11 @@ namespace Platform.Games
     {
         Room room;
 
+        Game game;
+
         public EventCenterRule(object objgame)
         {
-            Game game = (Game)objgame;
+            game = (Game)objgame;
             game.OnShuffleCardCompleted += new Model.ShuffleCardComplete(game_OnShuffleCardCompleted);
             game.OnSetUpSeatCompleted += new Model.SetUpSeatComplete(game_OnSetUpSeatCompleted);
             game.OnSetUpUserRoleCompleted += new Model.SetUpUserRoleComplete(game_OnSetUpUserRoleCompleted);
@@ -33,7 +36,22 @@ namespace Platform.Games
         /// <param name="args"></param>
         void game_OnShogunSelectionBegin(object sender, OgnasEventArgs.ShogunSelectArgs args)
         {
+            // 首先由主公选择武将
+            this.game.gameState = GameState.SelectShogunLord;
+            Console.WriteLine(Ognas.Lib.CommonUtils.CommonUtil.GetEnumDescription(this.game.gameState));
+            List<Shogun> shoGunLord = args.shogunCenter.GetSubShogunList(TypeofInitialShogunList.ForMaster);
 
+            User lord;
+            lord = args.userList.Find(new Predicate<User>(targ));
+
+            SelectionShogunProtocol ssp = new SelectionShogunProtocol(shoGunLord, GameState.SelectShogunLord);
+            ssp.ClientAddress = lord.Address;
+            this.SendMessage(ssp);
+        }
+
+        bool targ(User u)
+        {
+            return (u.UserRole == EnumUserRole.Lord);
         }
 
         /// <summary>

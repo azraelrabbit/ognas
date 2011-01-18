@@ -5,4 +5,5 @@
 	<Protocol EnumName="ExitRoom" ClassName="Ognas.Lib.Protocols.ExitRoomProtocol" ProcessClass="Platform.ProtocolProcess" MethodName="ExitRoomProtocolResponse"></Protocol>
 	<Protocol EnumName="RegisterUser" ClassName="Ognas.Lib.Protocols.RegisterUserProtocol" ProcessClass="Platform.ProtocolProcess" MethodName="RegisterUserProtocolResponse"></Protocol>
 	<Protocol EnumName="UdpMessage" ClassName="Ognas.Lib.Protocols.UdpMessageProtocol" ProcessClass="Platform.ProtocolProcess" MethodName="UdpMessageProtocolResponse"></Protocol>
+  <Protocol EnumName="SelectShogun" ClassName="Ognas.Lib.Protocols.SelectionShogunProtocol" ProcessClass="Platform.ProtocolProcess" MethodName="SelectionShogunProtocalResponse"></Protocol>
 </Protocols>

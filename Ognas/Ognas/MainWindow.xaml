@@ -20,8 +20,15 @@
                 <Button x:Name="btnExitRoom" Content="Exit room" Visibility="Collapsed" Click="btnExitRoom_Click"></Button>
             </StackPanel>
         </Canvas>
-        <Canvas Grid.Row="1"  Grid.Column="0" Grid.RowSpan="2" Background="#dcdcdc" >
-
+        <Canvas Grid.Row="1"  Grid.Column="0" Grid.RowSpan="2" Background="#dcdcdc" Panel.ZIndex="1">
+            <Canvas Canvas.Left="8" Canvas.Top="6" Height="150" Name="canvas1" Width="200" />
+            <Canvas Canvas.Left="301" Canvas.Top="6" Height="150" Name="canvas2" Width="200" />
+            <Canvas Canvas.Left="593" Canvas.Top="6" Height="150" Name="canvas3" Width="200" />
+            <Canvas Canvas.Left="3" Canvas.Top="521" Height="147" Name="canvas4" Width="790" />
+            <Canvas Canvas.Left="8" Canvas.Top="180" Height="150" Name="canvas5" Width="200" />
+            <Canvas Canvas.Left="8" Canvas.Top="354" Height="150" Name="canvas6" Width="200"></Canvas>
+            <Canvas Canvas.Left="593" Canvas.Top="180" Height="150" Name="canvas7" Width="200" />
+            <Canvas Canvas.Left="593" Canvas.Top="354" Height="150" Name="canvas8" Width="200" />
         </Canvas>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
             <Label x:Name="lblError" Foreground="Red"></Label>

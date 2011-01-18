@@ -17,6 +17,7 @@ namespace Platform.Games
         /// </summary>
         public CardCenter cardCenter
         {
+
             get;
             set;
         }
@@ -59,6 +60,12 @@ namespace Platform.Games
             set;
         }
 
+        public GameState gameState
+        {
+            get;
+            set;
+        }
+
         /// <summary>
         /// 事件规则处理中心
         /// </summary>
@@ -88,6 +95,8 @@ namespace Platform.Games
             //TODO: 
 
             // 初始化游戏全局变量
+            gameState = GameState.GameStart;
+            this.shogunCenter = new ShogunCenter();
             LoadCards();
             InitSeatList();
             // 洗牌
@@ -103,12 +112,15 @@ namespace Platform.Games
             if (this.OnShogunSelectionBegin != null)
             {
                 ShogunSelectArgs shogunArgs = new ShogunSelectArgs();
+                shogunArgs.shogunCenter = this.shogunCenter;
                 shogunArgs.Message = "开始选择武将...";
+                gameState = GameState.SelectShogunBegin;
+                shogunArgs.userList = this.userList;
                 this.OnShogunSelectionBegin(this, shogunArgs);
             }
 
             // 发牌
-            DealCards();
+            //  DealCards();
 
             // 用户令牌移交到第一顺位玩家
 
@@ -116,6 +128,7 @@ namespace Platform.Games
 
         private void InitSeatList()
         {
+            seatList = new Dictionary<int, List<EnumUserRole>>();
             //游戏人数	主公	    忠臣	 反贼	内奸
             //8	        1	    2	 4	    1
             List<EnumUserRole> seatSet = new List<EnumUserRole>();
@@ -213,7 +226,10 @@ namespace Platform.Games
             {
                 this.userList[i].UserRole = roleList[i];
             }
-
+            if (this.userList.Count == 1)
+            {
+                this.userList[0].UserRole = EnumUserRole.Lord;
+            }
             // 分派身份完毕
             GameEventArgs gameArgs = new GameEventArgs();
             gameArgs.userList = this.userList;
