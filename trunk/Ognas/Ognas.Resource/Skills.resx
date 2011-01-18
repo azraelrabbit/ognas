@@ -119,6 +119,7 @@
   </resheader>
   <data name="60" xml:space="preserve">
     <value>0x04|闪电|0x01|0x01</value>
+    <comment>技能|技能名称|花色|点数</comment>
   </data>
   <data name="61" xml:space="preserve">
     <value>0x1F|八卦阵|0x01|0x02</value>
