@@ -47,6 +47,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Images.Shogun.resx</DependentUpon>
     </Compile>
+    <Compile Include="Images.Skill.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.Skill.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shoguns.Designer.cs">
       <DependentUpon>Shoguns.resx</DependentUpon>
@@ -63,6 +68,10 @@
     <EmbeddedResource Include="Images.Shogun.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Images.Shogun.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Images.Skill.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Skill.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Shoguns.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -170,6 +179,48 @@
     <None Include="Resources\SH65.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Zs1.jpg" />
+    <None Include="Resources\Zqys1.jpg" />
+    <None Include="Resources\Zhfd1.jpg" />
+    <None Include="Resources\Zgln1.jpg" />
+    <None Include="Resources\Zbsm1.jpg" />
+    <None Include="Resources\Wzsy1.jpg" />
+    <None Include="Resources\Wxkj1.jpg" />
+    <None Include="Resources\Wjqf1.jpg" />
+    <None Include="Resources\Wgfd1.jpg" />
+    <None Include="Resources\Tyjy1.jpg" />
+    <None Include="Resources\Tslh1.jpg" />
+    <None Include="Resources\Tj1.jpg" />
+    <None Include="Resources\Tao1.jpg" />
+    <None Include="Resources\Ssqy1.jpg" />
+    <None Include="Resources\Shan1.jpg" />
+    <None Include="Resources\Sha3.jpg" />
+    <None Include="Resources\Sha2.jpg" />
+    <None Include="Resources\Sha1.jpg" />
+    <None Include="Resources\Bgz1.jpg" />
+    <None Include="Resources\Blcd1.jpg" />
+    <None Include="Resources\Bysz1.jpg" />
+    <None Include="Resources\Ct1.jpg" />
+    <None Include="Resources\Cxsgj1.jpg" />
+    <None Include="Resources\Dl1.jpg" />
+    <None Include="Resources\Dw1.jpg" />
+    <None Include="Resources\Fthj1.jpg" />
+    <None Include="Resources\Gdd1.jpg" />
+    <None Include="Resources\Ghcq1.jpg" />
+    <None Include="Resources\Gsf1.jpg" />
+    <None Include="Resources\Hg1.jpg" />
+    <None Include="Resources\Jd1.jpg" />
+    <None Include="Resources\Jdsr1.jpg" />
+    <None Include="Resources\Jiu1.jpg" />
+    <None Include="Resources\Jy1.jpg" />
+    <None Include="Resources\Lbss1.jpg" />
+    <None Include="Resources\Nmrq1.jpg" />
+    <None Include="Resources\Qhj1.jpg" />
+    <None Include="Resources\Qlg1.jpg" />
+    <None Include="Resources\Qlyyd1.jpg" />
+    <None Include="Resources\Sd1.jpg" />
+    <None Include="Resources\Rwd1.png" />
+    <None Include="Resources\Hbj1.jpg" />
     <Content Include="Resources\SH4A.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

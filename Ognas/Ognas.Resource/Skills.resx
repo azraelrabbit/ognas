@@ -118,325 +118,325 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="60" xml:space="preserve">
-    <value>0x04|闪电|0x01|0x01</value>
-    <comment>技能|技能名称|花色|点数</comment>
+    <value>0x04|闪电|0x01|0x01|Shan1</value>
+    <comment>技能|技能名称|花色|点数|图片</comment>
   </data>
   <data name="61" xml:space="preserve">
-    <value>0x1F|八卦阵|0x01|0x02</value>
+    <value>0x1F|八卦阵|0x01|0x02|Bgz1</value>
   </data>
   <data name="62" xml:space="preserve">
-    <value>0x0F|过河拆桥|0x01|0x03</value>
+    <value>0x0F|过河拆桥|0x01|0x03|Ghcq1</value>
   </data>
   <data name="63" xml:space="preserve">
-    <value>0x0F|过河拆桥|0x01|0x04</value>
+    <value>0x0F|过河拆桥|0x01|0x04|Ghcq1</value>
   </data>
   <data name="64" xml:space="preserve">
-    <value>0x1B|青龙偃月刀|0x01|0x05</value>
+    <value>0x1B|青龙偃月刀|0x01|0x05|Qlyyd1</value>
   </data>
   <data name="65" xml:space="preserve">
-    <value>0x05|乐不思蜀|0x01|0x06</value>
+    <value>0x05|乐不思蜀|0x01|0x06|Lbss1</value>
   </data>
   <data name="66" xml:space="preserve">
-    <value>0x0C|南蛮入侵|0x01|0x07</value>
+    <value>0x0C|南蛮入侵|0x01|0x07|Nmrq1</value>
   </data>
   <data name="67" xml:space="preserve">
-    <value>0x01|杀|0x01|0x08</value>
+    <value>0x01|杀|0x01|0x08|Sha1</value>
   </data>
   <data name="68" xml:space="preserve">
-    <value>0x01|杀|0x01|0x09</value>
+    <value>0x01|杀|0x01|0x09|Sha1</value>
   </data>
   <data name="69" xml:space="preserve">
-    <value>0x01|杀|0x01|0x0A</value>
+    <value>0x01|杀|0x01|0x0A|Sha1</value>
   </data>
   <data name="6A" xml:space="preserve">
-    <value>0x06|无懈可击|0x01|0x0B</value>
+    <value>0x06|无懈可击|0x01|0x0B|Wxkj1</value>
   </data>
   <data name="6B" xml:space="preserve">
-    <value>0x1C|丈八蛇矛|0x01|0x0C</value>
+    <value>0x1C|丈八蛇矛|0x01|0x0C|Zbsm1</value>
   </data>
   <data name="6C" xml:space="preserve">
-    <value>0x15|大宛|0x01|0x0D</value>
+    <value>0x15|大宛|0x01|0x0D|Dw1</value>
   </data>
   <data name="6D" xml:space="preserve">
-    <value>0x0B|桃园结义|0x02|0x01</value>
+    <value>0x0B|桃园结义|0x02|0x01|Tyjy1</value>
   </data>
   <data name="6E" xml:space="preserve">
-    <value>0x02|闪|0x02|0x02</value>
+    <value>0x02|闪|0x02|0x02|Shan1</value>
   </data>
   <data name="6F" xml:space="preserve">
-    <value>0x03|桃|0x02|0x03</value>
+    <value>0x03|桃|0x02|0x03|Tao1</value>
   </data>
   <data name="70" xml:space="preserve">
-    <value>0x03|桃|0x02|0x04</value>
+    <value>0x03|桃|0x02|0x04|Tao1</value>
   </data>
   <data name="71" xml:space="preserve">
-    <value>0x1E|麒麟弓|0x02|0x05</value>
+    <value>0x1E|麒麟弓|0x02|0x05|Qlg1</value>
   </data>
   <data name="72" xml:space="preserve">
-    <value>0x03|桃|0x02|0x06</value>
+    <value>0x03|桃|0x02|0x06|Tao1</value>
   </data>
   <data name="73" xml:space="preserve">
-    <value>0x03|桃|0x02|0x07</value>
+    <value>0x03|桃|0x02|0x07|Tao1</value>
   </data>
   <data name="74" xml:space="preserve">
-    <value>0x03|桃|0x02|0x08</value>
+    <value>0x03|桃|0x02|0x08|Tao1</value>
   </data>
   <data name="75" xml:space="preserve">
-    <value>0x03|桃|0x02|0x09</value>
+    <value>0x03|桃|0x02|0x09|Tao1</value>
   </data>
   <data name="76" xml:space="preserve">
-    <value>0x01|杀|0x02|0x0A</value>
+    <value>0x01|杀|0x02|0x0A|Sha1</value>
   </data>
   <data name="77" xml:space="preserve">
-    <value>0x01|杀|0x02|0x0B</value>
+    <value>0x01|杀|0x02|0x0B|Sha1</value>
   </data>
   <data name="78" xml:space="preserve">
-    <value>0x03|桃|0x02|0x0C</value>
+    <value>0x03|桃|0x02|0x0C|Tao1</value>
   </data>
   <data name="79" xml:space="preserve">
-    <value>0x10|爪黄飞电|0x02|0x0D</value>
+    <value>0x10|爪黄飞电|0x02|0x0D|Zhfd1</value>
   </data>
   <data name="7A" xml:space="preserve">
-    <value>0x16|诸葛连弩|0x03|0x01</value>
+    <value>0x16|诸葛连弩|0x03|0x01|Zgln1</value>
   </data>
   <data name="7B" xml:space="preserve">
-    <value>0x1F|八卦阵|0x03|0x02</value>
+    <value>0x1F|八卦阵|0x03|0x02|Bgz1</value>
   </data>
   <data name="7C" xml:space="preserve">
-    <value>0x0F|过河拆桥|0x03|0x03</value>
+    <value>0x0F|过河拆桥|0x03|0x03|Ghcq1</value>
   </data>
   <data name="7D" xml:space="preserve">
-    <value>0x0F|过河拆桥|0x03|0x04</value>
+    <value>0x0F|过河拆桥|0x03|0x04|Ghcq1</value>
   </data>
   <data name="7E" xml:space="preserve">
-    <value>0x11|的卢|0x03|0x05</value>
+    <value>0x11|的卢|0x03|0x05|Dl1</value>
   </data>
   <data name="7F" xml:space="preserve">
-    <value>0x05|乐不思蜀|0x03|0x06</value>
+    <value>0x05|乐不思蜀|0x03|0x06|Lbss1</value>
   </data>
   <data name="80" xml:space="preserve">
-    <value>0x0C|南蛮入侵|0x03|0x07</value>
+    <value>0x0C|南蛮入侵|0x03|0x07|Nmrq1</value>
   </data>
   <data name="81" xml:space="preserve">
-    <value>0x01|杀|0x03|0x08</value>
+    <value>0x01|杀|0x03|0x08|Sha1</value>
   </data>
   <data name="82" xml:space="preserve">
-    <value>0x01|杀|0x03|0x09</value>
+    <value>0x01|杀|0x03|0x09|Sha1</value>
   </data>
   <data name="83" xml:space="preserve">
-    <value>0x01|杀|0x03|0x0A</value>
+    <value>0x01|杀|0x03|0x0A|Sha1</value>
   </data>
   <data name="84" xml:space="preserve">
-    <value>0x01|杀|0x03|0x0B</value>
+    <value>0x01|杀|0x03|0x0B|Sha1</value>
   </data>
   <data name="85" xml:space="preserve">
-    <value>0x07|借刀杀人|0x03|0x0C</value>
+    <value>0x07|借刀杀人|0x03|0x0C|Jdsr1</value>
   </data>
   <data name="86" xml:space="preserve">
-    <value>0x07|借刀杀人|0x03|0x0D</value>
+    <value>0x07|借刀杀人|0x03|0x0D|Jdsr1</value>
   </data>
   <data name="87" xml:space="preserve">
-    <value>0x16|诸葛连弩|0x04|0x01</value>
+    <value>0x16|诸葛连弩|0x04|0x01|Zgln1</value>
   </data>
   <data name="88" xml:space="preserve">
-    <value>0x02|闪|0x04|0x02</value>
+    <value>0x02|闪|0x04|0x02|Shan1</value>
   </data>
   <data name="89" xml:space="preserve">
-    <value>0x02|闪|0x04|0x03</value>
+    <value>0x02|闪|0x04|0x03|Shan1</value>
   </data>
   <data name="8A" xml:space="preserve">
-    <value>0x02|闪|0x04|0x04</value>
+    <value>0x02|闪|0x04|0x04|Shan1</value>
   </data>
   <data name="8B" xml:space="preserve">
-    <value>0x02|闪|0x04|0x05</value>
+    <value>0x02|闪|0x04|0x05|Shan1</value>
   </data>
   <data name="8C" xml:space="preserve">
-    <value>0x02|闪|0x04|0x06</value>
+    <value>0x02|闪|0x04|0x06|Shan1</value>
   </data>
   <data name="8D" xml:space="preserve">
-    <value>0x02|闪|0x04|0x07</value>
+    <value>0x02|闪|0x04|0x07|Shan1</value>
   </data>
   <data name="8E" xml:space="preserve">
-    <value>0x02|闪|0x04|0x08</value>
+    <value>0x02|闪|0x04|0x08|Shan1</value>
   </data>
   <data name="8F" xml:space="preserve">
-    <value>0x02|闪|0x04|0x09</value>
+    <value>0x02|闪|0x04|0x09|Shan1</value>
   </data>
   <data name="90" xml:space="preserve">
-    <value>0x02|闪|0x04|0x0A</value>
+    <value>0x02|闪|0x04|0x0A|Shan1</value>
   </data>
   <data name="91" xml:space="preserve">
-    <value>0x02|闪|0x04|0x0B</value>
+    <value>0x02|闪|0x04|0x0B|Shan1</value>
   </data>
   <data name="92" xml:space="preserve">
-    <value>0x03|桃|0x04|0x0C</value>
+    <value>0x03|桃|0x04|0x0C|Tao1</value>
   </data>
   <data name="93" xml:space="preserve">
-    <value>0x01|杀|0x04|0x0D</value>
+    <value>0x01|杀|0x04|0x0D|Sha1</value>
   </data>
   <data name="94" xml:space="preserve">
-    <value>0x0A|决斗|0x01|0x01</value>
+    <value>0x0A|决斗|0x01|0x01|Jd1</value>
   </data>
   <data name="95" xml:space="preserve">
-    <value>0x19|决斗|0x01|0x02</value>
+    <value>0x19|决斗|0x01|0x02|Jd1</value>
   </data>
   <data name="96" xml:space="preserve">
-    <value>0x0E|顺手牵羊|0x01|0x03</value>
+    <value>0x0E|顺手牵羊|0x01|0x03|Ssqy1</value>
   </data>
   <data name="97" xml:space="preserve">
-    <value>0x0E|顺手牵羊|0x01|0x04</value>
+    <value>0x0E|顺手牵羊|0x01|0x04|Ssqy1</value>
   </data>
   <data name="98" xml:space="preserve">
-    <value>0x12|绝影|0x01|0x05</value>
+    <value>0x12|绝影|0x01|0x05|Jy1</value>
   </data>
   <data name="99" xml:space="preserve">
-    <value>0x18|青釭剑|0x01|0x06</value>
+    <value>0x18|青釭剑|0x01|0x06|Qhj1</value>
   </data>
   <data name="9A" xml:space="preserve">
-    <value>0x01|杀|0x01|0x07</value>
+    <value>0x01|杀|0x01|0x07|Sha1</value>
   </data>
   <data name="9B" xml:space="preserve">
-    <value>0x01|杀|0x01|0x08</value>
+    <value>0x01|杀|0x01|0x08|Sha1</value>
   </data>
   <data name="9C" xml:space="preserve">
-    <value>0x01|杀|0x01|0x09</value>
+    <value>0x01|杀|0x01|0x09|Sha1</value>
   </data>
   <data name="9D" xml:space="preserve">
-    <value>0x01|杀|0x01|0x0A</value>
+    <value>0x01|杀|0x01|0x0A|Sha1</value>
   </data>
   <data name="9E" xml:space="preserve">
-    <value>0x0E|顺手牵羊|0x01|0x0B</value>
+    <value>0x0E|顺手牵羊|0x01|0x0B|Ssqy1</value>
   </data>
   <data name="9F" xml:space="preserve">
-    <value>0x0F|过河拆桥|0x01|0x0C</value>
+    <value>0x0F|过河拆桥|0x01|0x0C|Ghcq1</value>
   </data>
   <data name="A0" xml:space="preserve">
-    <value>0x0C|南蛮入侵|0x01|0x0D</value>
+    <value>0x0C|南蛮入侵|0x01|0x0D|Nmrq1</value>
   </data>
   <data name="A1" xml:space="preserve">
-    <value>0x0D|万箭齐发|0x02|0x01</value>
+    <value>0x0D|万箭齐发|0x02|0x01|Wjqf1</value>
   </data>
   <data name="A2" xml:space="preserve">
-    <value>0x01|闪|0x02|0x02</value>
+    <value>0x01|闪|0x02|0x02|Shan1</value>
   </data>
   <data name="A3" xml:space="preserve">
-    <value>0x08|五谷丰登|0x02|0x03</value>
+    <value>0x08|五谷丰登|0x02|0x03|Wgfd1</value>
   </data>
   <data name="A4" xml:space="preserve">
-    <value>0x08|五谷丰登|0x02|0x04</value>
+    <value>0x08|五谷丰登|0x02|0x04|Wgfd1</value>
   </data>
   <data name="A5" xml:space="preserve">
-    <value>0x13|赤兔|0x02|0x05</value>
+    <value>0x13|赤兔|0x02|0x05|Ct1</value>
   </data>
   <data name="A6" xml:space="preserve">
-    <value>0x05|乐不思蜀|0x02|0x06</value>
+    <value>0x05|乐不思蜀|0x02|0x06|Lbss1</value>
   </data>
   <data name="A7" xml:space="preserve">
-    <value>0x09|无中生有|0x02|0x07</value>
+    <value>0x09|无中生有|0x02|0x07|Wzsy1</value>
   </data>
   <data name="A8" xml:space="preserve">
-    <value>0x09|无中生有|0x02|0x08</value>
+    <value>0x09|无中生有|0x02|0x08|Wzsy1</value>
   </data>
   <data name="A9" xml:space="preserve">
-    <value>0x09|无中生有|0x02|0x09</value>
+    <value>0x09|无中生有|0x02|0x09|Wzsy1</value>
   </data>
   <data name="AA" xml:space="preserve">
-    <value>0x01|杀|0x02|0x0A</value>
+    <value>0x01|杀|0x02|0x0A|Sha1</value>
   </data>
   <data name="AB" xml:space="preserve">
-    <value>0x09|无中生有|0x02|0x0B</value>
+    <value>0x09|无中生有|0x02|0x0B|Wzsy1</value>
   </data>
   <data name="AC" xml:space="preserve">
-    <value>0x0F|过河拆桥|0x02|0x0C</value>
+    <value>0x0F|过河拆桥|0x02|0x0C|Ghcq1</value>
   </data>
   <data name="AD" xml:space="preserve">
-    <value>0x02|闪|0x02|0x0D</value>
+    <value>0x02|闪|0x02|0x0D|Shan1</value>
   </data>
   <data name="AE" xml:space="preserve">
-    <value>0x0A|决斗|0x03|0x01</value>
+    <value>0x0A|决斗|0x03|0x01|Jd1</value>
   </data>
   <data name="AF" xml:space="preserve">
-    <value>0x01|杀|0x03|0x02</value>
+    <value>0x01|杀|0x03|0x02|Sha1</value>
   </data>
   <data name="B0" xml:space="preserve">
-    <value>0x01|杀|0x03|0x03</value>
+    <value>0x01|杀|0x03|0x03|Sha1</value>
   </data>
   <data name="B1" xml:space="preserve">
-    <value>0x01|杀|0x03|0x04</value>
+    <value>0x01|杀|0x03|0x04|Sha1</value>
   </data>
   <data name="B2" xml:space="preserve">
-    <value>0x01|杀|0x03|0x05</value>
+    <value>0x01|杀|0x03|0x05|Sha1</value>
   </data>
   <data name="B3" xml:space="preserve">
-    <value>0x01|杀|0x03|0x06</value>
+    <value>0x01|杀|0x03|0x06|Sha1</value>
   </data>
   <data name="B4" xml:space="preserve">
-    <value>0x01|杀|0x03|0x07</value>
+    <value>0x01|杀|0x03|0x07|Sha1</value>
   </data>
   <data name="B5" xml:space="preserve">
-    <value>0x01|杀|0x03|0x08</value>
+    <value>0x01|杀|0x03|0x08|Sha1</value>
   </data>
   <data name="B6" xml:space="preserve">
-    <value>0x01|杀|0x03|0x09</value>
+    <value>0x01|杀|0x03|0x09|Sha1</value>
   </data>
   <data name="B7" xml:space="preserve">
-    <value>0x01|杀|0x03|0x0A</value>
+    <value>0x01|杀|0x03|0x0A|Sha1</value>
   </data>
   <data name="B8" xml:space="preserve">
-    <value>0x01|杀|0x03|0x0B</value>
+    <value>0x01|杀|0x03|0x0B|Sha1</value>
   </data>
   <data name="B9" xml:space="preserve">
-    <value>0x06|无懈可击|0x03|0x0C</value>
+    <value>0x06|无懈可击|0x03|0x0C|Wxkj1</value>
   </data>
   <data name="BA" xml:space="preserve">
-    <value>0x06|无懈可击|0x03|0x0D</value>
+    <value>0x06|无懈可击|0x03|0x0D|Wxkj1</value>
   </data>
   <data name="BB" xml:space="preserve">
-    <value>0x0A|决斗|0x04|0x01</value>
+    <value>0x0A|决斗|0x04|0x01|Jd1</value>
   </data>
   <data name="BC" xml:space="preserve">
-    <value>0x0A|闪|0x04|0x02</value>
+    <value>0x0A|闪|0x04|0x02|Shan1</value>
   </data>
   <data name="BD" xml:space="preserve">
-    <value>0x0E|顺手牵羊|0x04|0x03</value>
+    <value>0x0E|顺手牵羊|0x04|0x03|Ssqy1</value>
   </data>
   <data name="BE" xml:space="preserve">
-    <value>0x0E|顺手牵羊|0x04|0x04</value>
+    <value>0x0E|顺手牵羊|0x04|0x04|Ssqy1</value>
   </data>
   <data name="BF" xml:space="preserve">
-    <value>0x1A|贯石斧|0x04|0x05</value>
+    <value>0x1A|贯石斧|0x04|0x05|Gsf1</value>
   </data>
   <data name="C0" xml:space="preserve">
-    <value>0x01|杀|0x04|0x06</value>
+    <value>0x01|杀|0x04|0x06|Sha1</value>
   </data>
   <data name="C1" xml:space="preserve">
-    <value>0x01|杀|0x04|0x07</value>
+    <value>0x01|杀|0x04|0x07|Sha1</value>
   </data>
   <data name="C2" xml:space="preserve">
-    <value>0x01|杀|0x04|0x08</value>
+    <value>0x01|杀|0x04|0x08|Sha1</value>
   </data>
   <data name="C3" xml:space="preserve">
-    <value>0x01|杀|0x04|0x09</value>
+    <value>0x01|杀|0x04|0x09|Sha1</value>
   </data>
   <data name="C4" xml:space="preserve">
-    <value>0x01|杀|0x04|0x0A</value>
+    <value>0x01|杀|0x04|0x0A|Sha1</value>
   </data>
   <data name="C5" xml:space="preserve">
-    <value>0x02|闪|0x04|0x0B</value>
+    <value>0x02|闪|0x04|0x0B|Shan1</value>
   </data>
   <data name="C6" xml:space="preserve">
-    <value>0x02|方天画戟|0x04|0x0C</value>
+    <value>0x02|方天画戟|0x04|0x0C|Fthj1</value>
   </data>
   <data name="C7" xml:space="preserve">
-    <value>0x1D|紫骍|0x04|0x0D</value>
+    <value>0x1D|紫骍|0x04|0x0D|Zs1</value>
   </data>
   <data name="C9" xml:space="preserve">
-    <value>0x17|寒冰剑|0x01|0x02</value>
+    <value>0x17|寒冰剑|0x01|0x02|Hbj1</value>
   </data>
   <data name="E0" xml:space="preserve">
-    <value>0x04|闪电|0x02|0x0C</value>
+    <value>0x04|闪电|0x02|0x0C|Sd1</value>
   </data>
   <data name="E3" xml:space="preserve">
-    <value>0x20|仁王盾|0x03|0x02</value>
+    <value>0x20|仁王盾|0x03|0x02|Rwd1</value>
   </data>
 </root>

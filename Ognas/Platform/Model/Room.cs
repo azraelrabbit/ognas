@@ -39,14 +39,14 @@ namespace Platform.Model
 
         public RoomEnd RoomEnd = null;
 
-        private GameBase gameBase = null;
+        public GameBase gameBase = null;
 
         public bool IsFull
         {
             get
             {
                 return this.AddressUserDictionary.Count == userMaxCount;
-            }            
+            }
         }
 
         public string RoomName
@@ -134,7 +134,7 @@ namespace Platform.Model
             lock (roomLock)
             {
                 // notify play
-                
+
                 // send Udp message
                 this.SendUdpMessage(string.Format("{0} the user {1} has exited the room {2}.", Constants.SystemMessage, this.AddressUserDictionary[protocol.ClientAddress].UserName, this.roomName));
 

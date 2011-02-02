@@ -50,6 +50,12 @@ namespace Ognas.Lib.Skills
             get;
         }
 
+        public string Picture
+        {
+            get;
+            set;
+        }
+
         public Stunt Stunt
         {
             get;

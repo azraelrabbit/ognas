@@ -75,7 +75,7 @@ namespace Ognas.Client
             return null;
         }
 
-        public static byte[] SelectionShogunProtocol(object host, Protocol protocol)
+        public static byte[] SelectionShogunProtocolResponse(object host, Protocol protocol)
         {
             MainWindow mainWindow = (MainWindow)host;
             SelectionShogunProtocol sspclient = (SelectionShogunProtocol)protocol;
@@ -83,6 +83,20 @@ namespace Ognas.Client
             {
                 sspclient.GetMessageShogun();
                 mainWindow.ShowSelectShogunWindow(sspclient);
+            });
+            return null;
+        }
+
+        public static byte[] DealCardProtocolResponse(object host, Protocol protocol)
+        {
+            MainWindow mainWindow = (MainWindow)host;
+            DealCardProtocol dcpClient = (DealCardProtocol)protocol;
+            mainWindow.Dispatcher.BeginInvoke(DispatcherPriority.Normal, (ThreadStart)delegate()
+            {
+                dcpClient.GetDealedCardsClient();
+
+                mainWindow.localUser.HandCards = dcpClient.cardList;
+                mainWindow.GetCards();
             });
             return null;
         }

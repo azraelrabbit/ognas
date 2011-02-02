@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Ognas.Lib;
+using Ognas.Lib.Shoguns;
 
 namespace Platform.OgnasEventArgs
 {
     public class ShogunSelectArgs : EventArgs
     {
         public ShogunCenter shogunCenter
+        {
+            get;
+            set;
+        }
+
+        public Shogun SelectedShogun
         {
             get;
             set;

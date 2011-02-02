@@ -24,9 +24,19 @@ namespace Platform.Model
 
     public delegate void DealCardBegin(object sender, DealCardsArgs args);
 
+    public delegate void DealCardComplete(object sender, DealCardsArgs args);
+
     public delegate void SendMessageToUserClient(object sender, SendMessageArgs args);
 
     public delegate void ShogunSelectionBegin(object sender, ShogunSelectArgs args);
+
+    public delegate void ShogunSelectionLordComplete(object sender, ShogunSelectArgs args);
+
+    public delegate void ShogunSelectionOtherBegin(object sender, ShogunSelectArgs args);
+
+    public delegate void ShogunSelectionOtherComplete(object sender, ShogunSelectArgs args);
+
+
 
     #endregion Game about
 
@@ -43,14 +53,14 @@ namespace Platform.Model
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="args"></param>
-    public delegate void UserGetCards(object sender, DealCardsArgs args);
+    public delegate void UserCardsGet(object sender, DealCardsArgs args);
 
     /// <summary>
     /// 弃牌
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="args"></param>
-    public delegate void UserDropCards(object sender, DealCardsArgs args);
+    public delegate void UserCardsDrop(object sender, DealCardsArgs args);
 
     #endregion
 

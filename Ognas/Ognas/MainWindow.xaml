@@ -1,40 +1,54 @@
 ﻿<Window x:Class="Ognas.Client.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="768" Width="1024" Loaded="Window_Loaded">
-    <Grid>
+        Title="MainWindow" Height="768" Width="1052" Loaded="Window_Loaded">
+    <Grid Height="702" Width="1025">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Ognas;component/Images/sgsMainBack.png" />
+        </Grid.Background>
         <Grid.RowDefinitions >
             <RowDefinition Height="35"   />
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="20" />
+            <RowDefinition Height="138.5"/>
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="800" />
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="815.5" />
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Canvas Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="2">
-            <StackPanel Orientation="Horizontal">
-                <Label x:Name="lblWelcomeInfo" Foreground="Blue" ></Label>
-                <Label x:Name="lblRoomInfo" Foreground="Blue" ></Label>
-                <Button x:Name="btnExitRoom" Content="Exit room" Visibility="Collapsed" Click="btnExitRoom_Click"></Button>
-            </StackPanel>
+            <StackPanel Orientation="Horizontal"></StackPanel>
+            <Button x:Name="btnExitRoom" Content="Exit room" Visibility="Collapsed" Click="btnExitRoom_Click" Canvas.Left="966" Canvas.Top="6"></Button>
+            <Label x:Name="lblRoomInfo" Foreground="Blue" Canvas.Left="361" Canvas.Top="6"></Label>
+            <Label x:Name="lblWelcomeInfo" Foreground="Blue" Canvas.Left="179" Canvas.Top="6"></Label>
         </Canvas>
-        <Canvas Grid.Row="1"  Grid.Column="0" Grid.RowSpan="2" Background="#dcdcdc" Panel.ZIndex="1">
-            <Canvas Canvas.Left="8" Canvas.Top="6" Height="150" Name="canvas1" Width="200" />
-            <Canvas Canvas.Left="301" Canvas.Top="6" Height="150" Name="canvas2" Width="200" />
-            <Canvas Canvas.Left="593" Canvas.Top="6" Height="150" Name="canvas3" Width="200" />
-            <Canvas Canvas.Left="3" Canvas.Top="521" Height="147" Name="canvas4" Width="790" />
-            <Canvas Canvas.Left="8" Canvas.Top="180" Height="150" Name="canvas5" Width="200" />
-            <Canvas Canvas.Left="8" Canvas.Top="354" Height="150" Name="canvas6" Width="200"></Canvas>
-            <Canvas Canvas.Left="593" Canvas.Top="180" Height="150" Name="canvas7" Width="200" />
-            <Canvas Canvas.Left="593" Canvas.Top="354" Height="150" Name="canvas8" Width="200" />
+        <Canvas Grid.Row="1" Grid.RowSpan="2" Background="{x:Null}" Panel.ZIndex="1" Name="cvMainW">
+            <Canvas Canvas.Left="3" Canvas.Top="462" Height="206" x:Name="cvPCpanel" Width="1021">
+            	<Canvas Canvas.Left="0" Canvas.Top="0" Height="198" x:Name="cvEquip" Width="171">
+            		<Grid Canvas.Left="8" Canvas.Top="55.5" Height="134.5" x:Name="gdEquip" Width="164">
+            			<Grid.RowDefinitions>
+            				<RowDefinition x:Name="Weapon" Height="0.309*" />
+            				<RowDefinition x:Name="Armor" Height="0.238*" />
+            				<RowDefinition x:Name="Plushorse" Height="0.215*" />
+            				<RowDefinition x:Name="MinusHorse" Height="0.238*" />
+            			</Grid.RowDefinitions>
+            		</Grid>
+            	</Canvas>
+            	<Canvas Canvas.Left="175" Canvas.Top="61" Height="130" x:Name="cvCard" Width="616" HorizontalAlignment="Left" />
+            	<Canvas Canvas.Left="795" Canvas.Top="0" Height="206" x:Name="cvPlayer" Width="226" />
+            </Canvas>
+            <Canvas Canvas.Left="179" Canvas.Top="39" Height="158" x:Name="p3" Width="137" />
+            <Canvas Canvas.Left="340" Canvas.Top="39" Height="158" x:Name="p4" Width="134" />
+            <Canvas Canvas.Left="498" Canvas.Top="39" Height="158" x:Name="p5" Width="136" />
+            <Canvas Canvas.Left="20" Canvas.Top="90" Height="159" x:Name="p2" Width="139" />
+            <Canvas Canvas.Left="20" Canvas.Top="289" Height="159" x:Name="p1" Width="139"/>
+            <Canvas Canvas.Left="656" Canvas.Top="90" Height="159" x:Name="p6" Width="137" />
+            <Canvas Canvas.Left="656" Canvas.Top="289" Height="159" x:Name="p7" Width="137" />
         </Canvas>
-        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical">
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="0,0,0,82">
             <Label x:Name="lblError" Foreground="Red"></Label>
             <StackPanel x:Name="panelEnterRoom" Visibility="Visible" Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="Room Name"></Label>
+                    <Label Content="Room Name" Foreground="#FFEFE9E9"></Label>
                     <TextBox x:Name="txtRoomName" Width="100"></TextBox>
                 </StackPanel>
             
@@ -44,8 +58,8 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical">
-            <RichTextBox x:Name="richMessage" Height="400" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Vertical" RenderTransformOrigin="0.492,0.494">
+            <RichTextBox x:Name="richMessage" Height="257" IsReadOnly="True" ScrollViewer.VerticalScrollBarVisibility="Auto" Background="{x:Null}" Foreground="#FF40F70F">
                 <RichTextBox.Resources>
                     <Style TargetType="{x:Type Paragraph}">
                         <Setter Property="Margin" Value="2"></Setter>
@@ -53,7 +67,7 @@
                 </RichTextBox.Resources>
             </RichTextBox>
             <RichTextBox x:Name="richInputMessage" Height="50" SpellCheck.IsEnabled="True" ScrollViewer.VerticalScrollBarVisibility="Auto"></RichTextBox> 
-            <Button x:Name="btnSendMessage" Click="btnSendMessage_Click" Content="SendMessage"></Button>
+            <Button x:Name="btnSendMessage" Click="btnSendMessage_Click" Content="SendMessage" Height="18.277"/>
         </StackPanel>
     </Grid>
 </Window>

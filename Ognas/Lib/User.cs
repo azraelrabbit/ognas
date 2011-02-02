@@ -21,6 +21,7 @@ namespace Ognas.Lib
         public User(string userName)
         {
             this.userName = userName;
+            this.UserState = EnumUserState.Live;
         }
 
         private string userName;
@@ -30,6 +31,22 @@ namespace Ognas.Lib
             get { return userName; }
         }
 
+        public List<Skills.Skill> HandCards
+        {
+            get;
+            set;
+        }
+        public Shoguns.Shogun shogun
+        {
+            get;
+            set;
+        }
+
+        public EnumUserState UserState
+        {
+            get;
+            set;
+        }
 
         public string Address { get; set; }
     }
