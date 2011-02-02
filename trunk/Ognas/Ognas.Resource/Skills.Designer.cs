@@ -70,7 +70,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x04|闪电|0x01|0x01 的本地化字符串。
+        ///   查找类似 0x04|闪电|0x01|0x01|Shan1 的本地化字符串。
         /// </summary>
         public static string _60
         {
@@ -81,7 +81,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x1F|八卦阵|0x01|0x02 的本地化字符串。
+        ///   查找类似 0x1F|八卦阵|0x01|0x02|Bgz1 的本地化字符串。
         /// </summary>
         public static string _61
         {
@@ -92,7 +92,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0F|过河拆桥|0x01|0x03 的本地化字符串。
+        ///   查找类似 0x0F|过河拆桥|0x01|0x03|Ghcq1 的本地化字符串。
         /// </summary>
         public static string _62
         {
@@ -103,7 +103,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0F|过河拆桥|0x01|0x04 的本地化字符串。
+        ///   查找类似 0x0F|过河拆桥|0x01|0x04|Ghcq1 的本地化字符串。
         /// </summary>
         public static string _63
         {
@@ -114,7 +114,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x1B|青龙偃月刀|0x01|0x05 的本地化字符串。
+        ///   查找类似 0x1B|青龙偃月刀|0x01|0x05|Qlyyd1 的本地化字符串。
         /// </summary>
         public static string _64
         {
@@ -125,7 +125,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x05|乐不思蜀|0x01|0x06 的本地化字符串。
+        ///   查找类似 0x05|乐不思蜀|0x01|0x06|Lbss1 的本地化字符串。
         /// </summary>
         public static string _65
         {
@@ -136,7 +136,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0C|南蛮入侵|0x01|0x07 的本地化字符串。
+        ///   查找类似 0x0C|南蛮入侵|0x01|0x07|Nmrq1 的本地化字符串。
         /// </summary>
         public static string _66
         {
@@ -147,7 +147,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x01|0x08 的本地化字符串。
+        ///   查找类似 0x01|杀|0x01|0x08|Sha1 的本地化字符串。
         /// </summary>
         public static string _67
         {
@@ -158,7 +158,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x01|0x09 的本地化字符串。
+        ///   查找类似 0x01|杀|0x01|0x09|Sha1 的本地化字符串。
         /// </summary>
         public static string _68
         {
@@ -169,7 +169,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x01|0x0A 的本地化字符串。
+        ///   查找类似 0x01|杀|0x01|0x0A|Sha1 的本地化字符串。
         /// </summary>
         public static string _69
         {
@@ -180,7 +180,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x06|无懈可击|0x01|0x0B 的本地化字符串。
+        ///   查找类似 0x06|无懈可击|0x01|0x0B|Wxkj1 的本地化字符串。
         /// </summary>
         public static string _6A
         {
@@ -191,7 +191,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x1C|丈八蛇矛|0x01|0x0C 的本地化字符串。
+        ///   查找类似 0x1C|丈八蛇矛|0x01|0x0C|Zbsm1 的本地化字符串。
         /// </summary>
         public static string _6B
         {
@@ -202,7 +202,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x15|大宛|0x01|0x0D 的本地化字符串。
+        ///   查找类似 0x15|大宛|0x01|0x0D|Dw1 的本地化字符串。
         /// </summary>
         public static string _6C
         {
@@ -213,7 +213,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0B|桃园结义|0x02|0x01 的本地化字符串。
+        ///   查找类似 0x0B|桃园结义|0x02|0x01|Tyjy1 的本地化字符串。
         /// </summary>
         public static string _6D
         {
@@ -224,7 +224,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x02|0x02 的本地化字符串。
+        ///   查找类似 0x02|闪|0x02|0x02|Shan1 的本地化字符串。
         /// </summary>
         public static string _6E
         {
@@ -235,7 +235,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x03|桃|0x02|0x03 的本地化字符串。
+        ///   查找类似 0x03|桃|0x02|0x03|Tao1 的本地化字符串。
         /// </summary>
         public static string _6F
         {
@@ -246,7 +246,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x03|桃|0x02|0x04 的本地化字符串。
+        ///   查找类似 0x03|桃|0x02|0x04|Tao1 的本地化字符串。
         /// </summary>
         public static string _70
         {
@@ -257,7 +257,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x1E|麒麟弓|0x02|0x05 的本地化字符串。
+        ///   查找类似 0x1E|麒麟弓|0x02|0x05|Qlg1 的本地化字符串。
         /// </summary>
         public static string _71
         {
@@ -268,7 +268,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x03|桃|0x02|0x06 的本地化字符串。
+        ///   查找类似 0x03|桃|0x02|0x06|Tao1 的本地化字符串。
         /// </summary>
         public static string _72
         {
@@ -279,7 +279,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x03|桃|0x02|0x07 的本地化字符串。
+        ///   查找类似 0x03|桃|0x02|0x07|Tao1 的本地化字符串。
         /// </summary>
         public static string _73
         {
@@ -290,7 +290,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x03|桃|0x02|0x08 的本地化字符串。
+        ///   查找类似 0x03|桃|0x02|0x08|Tao1 的本地化字符串。
         /// </summary>
         public static string _74
         {
@@ -301,7 +301,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x03|桃|0x02|0x09 的本地化字符串。
+        ///   查找类似 0x03|桃|0x02|0x09|Tao1 的本地化字符串。
         /// </summary>
         public static string _75
         {
@@ -312,7 +312,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x02|0x0A 的本地化字符串。
+        ///   查找类似 0x01|杀|0x02|0x0A|Sha1 的本地化字符串。
         /// </summary>
         public static string _76
         {
@@ -323,7 +323,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x02|0x0B 的本地化字符串。
+        ///   查找类似 0x01|杀|0x02|0x0B|Sha1 的本地化字符串。
         /// </summary>
         public static string _77
         {
@@ -334,7 +334,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x03|桃|0x02|0x0C 的本地化字符串。
+        ///   查找类似 0x03|桃|0x02|0x0C|Tao1 的本地化字符串。
         /// </summary>
         public static string _78
         {
@@ -345,7 +345,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x10|爪黄飞电|0x02|0x0D 的本地化字符串。
+        ///   查找类似 0x10|爪黄飞电|0x02|0x0D|Zhfd1 的本地化字符串。
         /// </summary>
         public static string _79
         {
@@ -356,7 +356,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x16|诸葛连弩|0x03|0x01 的本地化字符串。
+        ///   查找类似 0x16|诸葛连弩|0x03|0x01|Zgln1 的本地化字符串。
         /// </summary>
         public static string _7A
         {
@@ -367,7 +367,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x1F|八卦阵|0x03|0x02 的本地化字符串。
+        ///   查找类似 0x1F|八卦阵|0x03|0x02|Bgz1 的本地化字符串。
         /// </summary>
         public static string _7B
         {
@@ -378,7 +378,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0F|过河拆桥|0x03|0x03 的本地化字符串。
+        ///   查找类似 0x0F|过河拆桥|0x03|0x03|Ghcq1 的本地化字符串。
         /// </summary>
         public static string _7C
         {
@@ -389,7 +389,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0F|过河拆桥|0x03|0x04 的本地化字符串。
+        ///   查找类似 0x0F|过河拆桥|0x03|0x04|Ghcq1 的本地化字符串。
         /// </summary>
         public static string _7D
         {
@@ -400,7 +400,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x11|的卢|0x03|0x05 的本地化字符串。
+        ///   查找类似 0x11|的卢|0x03|0x05|Dl1 的本地化字符串。
         /// </summary>
         public static string _7E
         {
@@ -411,7 +411,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x05|乐不思蜀|0x03|0x06 的本地化字符串。
+        ///   查找类似 0x05|乐不思蜀|0x03|0x06|Lbss1 的本地化字符串。
         /// </summary>
         public static string _7F
         {
@@ -422,7 +422,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0C|南蛮入侵|0x03|0x07 的本地化字符串。
+        ///   查找类似 0x0C|南蛮入侵|0x03|0x07|Nmrq1 的本地化字符串。
         /// </summary>
         public static string _80
         {
@@ -433,7 +433,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x08 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x08|Sha1 的本地化字符串。
         /// </summary>
         public static string _81
         {
@@ -444,7 +444,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x09 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x09|Sha1 的本地化字符串。
         /// </summary>
         public static string _82
         {
@@ -455,7 +455,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x0A 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x0A|Sha1 的本地化字符串。
         /// </summary>
         public static string _83
         {
@@ -466,7 +466,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x0B 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x0B|Sha1 的本地化字符串。
         /// </summary>
         public static string _84
         {
@@ -477,7 +477,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x07|借刀杀人|0x03|0x0C 的本地化字符串。
+        ///   查找类似 0x07|借刀杀人|0x03|0x0C|Jdsr1 的本地化字符串。
         /// </summary>
         public static string _85
         {
@@ -488,7 +488,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x07|借刀杀人|0x03|0x0D 的本地化字符串。
+        ///   查找类似 0x07|借刀杀人|0x03|0x0D|Jdsr1 的本地化字符串。
         /// </summary>
         public static string _86
         {
@@ -499,7 +499,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x16|诸葛连弩|0x04|0x01 的本地化字符串。
+        ///   查找类似 0x16|诸葛连弩|0x04|0x01|Zgln1 的本地化字符串。
         /// </summary>
         public static string _87
         {
@@ -510,7 +510,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x02 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x02|Shan1 的本地化字符串。
         /// </summary>
         public static string _88
         {
@@ -521,7 +521,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x03 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x03|Shan1 的本地化字符串。
         /// </summary>
         public static string _89
         {
@@ -532,7 +532,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x04 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x04|Shan1 的本地化字符串。
         /// </summary>
         public static string _8A
         {
@@ -543,7 +543,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x05 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x05|Shan1 的本地化字符串。
         /// </summary>
         public static string _8B
         {
@@ -554,7 +554,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x06 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x06|Shan1 的本地化字符串。
         /// </summary>
         public static string _8C
         {
@@ -565,7 +565,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x07 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x07|Shan1 的本地化字符串。
         /// </summary>
         public static string _8D
         {
@@ -576,7 +576,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x08 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x08|Shan1 的本地化字符串。
         /// </summary>
         public static string _8E
         {
@@ -587,7 +587,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x09 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x09|Shan1 的本地化字符串。
         /// </summary>
         public static string _8F
         {
@@ -598,7 +598,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x0A 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x0A|Shan1 的本地化字符串。
         /// </summary>
         public static string _90
         {
@@ -609,7 +609,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x0B 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x0B|Shan1 的本地化字符串。
         /// </summary>
         public static string _91
         {
@@ -620,7 +620,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x03|桃|0x04|0x0C 的本地化字符串。
+        ///   查找类似 0x03|桃|0x04|0x0C|Tao1 的本地化字符串。
         /// </summary>
         public static string _92
         {
@@ -631,7 +631,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x04|0x0D 的本地化字符串。
+        ///   查找类似 0x01|杀|0x04|0x0D|Sha1 的本地化字符串。
         /// </summary>
         public static string _93
         {
@@ -642,7 +642,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0A|决斗|0x01|0x01 的本地化字符串。
+        ///   查找类似 0x0A|决斗|0x01|0x01|Jd1 的本地化字符串。
         /// </summary>
         public static string _94
         {
@@ -653,7 +653,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x19|决斗|0x01|0x02 的本地化字符串。
+        ///   查找类似 0x19|决斗|0x01|0x02|Jd1 的本地化字符串。
         /// </summary>
         public static string _95
         {
@@ -664,7 +664,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0E|顺手牵羊|0x01|0x03 的本地化字符串。
+        ///   查找类似 0x0E|顺手牵羊|0x01|0x03|Ssqy1 的本地化字符串。
         /// </summary>
         public static string _96
         {
@@ -675,7 +675,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0E|顺手牵羊|0x01|0x04 的本地化字符串。
+        ///   查找类似 0x0E|顺手牵羊|0x01|0x04|Ssqy1 的本地化字符串。
         /// </summary>
         public static string _97
         {
@@ -686,7 +686,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x12|绝影|0x01|0x05 的本地化字符串。
+        ///   查找类似 0x12|绝影|0x01|0x05|Jy1 的本地化字符串。
         /// </summary>
         public static string _98
         {
@@ -697,7 +697,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x18|青釭剑|0x01|0x06 的本地化字符串。
+        ///   查找类似 0x18|青釭剑|0x01|0x06|Qhj1 的本地化字符串。
         /// </summary>
         public static string _99
         {
@@ -708,7 +708,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x01|0x07 的本地化字符串。
+        ///   查找类似 0x01|杀|0x01|0x07|Sha1 的本地化字符串。
         /// </summary>
         public static string _9A
         {
@@ -719,7 +719,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x01|0x08 的本地化字符串。
+        ///   查找类似 0x01|杀|0x01|0x08|Sha1 的本地化字符串。
         /// </summary>
         public static string _9B
         {
@@ -730,7 +730,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x01|0x09 的本地化字符串。
+        ///   查找类似 0x01|杀|0x01|0x09|Sha1 的本地化字符串。
         /// </summary>
         public static string _9C
         {
@@ -741,7 +741,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x01|0x0A 的本地化字符串。
+        ///   查找类似 0x01|杀|0x01|0x0A|Sha1 的本地化字符串。
         /// </summary>
         public static string _9D
         {
@@ -752,7 +752,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0E|顺手牵羊|0x01|0x0B 的本地化字符串。
+        ///   查找类似 0x0E|顺手牵羊|0x01|0x0B|Ssqy1 的本地化字符串。
         /// </summary>
         public static string _9E
         {
@@ -763,7 +763,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0F|过河拆桥|0x01|0x0C 的本地化字符串。
+        ///   查找类似 0x0F|过河拆桥|0x01|0x0C|Ghcq1 的本地化字符串。
         /// </summary>
         public static string _9F
         {
@@ -774,7 +774,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0C|南蛮入侵|0x01|0x0D 的本地化字符串。
+        ///   查找类似 0x0C|南蛮入侵|0x01|0x0D|Nmrq1 的本地化字符串。
         /// </summary>
         public static string A0
         {
@@ -785,7 +785,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0D|万箭齐发|0x02|0x01 的本地化字符串。
+        ///   查找类似 0x0D|万箭齐发|0x02|0x01|Wjqf1 的本地化字符串。
         /// </summary>
         public static string A1
         {
@@ -796,7 +796,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|闪|0x02|0x02 的本地化字符串。
+        ///   查找类似 0x01|闪|0x02|0x02|Shan1 的本地化字符串。
         /// </summary>
         public static string A2
         {
@@ -807,7 +807,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x08|五谷丰登|0x02|0x03 的本地化字符串。
+        ///   查找类似 0x08|五谷丰登|0x02|0x03|Wgfd1 的本地化字符串。
         /// </summary>
         public static string A3
         {
@@ -818,7 +818,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x08|五谷丰登|0x02|0x04 的本地化字符串。
+        ///   查找类似 0x08|五谷丰登|0x02|0x04|Wgfd1 的本地化字符串。
         /// </summary>
         public static string A4
         {
@@ -829,7 +829,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x13|赤兔|0x02|0x05 的本地化字符串。
+        ///   查找类似 0x13|赤兔|0x02|0x05|Ct1 的本地化字符串。
         /// </summary>
         public static string A5
         {
@@ -840,7 +840,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x05|乐不思蜀|0x02|0x06 的本地化字符串。
+        ///   查找类似 0x05|乐不思蜀|0x02|0x06|Lbss1 的本地化字符串。
         /// </summary>
         public static string A6
         {
@@ -851,7 +851,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x09|无中生有|0x02|0x07 的本地化字符串。
+        ///   查找类似 0x09|无中生有|0x02|0x07|Wzsy1 的本地化字符串。
         /// </summary>
         public static string A7
         {
@@ -862,7 +862,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x09|无中生有|0x02|0x08 的本地化字符串。
+        ///   查找类似 0x09|无中生有|0x02|0x08|Wzsy1 的本地化字符串。
         /// </summary>
         public static string A8
         {
@@ -873,7 +873,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x09|无中生有|0x02|0x09 的本地化字符串。
+        ///   查找类似 0x09|无中生有|0x02|0x09|Wzsy1 的本地化字符串。
         /// </summary>
         public static string A9
         {
@@ -884,7 +884,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x02|0x0A 的本地化字符串。
+        ///   查找类似 0x01|杀|0x02|0x0A|Sha1 的本地化字符串。
         /// </summary>
         public static string AA
         {
@@ -895,7 +895,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x09|无中生有|0x02|0x0B 的本地化字符串。
+        ///   查找类似 0x09|无中生有|0x02|0x0B|Wzsy1 的本地化字符串。
         /// </summary>
         public static string AB
         {
@@ -906,7 +906,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0F|过河拆桥|0x02|0x0C 的本地化字符串。
+        ///   查找类似 0x0F|过河拆桥|0x02|0x0C|Ghcq1 的本地化字符串。
         /// </summary>
         public static string AC
         {
@@ -917,7 +917,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x02|0x0D 的本地化字符串。
+        ///   查找类似 0x02|闪|0x02|0x0D|Shan1 的本地化字符串。
         /// </summary>
         public static string AD
         {
@@ -928,7 +928,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0A|决斗|0x03|0x01 的本地化字符串。
+        ///   查找类似 0x0A|决斗|0x03|0x01|Jd1 的本地化字符串。
         /// </summary>
         public static string AE
         {
@@ -939,7 +939,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x02 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x02|Sha1 的本地化字符串。
         /// </summary>
         public static string AF
         {
@@ -950,7 +950,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x03 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x03|Sha1 的本地化字符串。
         /// </summary>
         public static string B0
         {
@@ -961,7 +961,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x04 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x04|Sha1 的本地化字符串。
         /// </summary>
         public static string B1
         {
@@ -972,7 +972,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x05 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x05|Sha1 的本地化字符串。
         /// </summary>
         public static string B2
         {
@@ -983,7 +983,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x06 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x06|Sha1 的本地化字符串。
         /// </summary>
         public static string B3
         {
@@ -994,7 +994,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x07 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x07|Sha1 的本地化字符串。
         /// </summary>
         public static string B4
         {
@@ -1005,7 +1005,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x08 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x08|Sha1 的本地化字符串。
         /// </summary>
         public static string B5
         {
@@ -1016,7 +1016,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x09 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x09|Sha1 的本地化字符串。
         /// </summary>
         public static string B6
         {
@@ -1027,7 +1027,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x0A 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x0A|Sha1 的本地化字符串。
         /// </summary>
         public static string B7
         {
@@ -1038,7 +1038,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x03|0x0B 的本地化字符串。
+        ///   查找类似 0x01|杀|0x03|0x0B|Sha1 的本地化字符串。
         /// </summary>
         public static string B8
         {
@@ -1049,7 +1049,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x06|无懈可击|0x03|0x0C 的本地化字符串。
+        ///   查找类似 0x06|无懈可击|0x03|0x0C|Wxkj1 的本地化字符串。
         /// </summary>
         public static string B9
         {
@@ -1060,7 +1060,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x06|无懈可击|0x03|0x0D 的本地化字符串。
+        ///   查找类似 0x06|无懈可击|0x03|0x0D|Wxkj1 的本地化字符串。
         /// </summary>
         public static string BA
         {
@@ -1071,7 +1071,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0A|决斗|0x04|0x01 的本地化字符串。
+        ///   查找类似 0x0A|决斗|0x04|0x01|Jd1 的本地化字符串。
         /// </summary>
         public static string BB
         {
@@ -1082,7 +1082,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0A|闪|0x04|0x02 的本地化字符串。
+        ///   查找类似 0x0A|闪|0x04|0x02|Shan1 的本地化字符串。
         /// </summary>
         public static string BC
         {
@@ -1093,7 +1093,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0E|顺手牵羊|0x04|0x03 的本地化字符串。
+        ///   查找类似 0x0E|顺手牵羊|0x04|0x03|Ssqy1 的本地化字符串。
         /// </summary>
         public static string BD
         {
@@ -1104,7 +1104,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x0E|顺手牵羊|0x04|0x04 的本地化字符串。
+        ///   查找类似 0x0E|顺手牵羊|0x04|0x04|Ssqy1 的本地化字符串。
         /// </summary>
         public static string BE
         {
@@ -1115,7 +1115,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x1A|贯石斧|0x04|0x05 的本地化字符串。
+        ///   查找类似 0x1A|贯石斧|0x04|0x05|Gsf1 的本地化字符串。
         /// </summary>
         public static string BF
         {
@@ -1126,7 +1126,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x04|0x06 的本地化字符串。
+        ///   查找类似 0x01|杀|0x04|0x06|Sha1 的本地化字符串。
         /// </summary>
         public static string C0
         {
@@ -1137,7 +1137,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x04|0x07 的本地化字符串。
+        ///   查找类似 0x01|杀|0x04|0x07|Sha1 的本地化字符串。
         /// </summary>
         public static string C1
         {
@@ -1148,7 +1148,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x04|0x08 的本地化字符串。
+        ///   查找类似 0x01|杀|0x04|0x08|Sha1 的本地化字符串。
         /// </summary>
         public static string C2
         {
@@ -1159,7 +1159,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x04|0x09 的本地化字符串。
+        ///   查找类似 0x01|杀|0x04|0x09|Sha1 的本地化字符串。
         /// </summary>
         public static string C3
         {
@@ -1170,7 +1170,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x01|杀|0x04|0x0A 的本地化字符串。
+        ///   查找类似 0x01|杀|0x04|0x0A|Sha1 的本地化字符串。
         /// </summary>
         public static string C4
         {
@@ -1181,7 +1181,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|闪|0x04|0x0B 的本地化字符串。
+        ///   查找类似 0x02|闪|0x04|0x0B|Shan1 的本地化字符串。
         /// </summary>
         public static string C5
         {
@@ -1192,7 +1192,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x02|方天画戟|0x04|0x0C 的本地化字符串。
+        ///   查找类似 0x02|方天画戟|0x04|0x0C|Fthj1 的本地化字符串。
         /// </summary>
         public static string C6
         {
@@ -1203,7 +1203,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x1D|紫骍|0x04|0x0D 的本地化字符串。
+        ///   查找类似 0x1D|紫骍|0x04|0x0D|Zs1 的本地化字符串。
         /// </summary>
         public static string C7
         {
@@ -1214,7 +1214,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x17|寒冰剑|0x01|0x02 的本地化字符串。
+        ///   查找类似 0x17|寒冰剑|0x01|0x02|Hbj1 的本地化字符串。
         /// </summary>
         public static string C9
         {
@@ -1225,7 +1225,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x04|闪电|0x02|0x0C 的本地化字符串。
+        ///   查找类似 0x04|闪电|0x02|0x0C|Sd1 的本地化字符串。
         /// </summary>
         public static string E0
         {
@@ -1236,7 +1236,7 @@ namespace Ognas.Resource
         }
 
         /// <summary>
-        ///   查找类似 0x20|仁王盾|0x03|0x02 的本地化字符串。
+        ///   查找类似 0x20|仁王盾|0x03|0x02|Rwd1 的本地化字符串。
         /// </summary>
         public static string E3
         {

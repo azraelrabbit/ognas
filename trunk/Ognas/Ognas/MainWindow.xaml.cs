@@ -20,6 +20,9 @@ using Ognas.Lib;
 using Ognas.Lib.Protocols;
 using Ognas.Lib.SocketUtils;
 using System.Reflection;
+using Ognas.Resource;
+using Ognas.Lib.Skills;
+using System.Windows.Media.Animation;
 
 namespace Ognas.Client
 {
@@ -36,8 +39,13 @@ namespace Ognas.Client
         public static IPAddress SystemIPAddress = Dns.GetHostAddresses(Dns.GetHostName())[0];
 
         public int currentRoomPort = 0;
-        public User localUser = null;
 
+        // 本地玩家
+        public User localUser = null;
+        //当前选中的卡牌
+        public List<Skill> curentSelectCard = new List<Skill>();
+
+        //其他玩家
         public List<User> otherUsers = new List<User>();
 
         public MainWindow()
@@ -45,6 +53,9 @@ namespace Ognas.Client
             InitializeComponent();
             PlatFormInitialize();
         }
+        // 卡牌原始大小
+        double cardOldHeight = 0;
+        double cardOldWidth = 0;
 
         public void PlatFormInitialize()
         {
@@ -196,6 +207,122 @@ namespace Ognas.Client
                 Protocol udpMessageProtocol = new UdpMessageProtocol();
                 udpMessageProtocol.Data = inputMessage;
                 this.TcpClientRoom.SendData(udpMessageProtocol);
+            }
+        }
+
+        public void GetCards()
+        {
+            double topS = cvCard.Margin.Top;
+            double leftS = cvCard.Margin.Left + 10;
+            foreach (Lib.Skills.Skill card in this.localUser.HandCards)
+            {
+                using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+                {
+                    System.Drawing.Bitmap bmp = (System.Drawing.Bitmap)Images_Skill.ResourceManager.GetObject(card.Picture);
+                    bmp.Save(ms, bmp.RawFormat);
+                    BitmapImage bmg = new BitmapImage();
+                    bmg.BeginInit();
+                    ms.Position = 0;
+                    bmg.StreamSource = ms;
+                    bmg.EndInit();
+
+                    Image image = new Image();
+                    image.BeginInit();
+                    image.Name = card.Code;
+                    image.Source = bmg;
+                    image.Height = 100;
+                    image.Tag = card;
+                    image.Margin = new Thickness(leftS, topS, 0, 0);
+                    image.MouseLeftButtonUp += new MouseButtonEventHandler(image_MouseLeftButtonUp);
+                    image.MouseEnter += new MouseEventHandler(image_MouseEnter);
+                    image.MouseLeave += new MouseEventHandler(image_MouseLeave);
+                    image.EndInit();
+
+                    this.cvPCpanel.Children.Add(image);
+
+                    leftS += image.ActualWidth + 2;
+
+                }
+            }
+        }
+
+        /// <summary>
+        /// 卡牌鼠標移出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void image_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Image img = ((Image)e.Source);
+            if (this.curentSelectCard.Contains((Skill)img.Tag))
+            {
+                return;
+            }
+
+            DoubleAnimation widthAnimation = new DoubleAnimation();
+            widthAnimation.From = img.ActualWidth;
+            widthAnimation.To = cardOldWidth;
+            widthAnimation.Duration = TimeSpan.FromMilliseconds(150);
+            img.BeginAnimation(Image.WidthProperty, widthAnimation);
+
+            DoubleAnimation heightAnimation = new DoubleAnimation();
+            heightAnimation.From = img.ActualHeight;
+            heightAnimation.To = cardOldHeight;
+            heightAnimation.Duration = TimeSpan.FromMilliseconds(150);
+            img.BeginAnimation(Image.HeightProperty, heightAnimation);
+
+            PointAnimation pointAnimation = new PointAnimation();
+            pointAnimation.From = new Point(img.Margin.Left, img.Margin.Top);
+            pointAnimation.To = new Point(img.Margin.Left, img.Margin.Top + 20);
+            pointAnimation.Duration = TimeSpan.FromMilliseconds(100);
+            img.BeginAnimation(Image.MarginProperty, pointAnimation);
+        }
+
+        /// <summary>
+        /// 卡牌鼠标移入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void image_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Image img = ((Image)e.Source);
+            if (this.curentSelectCard.Contains((Skill)img.Tag))
+            {
+                return;
+            }
+            cardOldHeight = img.ActualHeight;
+            cardOldWidth = img.ActualWidth;
+
+            DoubleAnimation widthAnimation = new DoubleAnimation();
+            widthAnimation.From = img.ActualWidth;
+            widthAnimation.To = img.ActualWidth * 1.2;
+            widthAnimation.Duration = TimeSpan.FromMilliseconds(150);
+            img.BeginAnimation(Image.WidthProperty, widthAnimation);
+
+            DoubleAnimation heightAnimation = new DoubleAnimation();
+            heightAnimation.From = img.ActualHeight;
+            heightAnimation.To = img.ActualHeight * 1.2;
+            heightAnimation.Duration = TimeSpan.FromMilliseconds(150);
+            img.BeginAnimation(Image.HeightProperty, heightAnimation);
+
+            PointAnimation pointAnimation = new PointAnimation();
+            pointAnimation.From = new Point(img.Margin.Left, img.Margin.Top);
+            pointAnimation.To = new Point(img.Margin.Left, img.Margin.Top - 20);
+            pointAnimation.Duration = TimeSpan.FromMilliseconds(100);
+            img.BeginAnimation(Image.MarginProperty, pointAnimation);
+        }
+
+        /// <summary>
+        /// 卡牌左鍵點擊
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Image img = (Image)e.Source;
+            if (!this.curentSelectCard.Contains((Skill)img.Tag))
+            {
+                this.curentSelectCard.Add((Skill)img.Tag);
             }
         }
 

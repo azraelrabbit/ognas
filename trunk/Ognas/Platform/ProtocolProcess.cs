@@ -55,6 +55,8 @@ namespace Platform
             Console.WriteLine(ssp.currentUser.UserName + " 选择的武将是: " + ssp.SelectedShogun.Name);
             Room room = (Room)host;
 
+            // 激发主公武将选择完成事件
+            room.gameBase.SelectedShogunLoardCompleted(room, ssa);
             return new byte[0];
         }
     }

@@ -24,6 +24,7 @@ namespace Ognas.Lib.Skills
             skill.Name = sinfo[1];
             skill.CardColor = (Skills.CardColor)int.Parse(sinfo[2].Substring(2), NumberStyles.AllowHexSpecifier);
             skill.CardNumber = (Skills.CardNumber)int.Parse(sinfo[3].Substring(2), NumberStyles.AllowHexSpecifier);
+            skill.Picture = sinfo[4].Trim();
             //skill.Range = int.Parse(sinfo[4]);
 
             return skill;

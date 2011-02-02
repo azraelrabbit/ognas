@@ -13,15 +13,6 @@ namespace Platform.Games
 {
     public class GameBase
     {
-        /// <summary>
-        /// 卡牌中心
-        /// </summary>
-        public CardCenter cardCenter
-        {
-
-            get;
-            set;
-        }
 
         /// <summary>
         /// 武将中心
@@ -40,6 +31,29 @@ namespace Platform.Games
         /// 当前令牌用户
         /// </summary>
         User currentTokenUser
+        {
+            get;
+            set;
+        }
+
+        // 当前玩家令牌次序
+        public int currentToken
+        {
+            get;
+            set;
+        }
+
+        // 回合状态
+        public EnumAroundState GoAroundState
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// 回合数
+        /// </summary>
+        public int GoAround
         {
             get;
             set;
@@ -75,18 +89,37 @@ namespace Platform.Games
         EventCenterRule eventCenterRule;
 
         public event ShuffleCardComplete OnShuffleCardCompleted;
+
+        // 分派座位 角色
         public event SetUpSeatComplete OnSetUpSeatCompleted;
         public event SetUpUserRoleComplete OnSetUpUserRoleCompleted;
+
+        // 发牌
         public event DealCardBegin OnDealCardBegins;
+        public event DealCardComplete OnDealCardCompleted;
+
+        // 选择武将
         public event ShogunSelectionBegin OnShogunSelectionBegin;
+        public event ShogunSelectionLordComplete OnShogunSelectionLordCompleted;
+        public event ShogunSelectionOtherBegin OnShogunSelectionOtherBegin;
+        public event ShogunSelectionOtherComplete OnShogunSelectionOtherCompleted;
+
+
+        // 出牌 摸牌 弃牌
+        public event UserCardUse OnUserCardUsing;
+        public event UserCardsGet OnUserCardGetting;
+        public event UserCardsDrop OnUserCardDroping;
 
         public GameBase()
         {
+            this.userList = new List<User>();
+            this.sortedUsers = new SortedList<int, User>();
         }
 
         public GameBase(List<User> userlist)
         {
             this.userList = userlist;
+            this.sortedUsers = new SortedList<int, User>();
         }
 
         /// <summary>
@@ -186,6 +219,8 @@ namespace Platform.Games
             // 发牌
             DealCardsArgs dcArgs = new DealCardsArgs();
             dcArgs.cardList = this.CardList;
+            dcArgs.userList = this.userList;
+
             dcArgs.Messages = "开始发牌...";
             if (this.OnDealCardBegins != null)
             {
@@ -201,7 +236,7 @@ namespace Platform.Games
             // TODO: 随机排座
             this.userList = Utility.GetRandomList(this.userList, this.userList.Count);
             int indexUser = 0;
-            foreach (User u in userList)
+            foreach (User u in this.userList)
             {
                 u.SeatNum = indexUser.ToString();
                 indexUser++;
@@ -214,6 +249,36 @@ namespace Platform.Games
             {
                 this.OnSetUpSeatCompleted(this, gameArgs);
             }
+
+
+            // 生成出牌次序列表
+            int tmp = 0;
+            foreach (User u in this.userList)
+            {
+                if (u.UserRole == EnumUserRole.Lord)
+                {
+                    tmp = int.Parse(u.SeatNum);
+                }
+            }
+            int intNm = 0;
+            for (int i = tmp; i >= 0; i--)
+            {
+                this.sortedUsers.Add(intNm, this.userList[i]);
+                intNm++;
+            }
+            for (int i = this.userList.Count - 1; i > tmp; i--)
+            {
+                this.sortedUsers.Add(intNm, this.userList[i]);
+                intNm++;
+            }
+            // 设置第一个玩家也就是主公为当前玩家
+            this.currentToken = 0;
+
+        }
+        public SortedList<int, User> sortedUsers
+        {
+            get;
+            set;
         }
 
         /// <summary>
@@ -243,5 +308,48 @@ namespace Platform.Games
 
         }
 
+        public void SelectedShogunLoardCompleted(Room room, ShogunSelectArgs ssa)
+        {
+            shogunCenter.Shoguns.Remove(ssa.SelectedShogun);
+            if (this.OnShogunSelectionLordCompleted != null)
+            {
+                this.OnShogunSelectionLordCompleted(room, ssa);
+            }
+        }
+        public void SelectedShogunOtherBegin()
+        {
+            ShogunSelectArgs ssa = new ShogunSelectArgs();
+            ssa.shogunCenter = this.shogunCenter;
+            ssa.userList = this.userList;
+            if (this.OnShogunSelectionOtherBegin != null)
+            {
+                this.OnShogunSelectionOtherBegin(this, ssa);
+            }
+        }
+
+        /// <summary>
+        /// 获取下一令牌用户
+        /// </summary>
+        /// <returns></returns>
+        public User NextUser()
+        {
+            this.currentTokenUser = this.sortedUsers[this.currentToken];
+            if (this.currentToken == 0)
+            {
+                this.GoAroundState = EnumAroundState.AroundStart;
+            }
+
+            if (this.currentToken == this.sortedUsers.Count)
+            {
+                this.GoAroundState = EnumAroundState.AroundOver;
+                this.currentToken = 0;
+            }
+            else
+            {
+                this.currentToken++;
+            }
+
+            return this.currentTokenUser;
+        }
     }
 }

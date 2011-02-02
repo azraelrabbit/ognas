@@ -10,6 +10,7 @@ using Ognas.Lib;
 using Ognas.Lib.Shoguns;
 using Ognas.Lib.Enums;
 using Ognas.Lib.SocketUtils;
+using Ognas.Lib.Skills;
 
 namespace Platform.Games
 {
@@ -27,6 +28,29 @@ namespace Platform.Games
             game.OnSetUpUserRoleCompleted += new Model.SetUpUserRoleComplete(game_OnSetUpUserRoleCompleted);
             game.OnDealCardBegins += new Model.DealCardBegin(game_OnDealCardBegins);
             game.OnShogunSelectionBegin += new ShogunSelectionBegin(game_OnShogunSelectionBegin);
+            game.OnShogunSelectionLordCompleted += new ShogunSelectionLordComplete(game_OnShogunSelectionLordCompleted);
+            game.OnShogunSelectionOtherBegin += new ShogunSelectionOtherBegin(game_OnShogunSelectionOtherBegin);
+        }
+
+        // 其他玩家选择武将
+        void game_OnShogunSelectionOtherBegin(object sender, OgnasEventArgs.ShogunSelectArgs args)
+        {
+
+            SelectionShogunProtocol ssp = new SelectionShogunProtocol();
+
+        }
+
+        // 主公武将选择完成
+        void game_OnShogunSelectionLordCompleted(object sender, OgnasEventArgs.ShogunSelectArgs args)
+        {
+            Room r = (Room)sender;
+            //args.ssProtocol.SelectedShogun
+            User user = this.game.userList.Find(new Predicate<User>(delegate(User u)
+            {
+                return u.Address == args.ssProtocol.ClientAddress;
+            }));
+            user.shogun = args.SelectedShogun;
+            game.SelectedShogunOtherBegin();
         }
 
         /// <summary>
@@ -42,8 +66,8 @@ namespace Platform.Games
             List<Shogun> shoGunLord = args.shogunCenter.GetSubShogunList(TypeofInitialShogunList.ForMaster);
 
             User lord;
-            lord = args.userList.Find(new Predicate<User>(targ));
-
+            // lord = args.userList.Find(new Predicate<User>(targ));
+            lord = game.NextUser();
             SelectionShogunProtocol ssp = new SelectionShogunProtocol(shoGunLord, GameState.SelectShogunLord);
             ssp.ClientAddress = lord.Address;
             this.SendMessage(ssp);
@@ -62,6 +86,37 @@ namespace Platform.Games
         void game_OnDealCardBegins(object sender, OgnasEventArgs.DealCardsArgs args)
         {
             // TODO: 开始发牌
+            int countLord = 5;
+            int countOther = 3;
+            game.gameState = GameState.DealCardLord;
+            foreach (User u in args.userList)
+            {
+                if (u.UserRole == EnumUserRole.Lord)
+                {
+                    List<Skill> cardLord = Utility.GetRandomList(args.cardList, countLord);
+                    u.HandCards = cardLord;
+                    DealCardProtocol dcp = new DealCardProtocol();
+                    dcp.cardList = cardLord;
+                    dcp.state = GameState.DealCardLord;
+                    dcp.ClientAddress = u.Address;
+
+                    this.SendMessage(dcp);
+                    Utility.RemoveItemsFromList(args.cardList, cardLord);
+                }
+                else
+                {
+                    List<Skill> cardOther = Utility.GetRandomList(args.cardList, countOther);
+                    u.HandCards = cardOther;
+                    DealCardProtocol dcp = new DealCardProtocol();
+                    dcp.cardList = cardOther;
+                    dcp.state = GameState.DealCardOther;
+                    dcp.ClientAddress = u.Address;
+                    this.SendMessage(dcp);
+                    Utility.RemoveItemsFromList(args.cardList, cardOther);
+
+                }
+
+            }
 
 
         }

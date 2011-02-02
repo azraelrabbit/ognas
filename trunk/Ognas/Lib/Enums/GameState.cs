@@ -34,6 +34,8 @@ namespace Ognas.Lib.Enums
         [DescriptionAttribute("主公选择武将完毕")]
         SelectShogunLordComplete,
         [DescriptionAttribute("其他人选择武将")]
-        SelectShogunOther
+        SelectShogunOther,
+        [DescriptionAttribute("游戏结束")]
+        GameOver
     }
 }

@@ -81,12 +81,15 @@
     <Compile Include="CommonUtils\ProtocolUtils.cs" />
     <Compile Include="CommonUtils\StreamUtils.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Enums\EnumAroundState.cs" />
     <Compile Include="Enums\EnumUserRole.cs" />
+    <Compile Include="Enums\EnumUserState.cs" />
     <Compile Include="Enums\GameState.cs" />
     <Compile Include="Enums\SystemMessage.cs" />
     <Compile Include="EventCenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Protocols\CreateRoomProtocol.cs" />
+    <Compile Include="Protocols\DealCardProtocol.cs" />
     <Compile Include="Protocols\DealRoleProtocol.cs" />
     <Compile Include="Protocols\DealSeatProtocol.cs" />
     <Compile Include="Protocols\EnterRoomProtocol.cs" />

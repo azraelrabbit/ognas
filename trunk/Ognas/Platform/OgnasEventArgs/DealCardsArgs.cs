@@ -10,6 +10,12 @@ namespace Platform.OgnasEventArgs
 {
     public class DealCardsArgs : EventArgs
     {
+        public List<User> userList
+        {
+            get;
+            set;
+        }
+
         public List<Skill> cardList
         {
             get;
